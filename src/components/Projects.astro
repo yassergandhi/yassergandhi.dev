@@ -1,7 +1,8 @@
-<section class="py-16 px-6 md:px-10 bg-white/5"> <div class="max-w-[72ch] mx-auto">
+<section class="py-16 px-6 md:px-10 bg-white/5">
+  <div class="max-w-[72ch] mx-auto">
     
     <h2 class="text-sm font-mono text-[#2dd4bf] mb-8 tracking-wider uppercase">
-      Featured Implementation
+      Technical Showcase
     </h2>
 
     <div class="border border-white/10 bg-[#0f1115] p-8 rounded-lg hover:border-[#2dd4bf]/50 transition-colors group relative overflow-hidden">
@@ -9,36 +10,48 @@
       <div class="absolute top-0 right-0 w-24 h-24 bg-[#2dd4bf]/10 blur-3xl -z-10 rounded-full group-hover:bg-[#2dd4bf]/20 transition-all"></div>
 
       <div class="flex justify-between items-start mb-4">
-        <h3 class="text-xl font-bold text-white group-hover:text-[#2dd4bf] transition-colors">
-          Huhugerman — CSE Demo
-        </h3>
+        <div>
+          <h3 class="text-xl font-bold text-white group-hover:text-[#2dd4bf] transition-colors">
+            Huhugerman — Integration Demo
+          </h3>
+          <p class="text-xs text-zinc-500 font-mono mt-1">Simulated SDK & Diagnostic Tooling</p>
+        </div>
         <span class="text-xs font-mono border border-zinc-700 px-2 py-1 rounded text-zinc-400 bg-black/20">
           v1.0.0
         </span>
       </div>
 
-      <p class="mt-2 text-zinc-400 leading-relaxed">
-        Simulated SaaS API with latency, auth failures, retries,
-        and diagnostic tooling designed specifically for Customer Success scenarios.
+      <p class="mt-4 text-zinc-400 leading-relaxed text-sm">
+        A resilient React application engineered to demonstrate <strong>L1/L2 Support workflows</strong>. 
+        It simulates network instability to practice troubleshooting, log analysis, and data validation.
       </p>
 
-      <div class="mt-6 p-4 bg-black/30 rounded border border-white/5 font-mono text-sm text-zinc-300">
+      <div class="mt-6 p-4 bg-black/30 rounded border border-white/5 font-mono text-xs text-zinc-300">
         <ul class="space-y-2">
           <li class="flex items-center gap-2">
-            <span class="text-green-500">✓</span> 401 / 404 / 500 chaos engineering
+            <span class="text-[#2dd4bf]">✓</span> 
+            <span><strong>Chaos Engineering:</strong> Random 500/401/404 fault injection.</span>
           </li>
           <li class="flex items-center gap-2">
-            <span class="text-green-500">✓</span> Retry logic & Request Tracing (req_id)
+            <span class="text-[#2dd4bf]">✓</span> 
+            <span><strong>JSON Inspector:</strong> Live payload validation vs UI rendering.</span>
           </li>
           <li class="flex items-center gap-2">
-            <span class="text-green-500">✓</span> Customer-ready TROUBLESHOOTING.md
+            <span class="text-[#2dd4bf]">✓</span> 
+            <span><strong>Observability:</strong> Exposed Request_IDs & Latency metrics.</span>
           </li>
         </ul>
       </div>
 
-      <p class="mt-6 text-xs text-zinc-500 font-mono">
-        Stack: React · TypeScript · Simulated SDK · Vite
-      </p>
+      <div class="mt-6 flex gap-6 font-mono text-sm">
+        <a href="https://huhugerman-demo-cse.netlify.app/" target="_blank" class="flex items-center gap-2 text-[#2dd4bf] hover:text-[#14b8a6] hover:underline underline-offset-4 transition-colors font-semibold">
+          <span>▶</span> Live Demo
+        </a>
+        <a href="https://github.com/yassergandhi/huhugerman" target="_blank" class="flex items-center gap-2 text-zinc-400 hover:text-white transition-colors">
+          <span>code_repo</span> Source Code
+        </a>
+      </div>
+
     </div>
 
   </div>
