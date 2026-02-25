@@ -5,45 +5,40 @@ import '../styles/global.css';
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap"
-      rel="stylesheet"
-    >
+    <!-- Ubuntu Font (Ubuntu Lynx brand identity) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
-    <!-- Primary SEO -->
-    <title>
-      Yasser Gandhi · Technical Support & Application Support · SaaS
-    </title>
-
-    <meta
-      name="description"
-      content="Technical Support and Implementation specialist focused on SaaS platforms,
-API troubleshooting, user onboarding, and production issue resolution."
-    />
+    <!-- SEO Primary -->
+    <title>Yasser Gandhi Hernández Esquivel · Learning Systems Architect · AI-Driven Instructional Designer · German C1</title>
+    <meta name="description" content="Learning Systems Architect and AI-Driven Instructional Designer. 15 years teaching German at UAM and UNAM. Creator of huhuGERMAN, a Domain-Driven pedagogical platform integrating authentic German media from A1. TypeScript, Supabase, Zod. German C1. DACH EdTech specialist." />
+    <meta name="keywords" content="Learning Systems Architect, AI-Driven Instructional Designer, German Language Expert, huhuGERMAN, EdTech, DaF, Instructional Design, Zod, Domain-Driven Design, Supabase, UAM, UNAM, CELEX, DACH, Purple Squirrel" />
+    <meta name="author" content="Yasser Gandhi Hernández Esquivel" />
 
     <!-- Open Graph / LinkedIn -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Yasser Gandhi · Technical Customer Success & Implementation" />
-    <meta
-      property="og:description"
-      content="Bridging engineering and customers through API diagnostics, integration troubleshooting,
-      and German-speaking customer enablement in the DACH region."
-    />
+    <meta property="og:title" content="Yasser Gandhi · Learning Systems Architect | AI-Driven Instructional Designer | German C1" />
+    <meta property="og:description" content="Where DaF pedagogy meets domain-driven systems engineering. Creator of huhuGERMAN. 15 years at UAM & UNAM. C1 German. TypeScript, Supabase, Zod. Target: EdTech SaaS / DACH roles." />
     <meta property="og:url" content="https://yassergandhi.dev/" />
-    <!-- opcional: cuando tengas imagen -->
-    <!-- <meta property="og:image" content="https://yassergandhi.dev/og-image.png" /> -->
+    <meta property="og:image" content="https://yassergandhi.dev/og-image.png" />
 
-    <!-- Twitter (opcional pero consistente) -->
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Yasser Gandhi · Learning Systems Architect | German C1" />
+    <meta name="twitter:description" content="DaF pedagogy + qualitative research + systems engineering + C1 German. 15 years of real evidence. huhuGERMAN creator." />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://yassergandhi.dev/" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
 
-  <body class="bg-[#0f1115] text-zinc-300 antialiased selection:bg-[#2dd4bf] selection:text-black">
+  <body>
+    <div class="aura"></div>
     <slot />
   </body>
 </html>

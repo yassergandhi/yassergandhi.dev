@@ -1,0 +1,39 @@
+---
+---
+
+<nav class="sticky top-0 z-50" style="background: rgba(26,5,20,0.94); border-bottom: 1px solid rgba(233,84,32,0.1); backdrop-filter: blur(12px);">
+  <div class="inner" style="display: flex; align-items: center; justify-content: space-between; padding-top: 1.1rem; padding-bottom: 1.1rem;">
+
+    <a href="/" class="mono" style="font-size: 0.72rem; color: var(--orange); text-decoration: none; letter-spacing: 0.14em; text-transform: uppercase;">
+      yassergandhi.dev
+    </a>
+
+    <ul style="display: flex; gap: 2rem; list-style: none; align-items: center;">
+      {[
+        ['huhuGERMAN', '#project'],
+        ['ADR', '#adr'],
+        ['Credentials', '#credentials'],
+        ['Contact', '#contact'],
+      ].map(([label, href]) => (
+        <li class="hidden-mobile">
+          <a
+            href={href}
+            class="mono"
+            style="font-size: 0.68rem; color: var(--gray-dim); text-decoration: none; letter-spacing: 0.08em; transition: color 0.2s;"
+            onmouseover="this.style.color='var(--orange-light)'"
+            onmouseout="this.style.color='var(--gray-dim)'"
+          >
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+  </div>
+</nav>
+
+<style>
+  @media (max-width: 600px) {
+    .hidden-mobile { display: none; }
+  }
+</style>
