@@ -3,6 +3,7 @@
 
 <section id="why">
   <div class="container">
+    
     <div class="section-label">Architecture Decision Record</div>
     <h2>Why the ADR arrived late — and what that teaches</h2>
 
@@ -35,7 +36,7 @@
         <div class="adr-date">2025 — ADR Written</div>
         <div class="adr-title">Pedagogical domain as typed source of truth</div>
         <div class="adr-desc">
-          WochenKontextSchema formalizes gesehen / nicht_gesehen / korrektur.
+          WochenKontextSchema formalizes gelernt / nicht_gelernt / korrektur.
           prompt-builder constructs prompts from domain. AI obeys, not decides.
           Zod validates at every boundary. JSONB snapshots enable future audit.
         </div>
@@ -49,5 +50,44 @@
         </div>
       </div>
     </div>
+
+    <div class="section-label" style="margin-top: 5rem;">Pedagogical Decision Record</div>
+    <h2 id="pdr">PDR: Governing the AI, not just building it</h2>
+
+    <p style="color:var(--gray); margin-bottom: 2.5rem; font-size: 0.95rem; max-width: 640px;">
+      If an AI doesn't know the "State of the Classroom," it shouldn't generate a single line of content. 
+      The PDR is our hard-coded contract—ensuring pedagogy governs technology, not the other way around.
+    </p>
+
+    <div class="adr-timeline">
+      <div class="adr-entry">
+        <div class="adr-date">The Contract</div>
+        <div class="adr-title">Pedagogical Domain as Typed Truth</div>
+        <div class="adr-desc">
+          We formalize the "WochenKontext" (Weekly Context). No generic LLM magic.
+          If a concept (like Plurals for A1) is marked as "out_of_scope" in the PDR, 
+          the system is architecturally forbidden from generating it.
+        </div>
+      </div>
+      <div class="adr-entry">
+        <div class="adr-date">The Governance</div>
+        <div class="adr-title">PDR as System Prompt</div>
+        <div class="adr-desc">
+          Every prompt is wrapped in a PDR snapshot. 
+          The AI obeys the boundary constraints defined by the educator. 
+          The error is not a bug; it's a boundary condition.
+        </div>
+      </div>
+      <div class="adr-entry dim">
+        <div class="adr-date">RFC-001</div>
+        <div class="adr-title">Standardizing Pedagogy</div>
+        <div class="adr-desc">
+          Moving from "I hope the AI gets it right" to "The system cannot generate it wrong."
+          We are open-sourcing the PDR structure to force the EdTech industry 
+          to stop building wrappers and start building teachers.
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
