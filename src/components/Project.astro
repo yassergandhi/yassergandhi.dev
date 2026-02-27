@@ -5,6 +5,9 @@
   <div class="container">
     <div class="section-label">Featured Project</div>
     <h2>huhuGERMAN</h2>
+
+    
+    
     <p style="color:var(--gray); margin-bottom: 2rem; font-size: 0.95rem;">
       A pedagogical platform and research system. Not a toy project — used by 30–40 real students
       per trimester at UAM Azcapotzalco since 2022.
@@ -14,30 +17,27 @@
       <div class="project-meta">
         <span class="badge badge-production">Production</span>
         <span class="badge badge-live">● Live</span>
-        <span class="badge badge-archived">Repos Archived</span>
       </div>
 
       <h3>Domain-Driven German Language Learning Platform</h3>
 
-      <p class="project-body">
-        huhuGERMAN introduces authentic German documentary content (Y-Kollektiv, funk/ARD)
-        from A1 level — directly challenging the field consensus that recommends delaying
-        authentic materials until post-A2. The platform operationalizes the distinction
-        between <em>global comprehension</em> (understanding general topics) and
-        <em>selective comprehension</em> (recognizing specific structures).
-      </p>
-
-      <div class="adr-quote">
-        "La IA ya no decide: obedece al dominio." — ADR núcleo, 2025
+      <div class="purple-squirrel-box" style="margin-bottom: 1.5rem;">
+        <h4>Architectural Decision Record (ADR)</h4>
+        <p>The pedagogical domain is formalized as a typed Zod schema. <strong>The AI doesn't decide; it obeys.</strong></p>
+        
+        <pre style="background: #000; padding: 1.5rem; border-radius: 8px; color: #fff; overflow-x: auto; font-family: monospace;">
+// Pedagogical Domain Contract
+export const WochenKontextSchema = z.object({
+  gelernt: z.array(z.string()),
+  nicht_gelernt: z.array(z.string()),
+  strict_mode: z.boolean()
+});</pre>
       </div>
 
       <p class="project-body">
-        The critical architectural decision: the pedagogical domain (what has been taught,
-        what is forbidden to correct, under what conditions) is formalized as typed Zod schemas
-        and becomes the single source of truth. The AI does not decide what to correct.
-        It executes the domain's rules. This eliminates inconsistent feedback, prompt engineering
-        magic, and the silent technical debt that accumulates when grammar knowledge lives
-        only in the teacher's head.
+        huhuGERMAN operationalizes the distinction between <em>global comprehension</em> and 
+        <em>selective comprehension</em>. By wrapping prompts in a PDR snapshot, 
+        the AI is architecturally forbidden from generating content outside the classroom's "State."
       </p>
 
       <div class="tech-stack">
@@ -47,25 +47,7 @@
         <span class="tech-tag">Supabase</span>
         <span class="tech-tag">PostgreSQL</span>
         <span class="tech-tag">DeepSeek AI</span>
-        <span class="tech-tag">Vercel</span>
-        <span class="tech-tag">Google Apps Script</span>
-        <span class="tech-tag">SHA-256 Identity</span>
         <span class="tech-tag">Domain-Driven Design</span>
-      </div>
-
-      <div class="project-links">
-        <a href="https://huhugerman.com" target="_blank" rel="noopener" class="project-link">
-          → huhugerman.com
-        </a>
-        <a href="https://huhugerman-demo-cse.netlify.app/" target="_blank" rel="noopener" class="project-link">
-          → CSE Diagnostic Demo
-        </a>
-        <a href="https://github.com/yassergandhi/cse-student-portal-german-edu" target="_blank" rel="noopener" class="project-link dim">
-          GitHub: Portal
-        </a>
-        <a href="https://github.com/yassergandhi/cse-identity-engine-german-edu" target="_blank" rel="noopener" class="project-link dim">
-          GitHub: Identity Engine
-        </a>
       </div>
     </div>
   </div>
