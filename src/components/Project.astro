@@ -6,8 +6,6 @@
     <div class="section-label">Featured Project</div>
     <h2>huhuGERMAN</h2>
 
-    
-    
     <p style="color:var(--gray); margin-bottom: 2rem; font-size: 0.95rem;">
       A pedagogical platform and research system. Not a toy project — used by 30–40 real students
       per trimester at UAM Azcapotzalco since 2022.
@@ -24,20 +22,21 @@
       <div class="purple-squirrel-box" style="margin-bottom: 1.5rem;">
         <h4>Architectural Decision Record (ADR)</h4>
         <p>The pedagogical domain is formalized as a typed Zod schema. <strong>The AI doesn't decide; it obeys.</strong></p>
-        
-        <pre style="background: #000; padding: 1.5rem; border-radius: 8px; color: #fff; overflow-x: auto; font-family: monospace;">
-// Pedagogical Domain Contract
-export const WochenKontextSchema = z.object({
-  gelernt: z.array(z.string()),
-  nicht_gelernt: z.array(z.string()),
-  strict_mode: z.boolean()
-});</pre>
+
+        <div class="adr-code-block">
+          <span style="color:#8a7f87;">// Pedagogical Domain Contract</span><br/>
+          <span style="color:#FF6B35;">export const</span> WochenKontextSchema = z.object({"{"}<br/>
+          &nbsp;&nbsp;gesehen:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; z.array(z.string()),&nbsp;&nbsp;<span style="color:#8a7f87;">// structures taught</span><br/>
+          &nbsp;&nbsp;nicht_gesehen: z.array(z.string()),&nbsp;&nbsp;<span style="color:#8a7f87;">// not yet taught</span><br/>
+          &nbsp;&nbsp;korrektur:&nbsp;&nbsp;&nbsp;&nbsp; KorrekturSchema&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#8a7f87;">// what AI can / cannot correct</span><br/>
+          {"}"});
+        </div>
       </div>
 
       <p class="project-body">
-        huhuGERMAN operationalizes the distinction between <em>global comprehension</em> and 
-        <em>selective comprehension</em>. By wrapping prompts in a PDR snapshot, 
-        the AI is architecturally forbidden from generating content outside the classroom's "State."
+        huhuGERMAN operationalizes the distinction between <em>global comprehension</em> and
+        <em>selective comprehension</em>. The AI is architecturally forbidden from correcting
+        grammar the student has not yet studied. Pedagogy governs the system. Not the other way around.
       </p>
 
       <div class="tech-stack">
@@ -46,8 +45,14 @@ export const WochenKontextSchema = z.object({
         <span class="tech-tag">Zod</span>
         <span class="tech-tag">Supabase</span>
         <span class="tech-tag">PostgreSQL</span>
+        <span class="tech-tag">Google Apps Script v8</span>
         <span class="tech-tag">DeepSeek AI</span>
         <span class="tech-tag">Domain-Driven Design</span>
+      </div>
+
+      <div class="project-links" style="margin-top: 1.5rem;">
+        <a href="https://huhugerman.com" target="_blank" rel="noopener" class="project-link">→ huhugerman.com</a>
+        <a href="https://huhugerman-demo-cse.netlify.app/" target="_blank" rel="noopener" class="project-link">→ CSE Diagnostic Demo</a>
       </div>
     </div>
   </div>
