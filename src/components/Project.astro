@@ -7,8 +7,9 @@
     <h2>huhuGERMAN</h2>
 
     <p style="color:var(--gray); margin-bottom: 2rem; font-size: 0.95rem;">
-      A pedagogical platform and research system. Not a toy project — used by 30–40 real students
-      per trimester at UAM Azcapotzalco since 2022.
+      A pedagogical platform and longitudinal research system. Not a toy project — 
+      30–40 real students per trimester at UAM Azcapotzalco.
+      Input auténtico desde A1 · operational since 2011 · first documented case: July 2022.
     </p>
 
     <div class="project-card">
@@ -26,8 +27,8 @@
         <div class="adr-code-block">
           <span style="color:#8a7f87;">// Pedagogical Domain Contract</span><br/>
           <span style="color:#FF6B35;">export const</span> WochenKontextSchema = z.object({"{"}<br/>
-          &nbsp;&nbsp;gesehen:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; z.array(z.string()),&nbsp;&nbsp;<span style="color:#8a7f87;">// structures taught</span><br/>
-          &nbsp;&nbsp;nicht_gesehen: z.array(z.string()),&nbsp;&nbsp;<span style="color:#8a7f87;">// not yet taught</span><br/>
+          &nbsp;&nbsp;gelernt:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; z.array(z.string()),&nbsp;&nbsp;<span style="color:#8a7f87;">// structures taught</span><br/>
+          &nbsp;&nbsp;nicht_gelernt: z.array(z.string()),&nbsp;&nbsp;<span style="color:#8a7f87;">// not yet taught</span><br/>
           &nbsp;&nbsp;korrektur:&nbsp;&nbsp;&nbsp;&nbsp; KorrekturSchema&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#8a7f87;">// what AI can / cannot correct</span><br/>
           {"}"});
         </div>
@@ -35,8 +36,10 @@
 
       <p class="project-body">
         huhuGERMAN operationalizes the distinction between <em>global comprehension</em> and
-        <em>selective comprehension</em>. The AI is architecturally forbidden from correcting
-        grammar the student has not yet studied. Pedagogy governs the system. Not the other way around.
+        <em>selective comprehension</em> — a framework rooted in Vandergrift's metacognitive 
+        listening model and formalized in the B.A. thesis (UNAM, 2015). The AI is architecturally 
+        forbidden from correcting grammar the student has not yet studied. 
+        Pedagogy governs the system. Not the other way around.
       </p>
 
       <div class="tech-stack">
@@ -52,7 +55,8 @@
 
       <div class="project-links" style="margin-top: 1.5rem;">
         <a href="https://huhugerman.com" target="_blank" rel="noopener" class="project-link">→ huhugerman.com</a>
-        <a href="https://huhugerman-demo-cse.netlify.app/" target="_blank" rel="noopener" class="project-link">→ CSE Diagnostic Demo</a>
+        <a href="https://huhugerman-demo-cse.netlify.app/" target="_blank" rel="noopener" class="project-link">→ Chaos Engineering Demo</a>
+        <a href="https://github.com/yassergandhi/huhugerman-mvp-notes" target="_blank" rel="noopener" class="project-link dim">→ PRD & type definitions</a>
       </div>
     </div>
   </div>

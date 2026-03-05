@@ -15,12 +15,21 @@
 
     <div class="adr-timeline">
       <div class="adr-entry">
+        <div class="adr-date">2011 — Origin</div>
+        <div class="adr-title">Observation begins at FCPyS-UNAM</div>
+        <div class="adr-desc">
+          First longitudinal observation of the Hochdeutsch/Umgangssprache gap in Mexican students.
+          Authentic input introduced informally. The method precedes the theory — 
+          formalized later in the B.A. thesis (2015) and M.Ed. thesis (2020).
+        </div>
+      </div>
+      <div class="adr-entry">
         <div class="adr-date">2022 — MVP</div>
         <div class="adr-title">Endpoint + AI + implicit context</div>
         <div class="adr-desc">
           Validated the flow: student submits → AI gives feedback. Proved the pedagogical
-          hypothesis. But context lived in the teacher's head, not the system.
-          The AI corrected Perfekt for students in week 2. System not governable.
+          hypothesis was worth building. But context lived in the teacher's head, not the system.
+          The AI corrected Perfekt for students in week 2. System not yet governable.
         </div>
       </div>
       <div class="adr-entry">
@@ -30,6 +39,7 @@
           Students reported confusion from feedback on grammar they hadn't seen.
           This was not a bug. It was a missing domain contract.
           "When a system depends on human judgment to not break, it's not a product."
+          Documented classroom friction — now research data for the article.
         </div>
       </div>
       <div class="adr-entry">
@@ -38,15 +48,16 @@
         <div class="adr-desc">
           WochenKontextSchema formalizes gelernt / nicht_gelernt / korrektur.
           prompt-builder constructs prompts from domain. AI obeys, not decides.
-          Zod validates at every boundary. JSONB snapshots enable future audit.
+          Zod validates at every boundary. JSONB snapshots enable research audit trail.
         </div>
       </div>
       <div class="adr-entry dim">
-        <div class="adr-date">2026 — Academic Publication</div>
-        <div class="adr-title">Targeting Die Unterrichtspraxis / System (Elsevier Q1)</div>
+        <div class="adr-date">May 2026 — Publication</div>
+        <div class="adr-title">Targeting Die Unterrichtspraxis (AATG · Q3 ESCI)</div>
         <div class="adr-desc">
           The system becomes evidence for the research trajectory:
-          thesis (2020) as diagnostic phase, huhuGERMAN as intervention phase.
+          B.A. thesis (2015) as theoretical foundation, M.Ed. thesis (2020) as diagnostic phase,
+          huhuGERMAN as intervention. First editorial milestone in a planned sequence.
         </div>
       </div>
     </div>
@@ -56,7 +67,7 @@
 
     <p style="color:var(--gray); margin-bottom: 2.5rem; font-size: 0.95rem; max-width: 640px;">
       If an AI doesn't know the "State of the Classroom," it shouldn't generate a single line of content. 
-      The PDR is a hard-coded contract—ensuring pedagogy governs technology, not the other way around.
+      The PDR is a hard-coded contract — ensuring pedagogy governs technology, not the other way around.
     </p>
 
     <div class="adr-timeline">
@@ -64,9 +75,9 @@
         <div class="adr-date">The Contract</div>
         <div class="adr-title">Pedagogical Domain as Typed Truth</div>
         <div class="adr-desc">
-          huhuGERMAN formalizes the "WochenKontext"(Weekly Context). No generic LLM magic.
-          If a concept (like Plurals for A1) is marked as "out_of_scope" in the PDR, 
-          the system is architecturally forbidden from generating it.
+          huhuGERMAN formalizes the WochenKontext (Weekly Context). No generic LLM magic.
+          If a concept is marked as nicht_gelernt in the PDR, 
+          the system is architecturally forbidden from generating feedback on it.
         </div>
       </div>
       <div class="adr-entry">
@@ -75,7 +86,7 @@
         <div class="adr-desc">
           Every prompt is wrapped in a PDR snapshot. 
           The AI obeys the boundary constraints defined by the educator. 
-          The error is not a bug; it's a boundary condition.
+          The error is not a bug — it's a boundary condition.
         </div>
       </div>
       <div class="adr-entry dim">
@@ -83,7 +94,7 @@
         <div class="adr-title">Standardizing Pedagogy</div>
         <div class="adr-desc">
           Moving from "I hope the AI gets it right" to "The system cannot generate it wrong."
-          The PDR structure is being open-sourced to push the EdTech industry
+          The PDR structure is being documented as part of the research publication trajectory.
         </div>
       </div>
     </div>
