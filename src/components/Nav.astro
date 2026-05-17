@@ -4,11 +4,79 @@
 <nav>
   <div class="container">
     <a href="/" class="nav-brand">yassergandhi.dev</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
     <ul class="nav-links">
-      <li><a href="/#framework">Framework</a></li>
+      <li><a href="/">Home</a></li>
+      <li><a href="/#framework">Core Framework</a></li>
       <li><a href="/resilient-infrastructure">Infrastructure</a></li>
-      <li><a href="/predictive-analysis">Analysis</a></li>
+      <li><a href="/predictive-analysis">Predictive Analysis</a></li>
       <li><a href="/#contact">Contact</a></li>
     </ul>
   </div>
 </nav>
+
+<style is:global>
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--orange);
+    transition: transform 0.2s, opacity 0.2s;
+  }
+
+  @media (max-width: 640px) {
+    nav { position: relative; }
+
+    .nav-toggle { display: flex; }
+
+    .nav-links.open {
+      display: flex !important;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: rgba(26, 5, 20, 0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(233, 84, 32, 0.2);
+      flex-direction: column;
+      gap: 0;
+      padding: 0.5rem 0;
+      z-index: 99;
+    }
+
+    .nav-links.open li a {
+      display: block;
+      padding: 0.75rem 2rem;
+      font-size: 0.85rem;
+    }
+  }
+</style>
+
+<script>
+  const toggle = document.querySelector('.nav-toggle') as HTMLButtonElement | null;
+  const links = document.querySelector('.nav-links') as HTMLElement | null;
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = links?.classList.toggle('open') ?? false;
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  links?.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      links.classList.remove('open');
+      toggle?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
