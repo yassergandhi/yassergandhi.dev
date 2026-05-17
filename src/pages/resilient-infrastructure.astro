@@ -1,0 +1,149 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Contact from '../components/Contact.astro';
+
+const sanitizeEmailCode = `function sanitizeEmail(email) {
+  if (!email || !email.includes('@')) return '';
+  let [user, domain] = email.toString().trim().toLowerCase().split('@');
+  const commonFixes = {
+    'gmaia.lcom': 'gmail.com', 'gnail.com': 'gmail.com', 'gmai.com': 'gmail.com',
+    'gamil.com': 'gmail.com', 'gmal.com': 'gmail.com', 'hotml.com': 'hotmail.com'
+  };
+  if (commonFixes[domain]) domain = commonFixes[domain];
+  return \`\${user}@\${domain}\`;
+}`;
+---
+
+<Layout
+  title="Resilient Infrastructure · Identity Resolution & Chaos-Tolerant Systems · Yasser Gandhi"
+  description="Technical proof of concept: Identity Resolution Engine for fragmented multi-platform user data, and Chaos-Tolerant Infrastructure using TypeScript/Zod contracts to prevent production database contamination."
+  keywords="Identity Resolution Engine, User Data Deduplication, Email Sanitization, Chaos-Tolerant Architecture, TypeScript Zod Contracts, Data Pipeline, LLM Integration, Production Database Protection, Friction Scan"
+>
+  <Nav />
+  <main>
+    <section id="resilient-infrastructure">
+      <div class="container">
+        <div class="section-label">Technical Proof of Concept</div>
+        <h1 style="font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: 0.5rem;">Resilient Infrastructure</h1>
+        <p style="color: var(--gray); font-size: 1rem; margin-bottom: 4rem; max-width: 600px;">
+          Two backend architectures that prevent user data chaos from becoming a production emergency.
+        </p>
+
+        <!-- PoC 01: Identity Resolution Engine -->
+        <div class="project-card" style="margin-bottom: 4rem;">
+          <div class="project-meta">
+            <span class="badge badge-production">PoC 01</span>
+            <span class="badge badge-live">Backend Architecture</span>
+          </div>
+          <h2>The Identity Resolution Engine</h2>
+          <div class="project-body">
+            <p style="margin-bottom: 1.5rem;">
+              Multi-platform SaaS products accumulate a critical technical debt that lives in a
+              blind spot: <strong style="color: var(--white-warm);">fragmented user identities.</strong>
+              A single real user registers as
+              <code style="color: var(--orange-light); font-family: var(--font-mono);">john@gmaia.lcom</code>,
+              then as
+              <code style="color: var(--orange-light); font-family: var(--font-mono);">john@gnail.com</code>,
+              then tries to recover a password with a third variant. Your system treats them as
+              three different failed users. Your churn metrics are wrong. Your segmentation is corrupt.
+              Your re-engagement campaigns are firing at ghost accounts.
+            </p>
+            <p style="margin-bottom: 1.5rem;">
+              The Identity Resolution Engine unifies fragmented, typo-corrupted, or format-broken user
+              records into a <strong style="color: var(--white-warm);">Single Source of Truth (SSOT)</strong>
+              using advanced heuristic logic — without introducing heavy authentication debt or
+              breaking existing integrations. It resolves the chaos at the data ingestion layer
+              before it poisons your analytics, your CRM, and your LLM training data.
+            </p>
+            <p style="color: var(--orange-light); font-family: var(--font-mono); font-size: 0.85rem; margin-bottom: 0.5rem;">
+              // Core sanitization function — deployed at the input boundary
+            </p>
+          </div>
+
+          <div class="adr-code-block"><pre set:html={sanitizeEmailCode} /></div>
+
+          <div class="project-body" style="margin-top: 2rem;">
+            <p>
+              This is not input validation. This is
+              <strong style="color: var(--white-warm);">identity resolution at scale.</strong>
+              Paired with a deduplication pass on historical records and a conflict-resolution
+              strategy for accounts that share normalized emails, this engine transforms your
+              user table from a noise floor into a reliable analytical instrument.
+            </p>
+          </div>
+
+          <div class="tech-stack" style="margin-top: 1.5rem;">
+            <span class="tech-tag">JavaScript / TypeScript</span>
+            <span class="tech-tag">Heuristic Pattern Matching</span>
+            <span class="tech-tag">SSOT Architecture</span>
+            <span class="tech-tag">Data Deduplication</span>
+            <span class="tech-tag">Input Boundary Design</span>
+          </div>
+        </div>
+
+        <!-- PoC 02: Chaos-Tolerant Infrastructure -->
+        <div class="project-card">
+          <div class="project-meta">
+            <span class="badge badge-production">PoC 02</span>
+            <span class="badge badge-live">Backend Architecture</span>
+          </div>
+          <h2>Chaos-Tolerant Infrastructure</h2>
+          <div class="project-body">
+            <p style="margin-bottom: 1.5rem;">
+              Real users do not interact with your software predictably. They submit empty forms,
+              paste garbled data, trigger edge cases your QA never anticipated, and send malformed
+              requests at the exact moment your LLM integration is processing a batch. When your
+              infrastructure has no tolerance for this chaos, the result is
+              <strong style="color: var(--white-warm);">production database contamination</strong> —
+              corrupted records, broken API chains, and downstream failures that take hours to trace.
+            </p>
+            <p style="margin-bottom: 1.5rem;">
+              The solution is not more error logging. It is
+              <strong style="color: var(--white-warm);">strict data contracts enforced at every system
+              boundary.</strong> Using TypeScript type safety and Zod runtime validation schemas,
+              we define the exact shape of every data object the system accepts, rejects, or
+              transforms. No dirty record touches the production database. No malformed payload
+              reaches an LLM API call.
+            </p>
+            <p style="margin-bottom: 1.5rem;">
+              Dynamic segmentation by user session sections further isolates erratic behavior:
+              a user in an inconsistent state is routed to a recovery flow rather than allowed
+              to corrupt shared state. This prevents a single bad actor — or a single confused
+              user — from propagating failures across the system graph.
+            </p>
+
+            <div class="adr-quote">
+              The contract is not a safety net. It is the architecture. When the contract is strict,
+              chaos becomes a handled input state, not an incident report.
+            </div>
+
+            <p style="margin-top: 1.5rem;">
+              This pattern is production-proven in systems that integrate with LLMs under
+              real-user load, where the cost of a malformed payload is not just a 400 error —
+              it is a corrupted training data record, a wasted API credit, or a broken user
+              session that produces measurable churn.
+            </p>
+          </div>
+
+          <div class="tech-stack">
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">Zod Schema Contracts</span>
+            <span class="tech-tag">Dynamic Segmentation</span>
+            <span class="tech-tag">LLM API Integration</span>
+            <span class="tech-tag">Session Isolation</span>
+            <span class="tech-tag">Fault Mitigation</span>
+          </div>
+        </div>
+
+        <div style="margin-top: 4rem; text-align: center;">
+          <a href="mailto:yassergandhi.dev@gmail.com?subject=Resilient%20Infrastructure%20Inquiry" class="btn-primary">
+            [ Discuss Your Infrastructure Challenge ]
+          </a>
+        </div>
+      </div>
+    </section>
+    <hr class="divider" />
+    <Contact />
+  </main>
+</Layout>

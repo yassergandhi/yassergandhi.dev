@@ -7,9 +7,45 @@ import Project from '../components/Project.astro';
 import Adr from '../components/Adr.astro';
 import Credentials from '../components/Credentials.astro';
 import Contact from '../components/Contact.astro';
+
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Yasser Gandhi — Friction Scan Consulting",
+  "description": "Global B2B consulting for software user retention, onboarding failure diagnosis, and friction engineering. Friction Scan methodology.",
+  "url": "https://yassergandhi.dev",
+  "email": "yassergandhi.dev@gmail.com",
+  "founder": {
+    "@type": "Person",
+    "name": "Yasser Gandhi Hernández Esquivel",
+    "jobTitle": "User Retention Engineer & Friction Scan Consultant",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Mexico City",
+      "addressCountry": "MX"
+    }
+  },
+  "serviceType": [
+    "Friction Scan Audit",
+    "Onboarding Architecture Consulting",
+    "User Retention Engineering",
+    "Software Churn Diagnosis",
+    "Data Pipeline Cleanup"
+  ],
+  "areaServed": "Worldwide",
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "mailto:yassergandhi.dev@gmail.com"
+  }
+});
 ---
 
-<Layout>
+<Layout
+  title="Yasser Gandhi · Friction Scan Consulting · Stop Software Churn"
+  description="Your users are leaving because your onboarding architecture forces them to. I scan the invisible friction in your platform to stop attrition and protect software revenue. B2B consulting from Mexico City."
+  keywords="Friction Scan, Software Churn, User Attrition, Onboarding Failure, User Retention Consulting, LTV Protection, Product Adoption Engineering, B2B SaaS"
+>
+  <script slot="head" type="application/ld+json" set:html={jsonLd} />
   <Nav />
   <main>
     <Hero />
