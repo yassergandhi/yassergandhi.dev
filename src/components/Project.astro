@@ -3,13 +3,13 @@
 
 <section id="project">
   <div class="container">
-    <div class="section-label">Featured Project</div>
+    <div class="section-label">Live Proof of Method</div>
     <h2>huhuGERMAN</h2>
 
     <p style="color:var(--gray); margin-bottom: 2rem; font-size: 0.95rem;">
-      A pedagogical platform and longitudinal research system. Not a toy project — 
-      30–40 real students per trimester at UAM Azcapotzalco.
-      Input auténtico desde A1 · operational since 2011 · first documented case: July 2022.
+      A production language-learning platform serving 30–40 real users per trimester since 2011.
+      The architectural failure documented in 2024 — and its typed solution — is the same
+      methodology I apply when auditing your onboarding flow.
     </p>
 
     <div class="project-card">
@@ -22,7 +22,7 @@
 
       <div class="purple-squirrel-box" style="margin-bottom: 1.5rem;">
         <h4>Architectural Decision Record (ADR)</h4>
-        <p>The pedagogical domain is formalized as a typed Zod schema. <strong>The AI doesn't decide; it obeys.</strong></p>
+        <p>The user's current learning state is formalized as a typed Zod schema. <strong>The AI's behavior is governed by that state. Not by assumptions about it.</strong></p>
 
         <div class="adr-code-block">
           <span style="color:#8a7f87;">// Pedagogical Domain Contract</span><br/>
@@ -35,11 +35,16 @@
       </div>
 
       <p class="project-body">
-        huhuGERMAN operationalizes the distinction between <em>global comprehension</em> and
-        <em>selective comprehension</em> — a framework rooted in Vandergrift's metacognitive 
-        listening model and formalized in the B.A. thesis (UNAM, 2015). The AI is architecturally 
-        forbidden from correcting grammar the student has not yet studied. 
-        Pedagogy governs the system. Not the other way around.
+        The platform ran for over a decade with the pedagogical boundary — what the AI was
+        allowed to act on — living in the teacher's head, not the system. In 2024, students
+        began reporting confusion from AI feedback on grammar they had not yet studied. This was
+        not a bug. It was a missing domain contract. WochenKontextSchema formalizes that contract:
+        the AI is architecturally forbidden from correcting grammar the student has not been taught.
+        The user's current state governs the system. Not the other way around.
+        <br/><br/>
+        The same principle applies to your onboarding flow. When your system's behavior is
+        governed by assumptions about what the user already knows — rather than by what the user's
+        current state actually allows — that is an architecture failure. That is what the audit finds.
       </p>
 
       <div class="tech-stack">

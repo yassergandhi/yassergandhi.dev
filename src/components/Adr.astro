@@ -5,96 +5,114 @@
   <div class="container">
     
     <div class="section-label">Architecture Decision Record</div>
-    <h2>Why the ADR arrived late — and what that teaches</h2>
+    <h2>How the methodology was proven before it was named</h2>
 
     <p style="color:var(--gray); margin-bottom: 2.5rem; font-size: 0.95rem; max-width: 640px;">
-      The huhuGERMAN ADR was written <em>after</em> the MVP, not before. That honesty is deliberate.
-      A system that documents its decisions retroactively understands something a system
-      that never documents them never will.
+      The huhuGERMAN ADR was written after the MVP, not before. The friction events came first.
+      The architectural diagnosis followed. That sequence — observe, document the structural cause,
+      enforce the contract — is how this engagement works.
     </p>
 
     <div class="adr-timeline">
       <div class="adr-entry">
         <div class="adr-date">2011 — Origin</div>
-        <div class="adr-title">Observation begins at FCPyS-UNAM</div>
+        <div class="adr-title">Problem: a method that worked, with no record of why or where it broke</div>
         <div class="adr-desc">
-          First longitudinal observation of the Hochdeutsch/Umgangssprache gap in Mexican students.
-          Authentic input introduced informally. The method precedes the theory — 
-          formalized later in the B.A. thesis (2015) and M.Ed. thesis (2020).
+          Structured observation began at FCPyS-UNAM: where in the learning sequence did
+          authentic input produce confusion instead of comprehension? The method preceded
+          the theory. The observation preceded the system.
+          <br/><strong>For your system:</strong> An audit with no longitudinal basis is a snapshot.
+          The diagnostic discipline here comes from 15 years of watching the same system surface
+          and clarify its own architectural failures.
         </div>
       </div>
       <div class="adr-entry">
         <div class="adr-date">2022 — MVP</div>
-        <div class="adr-title">Endpoint + AI + implicit context</div>
+        <div class="adr-title">Problem: the flow worked, but the system was held together by human judgment</div>
         <div class="adr-desc">
-          Validated the flow: student submits → AI gives feedback. Proved the pedagogical
-          hypothesis was worth building. But context lived in the teacher's head, not the system.
-          The AI corrected Perfekt for students in week 2. System not yet governable.
+          Student submits → AI gives feedback. The pedagogical hypothesis validated.
+          But the AI corrected Perfekt for students in week 2 — because context about what
+          students had learned lived in the teacher's head, not the system.
+          <br/><strong>For your system:</strong> Every team ships before the architecture is tight.
+          The question is whether you have documented where human judgment is currently
+          holding your onboarding flow together — because that is where the friction lives.
         </div>
       </div>
       <div class="adr-entry">
         <div class="adr-date">2024 — Friction Discovery</div>
-        <div class="adr-title">Domain-level misalignment surfaces</div>
+        <div class="adr-title">Problem: user confusion with no architectural explanation in the system</div>
         <div class="adr-desc">
-          Students reported confusion from feedback on grammar they hadn't seen.
-          This was not a bug. It was a missing domain contract.
-          "When a system depends on human judgment to not break, it's not a product."
-          Documented classroom friction — now research data for the article.
+          Students reported confusion from feedback on grammar they had not studied.
+          The team's first instinct was to adjust the prompts. The actual diagnosis was
+          different: the system had no domain contract defining what the AI was allowed
+          to act on. The fix was not a patch — it was a typed schema.
+          <br/><strong>For your system:</strong> When your team patches onboarding confusion with
+          UI changes and the confusion returns, the patch is treating the symptom.
+          The audit finds the missing contract.
         </div>
       </div>
       <div class="adr-entry">
         <div class="adr-date">2025 — ADR Written</div>
-        <div class="adr-title">Pedagogical domain as typed source of truth</div>
+        <div class="adr-title">Decision: formalize the domain contract as the enforced source of truth</div>
         <div class="adr-desc">
           WochenKontextSchema formalizes gelernt / nicht_gelernt / korrektur.
-          prompt-builder constructs prompts from domain. AI obeys, not decides.
-          Zod validates at every boundary. JSONB snapshots enable research audit trail.
+          The prompt-builder constructs every AI prompt from the domain state. Zod validates
+          at every boundary. The system cannot generate feedback on concepts the user has not
+          encountered — not by convention, but by architecture.
+          <br/><strong>For your system:</strong> If your onboarding system's behavior is governed
+          by assumptions about user state that are never validated, this is the diagnostic that
+          finds the gap and names the contract that closes it.
         </div>
       </div>
       <div class="adr-entry dim">
         <div class="adr-date">May 2026 — Publication</div>
-        <div class="adr-title">Targeting Die Unterrichtspraxis (AATG · Q3 ESCI)</div>
+        <div class="adr-title">The system as evidence in a peer-reviewed research trajectory</div>
         <div class="adr-desc">
-          The system becomes evidence for the research trajectory:
-          B.A. thesis (2015) as theoretical foundation, M.Ed. thesis (2020) as diagnostic phase,
-          huhuGERMAN as intervention. First editorial milestone in a planned sequence.
+          Targeting Die Unterrichtspraxis (AATG · Q3 ESCI). The platform becomes the
+          intervention in a documented sequence: B.A. thesis (2015) as theoretical foundation,
+          M.Ed. thesis (2020) as diagnostic phase, huhuGERMAN as the architectural solution.
         </div>
       </div>
     </div>
 
-    <div class="section-label" style="margin-top: 5rem;">Pedagogical Decision Record</div>
-    <h2 id="pdr">PDR: Governing the AI, not just building it</h2>
+    <div class="section-label" style="margin-top: 5rem;">What This Audit Produces</div>
+    <h2 id="pdr">Not a deck. A domain contract with named failure points.</h2>
 
     <p style="color:var(--gray); margin-bottom: 2.5rem; font-size: 0.95rem; max-width: 640px;">
-      If an AI doesn't know the "State of the Classroom," it shouldn't generate a single line of content. 
-      The PDR is a hard-coded contract — ensuring pedagogy governs technology, not the other way around.
+      The WochenKontextSchema is not a whitepaper. It is a TypeScript type definition
+      deployed to a live system, validated at every runtime boundary, and tested against
+      real users every trimester. That is the standard of specificity this audit holds itself to.
     </p>
 
     <div class="adr-timeline">
       <div class="adr-entry">
-        <div class="adr-date">The Contract</div>
-        <div class="adr-title">Pedagogical Domain as Typed Truth</div>
+        <div class="adr-date">The Deliverable</div>
+        <div class="adr-title">A structural diagnosis, not a presentation</div>
         <div class="adr-desc">
-          huhuGERMAN formalizes the WochenKontext (Weekly Context). No generic LLM magic.
-          If a concept is marked as nicht_gelernt in the PDR, 
-          the system is architecturally forbidden from generating feedback on it.
+          The output names the architectural failure points in your onboarding flow —
+          where the system's assumptions about user state exceed what the user actually
+          knows at that moment. Each finding includes the structural cause and a
+          decision record for how to resolve it. Specific enough for an engineering team to act on.
         </div>
       </div>
       <div class="adr-entry">
-        <div class="adr-date">The Governance</div>
-        <div class="adr-title">PDR as System Prompt</div>
+        <div class="adr-date">The Standard</div>
+        <div class="adr-title">From "I hope users figure it out" to "the system cannot require what the user doesn't have yet"</div>
         <div class="adr-desc">
-          Every prompt is wrapped in a PDR snapshot. 
-          The AI obeys the boundary constraints defined by the educator. 
-          The error is not a bug — it's a boundary condition.
+          The same move that resolved the 2024 friction event in huhuGERMAN is what
+          the audit applies to your onboarding architecture: replace implicit assumptions
+          about user state with an explicit, validated domain contract.
+          The AI obeys. The onboarding flow obeys. The user is not asked to compensate
+          for a system that doesn't know where they are.
         </div>
       </div>
       <div class="adr-entry dim">
-        <div class="adr-date">RFC-001</div>
-        <div class="adr-title">Standardizing Pedagogy</div>
+        <div class="adr-date">The Scope</div>
+        <div class="adr-title">Remote. Project-based. One diagnostic question per engagement.</div>
         <div class="adr-desc">
-          Moving from "I hope the AI gets it right" to "The system cannot generate it wrong."
-          The PDR structure is being documented as part of the research publication trajectory.
+          Each engagement begins with a scoping call where the activation drop-off is
+          mapped against the current analytics instrumentation. The audit then goes one
+          layer deeper — into the architecture that your event logs cannot capture.
         </div>
       </div>
     </div>

@@ -4,56 +4,63 @@
 <section id="framework">
   <div class="container">
     <div class="section-label">The Framework</div>
-    <h2>Product Adoption is a Core Technical Process</h2>
+    <h2>Three Structural Failures Behind Activation Drop-Off</h2>
 
     <div class="purple-squirrel-box">
       <p style="font-size: 1rem; color: var(--gray); line-height: 1.75; margin-bottom: 2rem;">
-        A 400 Bad Request error or a UI drop-off is a structural failure in the system's
-        onboarding architecture — not a user deficiency. We fix the architecture to match
-        human behavior.
+        A drop-off in your activation funnel is a structural failure in the system's
+        onboarding architecture — not a copy problem, not a UI problem, and not a user deficiency.
+        I audit the architecture to find the layer your analytics cannot instrument.
       </p>
 
       <div class="venn-diagram">
         <div class="venn-item">
           <div class="venn-title">Churn Signals</div>
           <div class="venn-desc">
-            Users don't leave because they hate your product. They leave because
-            your product never gave them a clear path to value. Every abandoned
-            signup, skipped step, or support ticket is a measurable data point
-            in your friction map.
+            Your support tickets and NPS verbatims describe frustration — not the architecture
+            behind it. Users can't tell you the information sequence was wrong. They tell you
+            they felt lost. The audit translates that signal into a structural finding: the exact
+            point where the system's assumptions exceeded the user's current state.
           </div>
         </div>
 
         <div class="venn-item">
           <div class="venn-title">Onboarding Architecture</div>
           <div class="venn-desc">
-            The onboarding flow is not a UX concern — it is a systems engineering
-            problem. Cognitive load, information sequencing, and error recovery
-            paths must be designed with the same rigor as your database schema.
+            Your onboarding flow was sequenced around how your product works, not around
+            how users construct a mental model of it under uncertainty. Cognitive load,
+            information sequencing, and decision points must be governed by the user's
+            current state — not by the product's internal logic. That requires the same
+            rigor as your database schema.
           </div>
         </div>
 
         <div class="venn-item">
-          <div class="venn-title">Revenue Protection</div>
+          <div class="venn-title">Activation Economics</div>
           <div class="venn-desc">
-            User attrition is a revenue event. Every percentage point of improved
-            activation rate compounds into LTV. We treat friction removal as a
-            direct investment with a measurable ROI, not a usability nicety.
+            Trial-to-paid conversion is flat despite UI improvements and copy iterations
+            because those changes operate at the surface layer. Activation failures are
+            one level deeper — in the decision architecture. Each percentage point of
+            improved activation compounds directly into LTV. The audit finds where that
+            point is being lost.
           </div>
         </div>
       </div>
 
       <div class="intersection-note">
-        The diagnosis starts where your analytics end — in the behavioral gap between
-        what your logs record and what your users actually experience.
+        Your analytics team has been instrumenting the right events at the wrong layer.
+        The drop-off is visible in the data. The cause — the structural mismatch between
+        what your system assumes about the user and what the user actually knows at that
+        moment — is not visible in any event log. That is the layer this audit addresses.
       </div>
     </div>
 
     <div class="adr-quote">
-      Live B2C evidence: high-friction user retention engineering applied to a production
-      language learning platform serving real users since 2022.<br/>
+      Live production evidence: the same architectural discipline applied to a language-learning
+      platform serving real users since 2011. The friction event that surfaced in 2024 became
+      the proof of method.<br/>
       <a href="https://huhugerman.com" target="_blank" rel="noopener" class="project-link" style="margin-top: 0.75rem; display: inline-flex;">
-        [ Live Lab B2C Case Study: High-Friction User Retention ] →
+        [ Live Case Study: huhuGERMAN Production Platform ] →
       </a>
     </div>
   </div>

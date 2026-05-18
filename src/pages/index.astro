@@ -6,19 +6,20 @@ import PurpleSquirrel from '../components/PurpleSquirrel.astro';
 import Project from '../components/Project.astro';
 import Adr from '../components/Adr.astro';
 import Credentials from '../components/Credentials.astro';
+import About from '../components/About.astro';
 import Contact from '../components/Contact.astro';
 
 const jsonLd = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Yasser Gandhi — Friction Scan Consulting",
-  "description": "Global B2B consulting for software user retention, onboarding failure diagnosis, and friction engineering. Friction Scan methodology.",
+  "description": "SaaS onboarding architecture audits for Series A–C companies where trial-to-paid conversion is flat and activation analytics don't explain why. Friction Scan methodology. Mexico City, remote.",
   "url": "https://yassergandhi.dev",
   "email": "yassergandhi.dev@gmail.com",
   "founder": {
     "@type": "Person",
     "name": "Yasser Gandhi Hernández Esquivel",
-    "jobTitle": "User Retention Engineer & Friction Scan Consultant",
+    "jobTitle": "SaaS Onboarding Architect · Friction Scan Consulting",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Mexico City",
@@ -27,10 +28,10 @@ const jsonLd = JSON.stringify({
   },
   "serviceType": [
     "Friction Scan Audit",
-    "Onboarding Architecture Consulting",
-    "User Retention Engineering",
-    "Software Churn Diagnosis",
-    "Data Pipeline Cleanup"
+    "SaaS Onboarding Architecture Diagnosis",
+    "Trial-to-Paid Conversion Analysis",
+    "Activation Failure Diagnosis",
+    "User Retention Engineering"
   ],
   "areaServed": "Worldwide",
   "availableChannel": {
@@ -41,9 +42,9 @@ const jsonLd = JSON.stringify({
 ---
 
 <Layout
-  title="Yasser Gandhi · Friction Scan Consulting · Stop Software Churn"
-  description="Your users are leaving because your onboarding architecture forces them to. I scan the invisible friction in your platform to stop attrition and protect software revenue. B2B consulting from Mexico City."
-  keywords="Friction Scan, Software Churn, User Attrition, Onboarding Failure, User Retention Consulting, LTV Protection, Product Adoption Engineering, B2B SaaS"
+  title="Yasser Gandhi · SaaS Onboarding Architect · Diagnose Why Users Leave Before Activation"
+  description="Your trial-to-paid conversion is flat and your onboarding analytics show where users leave — but not why the architecture makes them leave. I diagnose the structural failures in SaaS onboarding flows that event logs cannot surface. Friction Scan Consulting, Mexico City."
+  keywords="Friction Scan, SaaS Onboarding Architect, Trial-to-Paid Conversion, Activation Failure, User Retention Consulting, Onboarding Architecture, Software Churn, User Attrition, B2B SaaS Consulting, Information Architecture, Cognitive Scaffolding, LTV Protection, Product Adoption Engineering, Series A SaaS"
 >
   <script slot="head" type="application/ld+json" set:html={jsonLd} />
   <Nav />
@@ -57,6 +58,8 @@ const jsonLd = JSON.stringify({
     <Adr />
     <hr class="divider" />
     <Credentials />
+    <hr class="divider" />
+    <About />
     <hr class="divider" />
     <Contact />
   </main>
