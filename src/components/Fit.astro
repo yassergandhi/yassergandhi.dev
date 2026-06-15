@@ -1,22 +1,11 @@
 ---
+const notFor = ['teams looking for another visual pass','flows that have no users, no observable breakdown, and no internal cost','teams that only want more copy without questioning what the product asks the user to know, trust, decide, or do','teams that want a diagnosis but have no owner willing to act on it'];
 ---
-
 <section id="fit">
   <div class="container">
     <div class="section-label">Fit</div>
     <h2>Who this is not for.</h2>
-    <p class="section-copy">
-      This is not for teams looking for another visual pass.
-    </p>
-    <p class="section-copy">
-      It is not for flows that have no users, no observable breakdown, and no internal cost.
-    </p>
-    <p class="section-copy">
-      It is not for teams that only want more copy without questioning what the product is asking the user to know, trust, decide, or do.
-    </p>
-    <p class="section-copy">
-      This is for teams with a critical flow that already creates support load, bad data, stalled onboarding, unclear qualification, or repeated internal debate.
-    </p>
-    <div class="method-note">Bring the flow that keeps coming back.</div>
+    <div class="diagnostic-cards">{notFor.map((item) => <div class="metric-card warning"><span>Not for</span><strong>{item}</strong></div>)}</div>
+    <div class="method-note">This is for teams with a critical flow that already creates support load, bad data, stalled onboarding, unclear qualification, or repeated internal debate.</div>
   </div>
 </section>
