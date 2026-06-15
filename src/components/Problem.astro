@@ -1,40 +1,22 @@
 ---
+const symptoms = [
+  ['Design', 'copy that needs another pass'],
+  ['Product', 'onboarding friction'],
+  ['Support', 'tickets that should not exist'],
+  ['Engineering', 'edge cases'],
+  ['Customer Success', 'repeated explanation'],
+  ['Leadership', 'activation, conversion, or data-quality risk'],
+];
 ---
-
 <section id="recognition">
   <div class="container">
     <div class="section-label">Recognition</div>
     <h2>Your team may already be naming the symptom wrong.</h2>
-    <p class="section-copy">
-      Design sees a copy problem. Product sees onboarding friction. Support sees repeated tickets.
-      Engineering sees edge cases. Leadership sees activation, conversion, or data-quality risk.
-    </p>
-    <p class="section-copy">
-      They may all be seeing the same failure from different angles: the product asks the user to
-      continue before the next move has been made legible.
-    </p>
-    <div class="method-note">That is where the review begins.</div>
-  </div>
-</section>
-
-<section id="problem">
-  <div class="container">
-    <div class="section-label">Phenomenon</div>
-    <h2>A clean interface can still leave the user stranded.</h2>
-    <p class="section-copy">
-      Most product teams inspect the screen. I inspect the moment where the user is expected to
-      continue without enough sequence, context, language, trust, consequence-awareness or decision support.
-    </p>
-    <p class="section-copy">
-      A flow breaks when the product asks for action before the next step is legible, safe, and consequentially clear.
-    </p>
-    <p class="section-copy">
-      When that happens, users do not always complain. They guess, delay, abandon, submit bad data,
-      or push the cost into support.
-    </p>
-    <div class="method-note">
-      This is not a visual problem first.<br />
-      It is a guidance failure.
+    <div class="diagnostic-cards">
+      {symptoms.map(([team, symptom]) => <div class="metric-card"><span>{team}</span><strong>{symptom}</strong></div>)}
     </div>
+    <p class="section-copy">They may all be paying for the same failure from different budgets:</p>
+    <div class="method-note">the product asks the user to continue before the next move has been made legible.</div>
+    <p class="section-copy recognition-close">That is where the review begins.</p>
   </div>
 </section>
