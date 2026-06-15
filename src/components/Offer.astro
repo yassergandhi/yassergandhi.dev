@@ -1,0 +1,53 @@
+---
+const useCases = [
+  'onboarding that users complete but do not understand',
+  'intake forms that produce unusable data',
+  'AI-assisted flows that increase uncertainty',
+  'dashboards that show information but fail to guide action',
+  'decision flows where users guess instead of decide',
+  'support-heavy moments where the product should have scaffolded earlier',
+  'empty states that leave users without a next move',
+];
+
+const deliverables = [
+  'the exact point where guidance disappears',
+  'what the system assumes the user already knows, trusts, or can decide',
+  'what the user likely does instead',
+  'what language, sequence, constraint, or missing state causes the breakdown',
+  'what scaffold must exist before the next decision',
+  'what to rewrite, delay, remove, expose, constrain, or implement',
+];
+---
+
+<section id="offer">
+  <div class="container">
+    <div class="section-label">Offer</div>
+    <h2>Hidden Scaffold Review</h2>
+    <p class="section-copy">
+      A strategic review of one critical SaaS flow your team cannot afford to keep misreading.
+    </p>
+    <p class="section-copy">
+      It identifies where guidance disappears, what the product assumes too early, and what scaffold
+      must exist before the user can act.
+    </p>
+
+    <div class="project-card offer-card">
+      <h3>Use cases</h3>
+      <ul class="deliverable-list">
+        {useCases.map((useCase) => <li>{useCase}</li>)}
+      </ul>
+    </div>
+
+    <div class="project-card offer-card">
+      <h3>Deliverables</h3>
+      <ul class="deliverable-list">
+        {deliverables.map((deliverable) => <li>{deliverable}</li>)}
+      </ul>
+    </div>
+
+    <div class="method-note">
+      Not a redesign package. Not a heuristic checklist. A guidance failure review for one flow
+      where human behavior and system logic no longer meet.
+    </div>
+  </div>
+</section>
