@@ -18,6 +18,15 @@ const deliverables = [
   'what scaffold must exist before the next decision',
   'what to rewrite, delay, remove, expose, constrain, or implement',
 ];
+
+const output = [
+  'Failure point',
+  'Hidden assumption',
+  'User inference required',
+  'Cost transfer',
+  'Next scaffold',
+  'First intervention',
+];
 ---
 
 <section id="offer">
@@ -28,8 +37,8 @@ const deliverables = [
       A strategic review of one critical SaaS flow your team cannot afford to keep misreading.
     </p>
     <p class="section-copy">
-      It identifies where guidance disappears, what the product assumes too early, where the cost is
-      currently being transferred, and what scaffold must exist before the user can act.
+      It identifies where guidance disappears, what the product assumes too early, where the cost is being
+      transferred, and what scaffold must exist before the user can act.
     </p>
 
     <div class="project-card offer-card">
@@ -46,9 +55,12 @@ const deliverables = [
       </ul>
     </div>
 
-    <div class="method-note">
-      Not a redesign package. Not a heuristic checklist. A guidance failure review for one flow
-      where human behavior and system logic no longer meet.
+    <div class="project-card offer-card diagnostic-artifact">
+      <h3>Review Output Preview</h3>
+      <p class="project-body">A Hidden Scaffold Review returns:</p>
+      <div class="artifact-grid">
+        {output.map((item) => <span class="tech-tag artifact-item">{item}</span>)}
+      </div>
     </div>
   </div>
 </section>

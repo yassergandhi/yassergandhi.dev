@@ -1,14 +1,15 @@
 ---
 const costs = [
-  'support tickets',
-  'onboarding calls',
-  'implementation delays',
-  'bad intake decisions',
-  'poor qualification',
-  'repeated internal explanations',
-  'low adoption',
-  'customer success workarounds',
-  'churn or retention drag',
+  'Support tickets',
+  'Onboarding calls',
+  'Implementation delays',
+  'Bad intake decisions',
+  'Poor qualification',
+  'Repeated internal explanations',
+  'Low adoption',
+  'Customer success workarounds',
+  'Churn or retention drag',
+  'Team exhaustion',
 ];
 ---
 
@@ -19,9 +20,9 @@ const costs = [
     <p class="section-copy">
       If the product does not scaffold the next action, the cost moves somewhere else.
     </p>
-    <ul class="deliverable-list compact-list">
-      {costs.map((cost) => <li>{cost}</li>)}
-    </ul>
+    <div class="cost-card-grid">
+      {costs.map((cost) => <div class="friction-card cost-card">{cost}</div>)}
+    </div>
     <p class="section-copy cost-transfer-close">
       A Hidden Scaffold Review maps where the user stopped, what the product assumed, and which team is now paying for the missing guidance.
     </p>

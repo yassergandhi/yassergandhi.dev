@@ -852,3 +852,92 @@ h3 {
   margin-left: auto;
   margin-right: auto;
 }
+
+.team-lens-grid,
+.cost-card-grid,
+.cost-range-grid,
+.artifact-grid,
+.faq-list,
+.text-list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.team-lens-grid,
+.cost-card-grid,
+.cost-range-grid {
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 2rem;
+}
+
+.team-lens-card,
+.cost-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.team-lens-card strong {
+  color: var(--white-warm);
+}
+
+.team-lens-card span {
+  color: var(--gray);
+}
+
+.cost-card {
+  color: var(--white-warm);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+
+.cost-range-card h3 {
+  color: var(--orange-light);
+}
+
+.artifact-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.artifact-item {
+  color: var(--white-warm);
+  border-color: rgba(233,84,32,0.24);
+}
+
+.text-list {
+  margin: 1.5rem 0 2rem;
+}
+
+.text-list span {
+  border-left: 2px solid var(--orange);
+  color: var(--gray);
+  padding-left: 1rem;
+}
+
+.faq-item {
+  border: 1px solid rgba(122,32,80,0.25);
+  background: rgba(48,10,36,0.35);
+  padding: 1rem 1.15rem;
+}
+
+.faq-item summary {
+  color: var(--white-warm);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.faq-item p {
+  color: var(--gray);
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 640px) {
+  .team-lens-grid,
+  .cost-card-grid,
+  .cost-range-grid,
+  .artifact-grid {
+    grid-template-columns: 1fr;
+  }
+}

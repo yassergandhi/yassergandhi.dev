@@ -12,12 +12,14 @@ import BeforeAfter from '../components/BeforeAfter.astro';
 import Proof from '../components/Proof.astro';
 import Ecosystem from '../components/Ecosystem.astro';
 import Contact from '../components/Contact.astro';
+import FAQ from '../components/FAQ.astro';
+import { faqs } from '../data/faqs';
 
 const title = 'Guidance Failure Architecture for SaaS · Yasser Gandhi';
 const description = 'Hidden Scaffold Reviews for SaaS flows where users stop, guess, abandon, submit bad data, or push missing guidance into support, onboarding, implementation, and customer success.';
 const canonical = 'https://yassergandhi.dev/';
-const ogTitle = 'Your product is losing users where guidance disappears.';
-const ogDescription = 'A Hidden Scaffold Review locates where a SaaS flow pushes missing guidance into support, onboarding, implementation, and customer success.';
+const ogTitle = 'Your product is losing money where guidance disappears.';
+const ogDescription = 'A Hidden Scaffold Review locates the hidden scaffold your SaaS flow assumes but never designed.';
 
 const personSchema = {
   '@type': 'Person',
@@ -45,6 +47,11 @@ const personSchema = {
     { '@type': 'CollegeOrUniversity', name: 'Universidad Nacional Autónoma de México' },
     { '@type': 'CollegeOrUniversity', name: 'Universidad de Guadalajara' },
   ],
+  hasCredential: [
+    { '@type': 'EducationalOccupationalCredential', name: 'B.A. Modern German Language and Literature, UNAM' },
+    { '@type': 'EducationalOccupationalCredential', name: 'M.A. Pedagogy, UNAM' },
+    { '@type': 'EducationalOccupationalCredential', name: 'B.Sc. Web Systems Development, Universidad de Guadalajara' },
+  ],
 };
 
 
@@ -55,6 +62,29 @@ const websiteSchema = {
   url: canonical,
   description,
   publisher: { '@id': 'https://yassergandhi.dev/#person' },
+};
+
+
+const profilePageSchema = {
+  '@type': 'ProfilePage',
+  '@id': 'https://yassergandhi.dev/#profile',
+  url: canonical,
+  name: 'Yasser Gandhi Hernández Esquivel',
+  about: { '@id': 'https://yassergandhi.dev/#person' },
+  mainEntity: { '@id': 'https://yassergandhi.dev/#person' },
+};
+
+const faqSchema = {
+  '@type': 'FAQPage',
+  '@id': 'https://yassergandhi.dev/#faq',
+  mainEntity: faqs.map(({ question, answer }) => ({
+    '@type': 'Question',
+    name: question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: answer,
+    },
+  })),
 };
 
 const serviceSchema = {
@@ -77,7 +107,7 @@ const serviceSchema = {
 };
 ---
 
-<Layout {title} {description} {canonical} {ogTitle} {ogDescription} extraSchema={[personSchema, websiteSchema, serviceSchema]}>
+<Layout {title} {description} {canonical} {ogTitle} {ogDescription} extraSchema={[personSchema, profilePageSchema, websiteSchema, serviceSchema, faqSchema]}>
   <Nav />
   <main>
     <Hero />
@@ -101,5 +131,7 @@ const serviceSchema = {
     <Ecosystem />
     <hr class="divider" />
     <Contact />
+    <hr class="divider" />
+    <FAQ />
   </main>
 </Layout>

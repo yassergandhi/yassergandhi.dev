@@ -1,29 +1,27 @@
 ---
 const ranges = [
-  'Early SaaS: $300–$3,000/month in avoidable support, founder time, failed activation, or repeated explanation.',
-  'Small SaaS: $2,000–$15,000/month when the same flow creates support load, onboarding drag, bad data, or qualification noise.',
-  'Medium SaaS: $10,000–$75,000/month when product, support, customer success, onboarding, and implementation all carry the same missing scaffold.',
-  'Larger mid-market systems: $50,000+/month when the failure affects activation, retention, implementation timelines, or multiple teams.',
+  ['Early SaaS', '$300–$3,000/month', 'Avoidable support, founder time, failed activation, repeated explanation.'],
+  ['Small SaaS', '$2,000–$15,000/month', 'Support load, onboarding drag, bad data, qualification noise.'],
+  ['Medium SaaS', '$10,000–$75,000/month', 'Product, Support, Customer Success, Onboarding and Implementation carrying the same missing scaffold.'],
+  ['Larger mid-market systems', '$50,000+/month', 'Activation, retention, implementation timelines or multiple teams affected.'],
 ];
 ---
 
 <section id="cost-of-inaction">
   <div class="container">
     <div class="section-label">Cost of Inaction</div>
-    <h2>The cost is already being carried. Usually under the wrong line item.</h2>
-    <p class="section-copy">
-      A small or mid-sized SaaS does not need a Fortune 500 outage to lose money. It can lose it
-      through recurring work: repeated tickets, extra onboarding calls, bad intake data, stalled
-      activation, customer success workarounds, and the same internal debate every week.
-    </p>
-    <div class="project-card offer-card">
-      <h3>Typical monthly cost ranges for unresolved guidance failure:</h3>
-      <ul class="deliverable-list">
-        {ranges.map((range) => <li>{range}</li>)}
-      </ul>
+    <h2>The cost is already being paid. Usually under the wrong line item.</h2>
+    <div class="cost-range-grid">
+      {ranges.map(([label, amount, detail]) => (
+        <div class="project-card cost-range-card">
+          <div class="cred-institution">{label}</div>
+          <h3>{amount}</h3>
+          <p class="project-body">{detail}</p>
+        </div>
+      ))}
     </div>
     <p class="section-copy cost-transfer-close">
-      These ranges are not a promise. They are a way to ask the right question: is the recurring
+      These ranges are not promises. They are a way to ask the right question: is the recurring
       cost of not diagnosing the flow already higher than the cost of the review?
     </p>
   </div>

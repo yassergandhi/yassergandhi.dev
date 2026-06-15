@@ -1,32 +1,24 @@
 ---
+const evidence = [
+  'Modern German Language and Literature, UNAM',
+  'Pedagogy, UNAM',
+  'Web Systems Development, UdeG',
+  '15 years observing breakdowns under institutional constraints',
+  'huhuGERMAN as live proof of scaffolded experience design',
+  'TypeScript, Supabase, Zod, domain contracts, governed AI',
+];
 ---
 
 <section id="proof">
   <div class="container">
-    <div class="section-label">Proof</div>
-    <h2>The same failure, across different systems.</h2>
-    <div class="friction-grid ecosystem-grid">
-      <div class="friction-card">
-        <strong>huhuGERMAN</strong>
-        <span>Not lack of grammar. The classroom stopped guiding. huhuGERMAN prepares people for the moment when German becomes a real exchange: the window, the landlord, the street, the office.</span>
-      </div>
-      <div class="friction-card">
-        <strong>Fernweh Together</strong>
-        <span>Forthcoming concept. Not lack of content. The platform only gave a link. Fernweh Together prepares the missing entry between a link and a shared world.</span>
-      </div>
-      <div class="friction-card">
-        <strong>yassergandhi.dev</strong>
-        <span>Not lack of users. The product stopped guiding the action. Hidden Scaffold Reviews locate the moment where SaaS users stop, guess, abandon, or transfer the cost to support.</span>
-      </div>
-    </div>
-
+    <div class="section-label">Authorial Evidence</div>
+    <h2>Verified formation. One reading practice.</h2>
     <div class="cred-grid proof-verification">
-      <div class="cred-card"><div class="cred-institution">15 years</div><div class="cred-degree">Observing breakdowns under institutional constraints</div></div>
-      <div class="cred-card"><div class="cred-institution">UNAM</div><div class="cred-degree">M.A. Pedagogy</div></div>
-      <div class="cred-card"><div class="cred-institution">UNAM</div><div class="cred-degree">B.A. Modern German Language and Literature</div></div>
-      <div class="cred-card"><div class="cred-institution">UdeG</div><div class="cred-degree">B.Sc. Web Systems Development</div></div>
-      <div class="cred-card"><div class="cred-institution">huhuGERMAN</div><div class="cred-degree">Live proof of domain-governed AI and scaffolded experience design</div></div>
-      <div class="cred-card"><div class="cred-institution">Systems</div><div class="cred-degree">TypeScript, Supabase, Zod, domain contracts, governed AI</div></div>
+      {evidence.map((item) => (
+        <div class="cred-card">
+          <div class="cred-degree">{item}</div>
+        </div>
+      ))}
     </div>
   </div>
 </section>

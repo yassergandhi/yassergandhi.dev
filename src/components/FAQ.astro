@@ -1,0 +1,18 @@
+---
+import { faqs } from '../data/faqs';
+---
+
+<section id="faq">
+  <div class="container">
+    <div class="section-label">FAQ</div>
+    <h2>Questions before you send the flow.</h2>
+    <div class="faq-list">
+      {faqs.map(({ question, answer }) => (
+        <details class="faq-item">
+          <summary>{question}</summary>
+          <p>{answer}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

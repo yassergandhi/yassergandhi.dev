@@ -1,41 +1,30 @@
 ---
+const lenses = [
+  ['Design', 'copy that needs another pass'],
+  ['Product', 'onboarding friction'],
+  ['Support', 'tickets that should not exist'],
+  ['Engineering', 'edge cases'],
+  ['Customer Success', 'repeated explanation'],
+  ['Leadership', 'activation, conversion, or data-quality risk'],
+];
 ---
 
 <section id="recognition">
   <div class="container">
     <div class="section-label">Recognition</div>
     <h2>Your team may already be naming the symptom wrong.</h2>
-    <p class="section-copy">
-      Design sees copy that needs another pass. Product sees onboarding friction.
-      Support sees tickets that should not exist. Engineering sees edge cases.
-      Customer Success sees repeated explanation. Leadership sees activation, conversion, or data-quality risk.
-    </p>
+    <div class="team-lens-grid">
+      {lenses.map(([team, symptom]) => (
+        <div class="friction-card team-lens-card">
+          <strong>{team}</strong>
+          <span>{symptom}</span>
+        </div>
+      ))}
+    </div>
     <p class="section-copy">
       They may all be paying for the same failure from different budgets: the product asks the user to
       continue before the next move has been made legible.
     </p>
     <div class="method-note">That is where the review begins.</div>
-  </div>
-</section>
-
-<section id="problem">
-  <div class="container">
-    <div class="section-label">Phenomenon</div>
-    <h2>A clean interface can still leave the user stranded.</h2>
-    <p class="section-copy">
-      Most product teams inspect the screen. I inspect the moment where the user is expected to
-      continue without enough sequence, context, language, trust, consequence-awareness or decision support.
-    </p>
-    <p class="section-copy">
-      A flow breaks when the product asks for action before the next step is legible, safe, and consequentially clear.
-    </p>
-    <p class="section-copy">
-      When that happens, users do not always complain. They guess, delay, abandon, submit bad data,
-      or push the cost into support, onboarding, implementation, and customer success.
-    </p>
-    <div class="method-note">
-      This is not a visual problem first.<br />
-      It is a guidance failure.
-    </div>
   </div>
 </section>
