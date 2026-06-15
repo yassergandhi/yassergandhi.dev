@@ -323,7 +323,7 @@ h2 {
   margin-bottom: 0.75rem;
 }
 
-/* Purple Squirrel */
+/* Authority intersection */
 .purple-squirrel-box {
   border: 1px solid rgba(233,84,32,0.3);
   background: linear-gradient(135deg,
@@ -709,4 +709,146 @@ h3 {
   .nav-links { display: none; }
   .watermark { display: none; }
   section { padding: 3rem 0; }
+}
+
+.section-copy {
+  color: var(--gray);
+  font-size: 0.98rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  max-width: 680px;
+}
+
+.hero-summary-large {
+  max-width: 720px;
+  font-size: clamp(1rem, 1.8vw, 1.18rem);
+}
+
+.friction-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.friction-card {
+  border: 1px solid rgba(122,32,80,0.25);
+  background: rgba(48,10,36,0.35);
+  color: var(--gray);
+  padding: 1.15rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.deliverable-list {
+  list-style: none;
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1.25rem;
+}
+
+.deliverable-list li {
+  color: var(--gray);
+  border-left: 2px solid var(--orange);
+  padding-left: 1rem;
+}
+
+.method-note {
+  border: 1px solid rgba(233,84,32,0.25);
+  background: rgba(233,84,32,0.06);
+  color: var(--white-warm);
+  font-family: var(--font-mono);
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.method-note span {
+  display: block;
+  color: var(--gray-dim);
+  margin-top: 0.65rem;
+}
+
+.ecosystem-grid .friction-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ecosystem-grid strong { color: var(--white-warm); }
+.ecosystem-grid span { color: var(--gray); }
+.ecosystem-line { margin-top: 2rem; font-family: var(--font-mono); color: var(--orange-light); }
+
+.brief-list {
+  max-width: 620px;
+  margin: 0 auto 2.5rem;
+  display: grid;
+  gap: 0.7rem;
+  text-align: left;
+}
+
+.brief-list div {
+  border: 1px solid rgba(200,192,197,0.16);
+  background: rgba(26,5,20,0.45);
+  padding: 0.85rem 1rem;
+}
+
+.brief-list span {
+  font-family: var(--font-mono);
+  color: var(--gray-dim);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 640px) {
+  .friction-grid { grid-template-columns: 1fr; }
+}
+
+.hero-subheadline {
+  color: var(--orange-light);
+  font-size: clamp(1.3rem, 2.6vw, 2rem);
+  font-weight: 500;
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+}
+
+.offer-card {
+  margin-bottom: 1.25rem;
+}
+
+.ecosystem-footer {
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(233,84,32,0.12);
+}
+
+.contact-cta {
+  flex-direction: row;
+  color: var(--white-warm);
+}
+
+.contact-cta:hover {
+  color: var(--white-warm);
+}
+
+.authority-line {
+  color: var(--orange-light);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  margin: -1.4rem 0 2.2rem;
+}
+
+.proof-verification {
+  margin-top: 2rem;
+}
+
+.compact-list {
+  margin-bottom: 2rem;
+}
+
+.cost-transfer-close,
+.contact-note {
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
 }
