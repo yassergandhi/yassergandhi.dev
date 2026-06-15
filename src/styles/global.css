@@ -841,14 +841,3 @@ h3 {
 .proof-verification {
   margin-top: 2rem;
 }
-
-.compact-list {
-  margin-bottom: 2rem;
-}
-
-.cost-transfer-close,
-.contact-note {
-  max-width: 620px;
-  margin-left: auto;
-  margin-right: auto;
-}

@@ -10,7 +10,7 @@ Guidance Failure Architecture and Hidden Scaffold Reviews for SaaS/software team
 
 “When the system stops guiding, the real design begins.”
 
-The site presents the core phenomenon: a system assumes the human can continue, but the system has stopped guiding. Guidance failure is not just where users stop; it is where the organization starts paying for the missing scaffold elsewhere.
+The site presents the core phenomenon: a system assumes the human can continue, but the system has stopped guiding. The offer helps teams find the hidden scaffold their product assumes but never designed.
 
 ## Stack
 
