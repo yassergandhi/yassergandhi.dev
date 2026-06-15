@@ -2,25 +2,91 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Hero from '../components/Hero.astro';
-import PurpleSquirrel from '../components/PurpleSquirrel.astro';
-import Project from '../components/Project.astro';
-import Adr from '../components/Adr.astro';
-import Credentials from '../components/Credentials.astro';
+import Problem from '../components/Problem.astro';
+import Offer from '../components/Offer.astro';
+import Method from '../components/Method.astro';
+import Proof from '../components/Proof.astro';
+import Ecosystem from '../components/Ecosystem.astro';
 import Contact from '../components/Contact.astro';
+
+const title = 'Guidance Failure Architecture for SaaS · Yasser Gandhi';
+const description = 'Hidden Scaffold Reviews for SaaS flows where users stop, guess, abandon, submit bad data, or push missing guidance into support.';
+const canonical = 'https://yassergandhi.dev/';
+const ogTitle = 'Your product is losing users where guidance disappears.';
+const ogDescription = 'A Hidden Scaffold Review locates the point where a SaaS flow looks clear but fails when users have to act.';
+
+const personSchema = {
+  '@type': 'Person',
+  '@id': 'https://yassergandhi.dev/#person',
+  name: 'Yasser Gandhi Hernández Esquivel',
+  url: 'https://yassergandhi.dev/',
+  sameAs: [
+    'https://www.linkedin.com/in/yassergandhi/',
+    'https://github.com/yassergandhi/',
+    'https://huhugerman.com',
+  ],
+  jobTitle: 'SaaS Friction Architecture Consultant',
+  knowsAbout: [
+    'Guidance Failure Architecture',
+    'Hidden Scaffold Reviews',
+    'behavioral diagnosis',
+    'qualitative research',
+    'domain-driven systems',
+    'TypeScript',
+    'Supabase',
+    'Zod',
+    'German as a foreign language pedagogy',
+  ],
+  alumniOf: [
+    { '@type': 'CollegeOrUniversity', name: 'Universidad Nacional Autónoma de México' },
+    { '@type': 'CollegeOrUniversity', name: 'Universidad de Guadalajara' },
+  ],
+};
+
+
+const websiteSchema = {
+  '@type': 'WebSite',
+  '@id': 'https://yassergandhi.dev/#website',
+  name: 'yassergandhi.dev',
+  url: canonical,
+  description,
+  publisher: { '@id': 'https://yassergandhi.dev/#person' },
+};
+
+const serviceSchema = {
+  '@type': 'Service',
+  '@id': 'https://yassergandhi.dev/#hidden-scaffold-review',
+  name: 'Hidden Scaffold Review',
+  serviceType: 'Guidance failure review for SaaS and software flows',
+  provider: { '@id': 'https://yassergandhi.dev/#person' },
+  areaServed: 'Global',
+  audience: {
+    '@type': 'BusinessAudience',
+    audienceType: 'B2B SaaS and software teams',
+  },
+  description,
+  offers: {
+    '@type': 'Offer',
+    availability: 'https://schema.org/InStock',
+    url: canonical,
+  },
+};
 ---
 
-<Layout>
+<Layout {title} {description} {canonical} {ogTitle} {ogDescription} extraSchema={[personSchema, websiteSchema, serviceSchema]}>
   <Nav />
   <main>
     <Hero />
     <hr class="divider" />
-    <PurpleSquirrel />
+    <Problem />
     <hr class="divider" />
-    <Project />
+    <Offer />
     <hr class="divider" />
-    <Adr />
+    <Method />
     <hr class="divider" />
-    <Credentials />
+    <Proof />
+    <hr class="divider" />
+    <Ecosystem />
     <hr class="divider" />
     <Contact />
   </main>
