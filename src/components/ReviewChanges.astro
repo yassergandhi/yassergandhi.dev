@@ -1,0 +1,23 @@
+---
+const before = ['users guess', 'support compensates', 'product debates symptoms'];
+const after = ['failure point is named', 'hidden assumption is visible', 'next scaffold is clear'];
+---
+
+<section id="changes">
+  <div class="container split-section compact">
+    <div>
+      <p class="section-label">What the review changes</p>
+      <h2>Less debate about symptoms. More clarity about the missing scaffold.</h2>
+    </div>
+    <div class="before-after-simple" aria-label="Before and after Hidden Scaffold Review">
+      <div>
+        <h3>Before</h3>
+        <ul>{before.map((item) => <li>{item}</li>)}</ul>
+      </div>
+      <div>
+        <h3>After</h3>
+        <ul>{after.map((item) => <li>{item}</li>)}</ul>
+      </div>
+    </div>
+  </div>
+</section>

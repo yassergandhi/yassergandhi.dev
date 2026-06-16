@@ -1,0 +1,90 @@
+---
+const scenarios = [
+  {
+    id: 'onboarding',
+    label: 'onboarding',
+    lines: [
+      ['symptom', 'users complete onboarding but do not activate'],
+      ['translation', 'the next move is not legible'],
+      ['hidden assumption', 'user already trusts the request'],
+      ['cost transfer', 'support + customer success'],
+      ['likely fix', 'sequence + consequence-awareness + decision support'],
+    ],
+  },
+  {
+    id: 'intake',
+    label: 'intake',
+    lines: [
+      ['symptom', 'forms arrive complete but unusable'],
+      ['translation', 'the product collected answers before it framed judgment'],
+      ['hidden assumption', 'user knows what quality looks like'],
+      ['cost transfer', 'qualification + implementation'],
+      ['likely fix', 'constraint language + examples + refusal states'],
+    ],
+  },
+  {
+    id: 'ai',
+    label: 'ai-assisted flow',
+    lines: [
+      ['symptom', 'AI output increases follow-up questions'],
+      ['translation', 'confidence is not scaffolded'],
+      ['hidden assumption', 'user can evaluate the answer alone'],
+      ['cost transfer', 'CS workarounds + expert review'],
+      ['likely fix', 'uncertainty markers + handoff rules + next action'],
+    ],
+  },
+  {
+    id: 'dashboard',
+    label: 'dashboard / decision flow',
+    lines: [
+      ['symptom', 'users see the data and delay action'],
+      ['translation', 'information appears without decision logic'],
+      ['hidden assumption', 'user can infer priority'],
+      ['cost transfer', 'adoption + retention drag'],
+      ['likely fix', 'thresholds + recommendation hierarchy + action states'],
+    ],
+  },
+];
+---
+
+<section id="diagnostic">
+  <div class="container">
+    <p class="section-label">Ubuntu Diagnostic Terminal</p>
+    <div class="terminal-shell">
+      <div class="terminal-topbar" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="terminal-layout">
+        <div class="terminal-tabs" role="tablist" aria-label="Diagnostic scenarios">
+          {scenarios.map((scenario, index) => (
+            <button class={index === 0 ? 'is-active' : ''} type="button" data-scenario={scenario.id}>{scenario.label}</button>
+          ))}
+        </div>
+        <div class="terminal-output" aria-live="polite">
+          {scenarios.map((scenario, index) => (
+            <div class={index === 0 ? 'terminal-scenario is-active' : 'terminal-scenario'} data-output={scenario.id}>
+              {scenario.lines.map(([key, value]) => (
+                <p><span>&gt; {key}:</span> {value}</p>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const terminal = document.querySelector('.terminal-shell');
+  const tabs = terminal?.querySelectorAll<HTMLButtonElement>('[data-scenario]');
+  const outputs = terminal?.querySelectorAll<HTMLElement>('[data-output]');
+
+  tabs?.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      tabs.forEach((item) => item.classList.toggle('is-active', item === tab));
+      outputs?.forEach((output) => {
+        output.classList.toggle('is-active', output.dataset.output === tab.dataset.scenario);
+      });
+    });
+  });
+</script>

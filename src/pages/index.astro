@@ -2,16 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Hero from '../components/Hero.astro';
-import Problem from '../components/Problem.astro';
-import CostTransfer from '../components/CostTransfer.astro';
-import CostOfInaction from '../components/CostOfInaction.astro';
-import Offer from '../components/Offer.astro';
-import BeforeAfter from '../components/BeforeAfter.astro';
-import Fit from '../components/Fit.astro';
-import Method from '../components/Method.astro';
-import AuthorialEvidence from '../components/AuthorialEvidence.astro';
+import VennDiagram from '../components/VennDiagram.astro';
+import DiagnosticTerminal from '../components/DiagnosticTerminal.astro';
+import CostReveal from '../components/CostReveal.astro';
+import ReviewChanges from '../components/ReviewChanges.astro';
 import Ecosystem from '../components/Ecosystem.astro';
-import FAQ from '../components/FAQ.astro';
 import Contact from '../components/Contact.astro';
 
 const title = 'Guidance Failure Architecture for SaaS · Yasser Gandhi';
@@ -40,31 +35,17 @@ const personSchema = {
 };
 const websiteSchema = { '@type': 'WebSite', '@id': 'https://yassergandhi.dev/#website', name: 'yassergandhi.dev', url: canonical, description, publisher: { '@id': 'https://yassergandhi.dev/#person' } };
 const serviceSchema = { '@type': 'Service', '@id': 'https://yassergandhi.dev/#hidden-scaffold-review', name: 'Hidden Scaffold Review', serviceType: 'Guidance Failure Architecture review for SaaS flows', provider: { '@id': 'https://yassergandhi.dev/#person' }, areaServed: 'Global', audience: { '@type': 'BusinessAudience', audienceType: 'B2B SaaS and software teams' }, description, offers: { '@type': 'Offer', availability: 'https://schema.org/InStock', url: canonical } };
-const aboutPageSchema = { '@type': 'AboutPage', '@id': 'https://yassergandhi.dev/#authorial-proof', url: canonical, name: 'Authorial proof', about: { '@id': 'https://yassergandhi.dev/#person' }, isPartOf: { '@id': 'https://yassergandhi.dev/#website' } };
-const faqSchema = { '@type': 'FAQPage', '@id': 'https://yassergandhi.dev/#faq', mainEntity: [
-  ['What is Guidance Failure Architecture?', 'A way to diagnose where a product, service, or system stops making the next human action legible and starts transferring that missing guidance into operational cost.'],
-  ['What is a Hidden Scaffold Review?', 'A focused review of one critical SaaS flow that identifies where guidance disappears, what the system assumes too early, and what scaffold should exist before the user acts.'],
-  ['How do I know if my SaaS has a guidance failure?', 'Look for flows that users keep asking about, abandoning, misusing, completing with bad data, or requiring support, onboarding, implementation, or customer success to explain repeatedly.'],
-  ['What evidence should I send?', 'Send the product URL, the flow that breaks, what users do instead, the internal cost you see, and the owner who needs to act on the diagnosis.'],
-  ['What changes after the review?', 'The failure point is named, the hidden product assumption becomes visible, the cost transfer is mapped, and the next scaffold becomes specific enough to defend.'],
-  ['Who is this not for?', 'Teams with no real users, no observable breakdown, no internal owner, or only a desire for visual polish are not a fit.'],
-  ['Why does literature, pedagogy, and systems development matter here?', 'Literature trains the reading of omission and presupposition, pedagogy explains how people continue or freeze under guidance, and systems development turns hidden assumptions into explicit flows and contracts.'],
-].map(([name, text]) => ({ '@type': 'Question', name, acceptedAnswer: { '@type': 'Answer', text } })) };
+const aboutPageSchema = { '@type': 'AboutPage', '@id': 'https://yassergandhi.dev/#ecosystem', url: canonical, name: 'Ecosystem proof', about: { '@id': 'https://yassergandhi.dev/#person' }, isPartOf: { '@id': 'https://yassergandhi.dev/#website' } };
 ---
-<Layout {title} {description} {canonical} {ogTitle} {ogDescription} extraSchema={[personSchema, websiteSchema, serviceSchema, aboutPageSchema, faqSchema, ...credentials]}>
+<Layout {title} {description} {canonical} {ogTitle} {ogDescription} extraSchema={[personSchema, websiteSchema, serviceSchema, aboutPageSchema, ...credentials]}>
   <Nav />
   <main>
-    <Hero /><hr class="divider" />
-    <Problem /><hr class="divider" />
-    <CostTransfer /><hr class="divider" />
-    <CostOfInaction /><hr class="divider" />
-    <Offer /><hr class="divider" />
-    <BeforeAfter /><hr class="divider" />
-    <Fit /><hr class="divider" />
-    <Method /><hr class="divider" />
-    <AuthorialEvidence /><hr class="divider" />
-    <Ecosystem /><hr class="divider" />
-    <FAQ /><hr class="divider" />
+    <Hero />
+    <VennDiagram />
+    <DiagnosticTerminal />
+    <CostReveal />
+    <ReviewChanges />
+    <Ecosystem />
     <Contact />
   </main>
 </Layout>

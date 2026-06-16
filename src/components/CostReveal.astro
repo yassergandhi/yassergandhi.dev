@@ -1,0 +1,54 @@
+---
+const costs = [
+  {
+    front: '$2k-$15k / month',
+    label: 'Support-heavy flow',
+    back: 'Support thinks it is a ticket problem. Product thinks it is friction. The missing scaffold keeps moving the cost across teams.',
+  },
+  {
+    front: '$10k-$75k / month',
+    label: 'Repeated onboarding drag',
+    back: 'Implementation explains what the product should have sequenced. Activation slows while the same gap is re-taught.',
+  },
+  {
+    front: 'Bad data',
+    label: 'Weak intake scaffold',
+    back: 'The team debates lead quality after the form already invited the wrong answer. Qualification absorbs the missing guidance.',
+  },
+  {
+    front: 'Retention drag',
+    label: 'Decision flow without action logic',
+    back: 'Users understand the dashboard but not the move. Delay becomes a product problem after looking like low engagement.',
+  },
+];
+---
+
+<section id="cost" class="section-focus">
+  <div class="container">
+    <p class="section-label">Cost of not acting</p>
+    <div class="section-heading-row">
+      <h2>The cost is already being paid somewhere.</h2>
+      <p>These are decision signals, not promises. The question is whether the recurring cost of not diagnosing the flow is already higher than the review.</p>
+    </div>
+    <div class="metric-card-row">
+      {costs.map((cost) => (
+        <button class="metric-reveal-card" type="button" aria-expanded="false">
+          <span class="metric-front">
+            <strong>{cost.front}</strong>
+            <em>{cost.label}</em>
+          </span>
+          <span class="metric-back">{cost.back}</span>
+        </button>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.metric-reveal-card').forEach((card) => {
+    card.addEventListener('click', () => {
+      const expanded = card.getAttribute('aria-expanded') === 'true';
+      card.setAttribute('aria-expanded', String(!expanded));
+    });
+  });
+</script>
