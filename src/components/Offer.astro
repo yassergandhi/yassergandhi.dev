@@ -1,5 +1,22 @@
 ---
-const deliverables = ['the exact point where guidance disappears','what the system assumes the user already knows, trusts, or can decide','what the user likely does instead','which team currently absorbs the cost','what language, sequence, constraint, or missing state causes the breakdown','what scaffold must exist before the next decision','what to rewrite, delay, remove, expose, constrain, or implement'];
+const preview = [
+  'Failure point',
+  'Hidden assumption',
+  'User workaround',
+  'Cost transfer',
+  'Next scaffold',
+  'First intervention',
+];
+
+const deliverables = [
+  'the exact point where guidance disappears',
+  'what the system assumes the user already knows, trusts, or can decide',
+  'what the user likely does instead',
+  'which team currently absorbs the cost',
+  'what language, sequence, constraint, or missing state causes the breakdown',
+  'what scaffold must exist before the next decision',
+  'what to rewrite, delay, remove, expose, constrain, or implement',
+];
 ---
 <section id="offer">
   <div class="container">
@@ -8,7 +25,18 @@ const deliverables = ['the exact point where guidance disappears','what the syst
     <div class="project-card offer-card">
       <p class="section-copy">A strategic review of one critical SaaS flow your team cannot afford to keep misreading.</p>
       <p class="section-copy">It identifies where guidance disappears, what the product assumes too early, where the cost is currently being transferred, and what scaffold must exist before the user can act.</p>
-      <div class="diagnostic-cards deliverable-cards">{deliverables.map((deliverable, index) => <div class="metric-card"><span>{String(index + 1).padStart(2, '0')}</span><strong>{deliverable}</strong></div>)}</div>
+      <div class="review-output-preview" aria-label="Review Output Preview">
+        <span>Review Output Preview</span>
+        <ol>
+          {preview.map((item) => <li>{item}</li>)}
+        </ol>
+      </div>
+      <details class="deliverable-details">
+        <summary>Full deliverables</summary>
+        <ul class="deliverable-list">
+          {deliverables.map((deliverable) => <li>{deliverable}</li>)}
+        </ul>
+      </details>
     </div>
   </div>
 </section>

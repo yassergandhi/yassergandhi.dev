@@ -1,11 +1,29 @@
 ---
-const costs = ['Support tickets','Onboarding calls','Implementation delays','Bad intake decisions','Poor qualification','Repeated internal explanations','Low adoption','Customer success workarounds','Churn or retention drag'];
+const leaks = [
+  ['Unclear next action', 'user guesses', 'support tickets'],
+  ['Weak intake scaffold', 'user submits bad data', 'qualification noise'],
+  ['AI uncertainty', 'user asks humans to decide', 'CS workarounds'],
+  ['Dashboard without action logic', 'user delays', 'adoption / retention drag'],
+];
 ---
 <section id="cost-transfer">
   <div class="container">
     <div class="section-label">Cost Transfer</div>
     <h2>A guidance failure rarely stays inside the screen.</h2>
-    <div class="chip-grid">{costs.map((cost) => <div class="cost-chip">{cost}</div>)}</div>
+    <div class="cost-leak-map" aria-label="Cost Leak Map">
+      {leaks.map(([gap, workaround, cost], index) => (
+        <div class="leak-step" style={`--step:${index};`}>
+          <span class="leak-label">Product gap</span>
+          <strong>{gap}</strong>
+          <span class="leak-arrow" aria-hidden="true">→</span>
+          <span class="leak-label">Human workaround</span>
+          <strong>{workaround}</strong>
+          <span class="leak-arrow" aria-hidden="true">→</span>
+          <span class="leak-label">Team cost</span>
+          <strong class="team-cost">{cost}</strong>
+        </div>
+      ))}
+    </div>
     <p class="section-copy cost-transfer-close">A Hidden Scaffold Review maps where the user stopped, what the product assumed, and which team is now paying for the missing guidance.</p>
   </div>
 </section>
