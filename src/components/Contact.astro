@@ -1,40 +1,88 @@
 ---
-const mailtoBody = encodeURIComponent(`Product URL:
-
-Flow that breaks:
-
-What users do instead:
-
-What this costs you:
-
-Who needs the review:
-
-Evidence available:
-`);
+const fallbackMailto = 'mailto:yassergandhi.dev@gmail.com?subject=Hidden%20Scaffold%20Review';
+const fields = [
+  ['name', 'Name', 'text', true],
+  ['email', 'Work email', 'email', true],
+  ['company', 'Company / product', 'text', true],
+  ['productUrl', 'Product URL', 'url', true],
+];
+const textareas = [
+  ['flow', 'Flow that breaks'],
+  ['userBehavior', 'What users do instead'],
+  ['cost', 'What this costs you'],
+  ['owner', 'Who needs the review'],
+  ['evidence', 'Evidence available'],
+];
 ---
 <section id="contact">
   <div class="container">
     <div class="contact-tagline">Send me the flow that is already failing.</div>
     <h2 style="margin-bottom:0.5rem;">Send this brief.</h2>
-    <p style="color:var(--gray); margin-bottom:0.75rem; font-size:0.95rem; max-width:620px; margin-left:auto; margin-right:auto;">Send the flow your team keeps explaining, compensating for, or routing around. I will tell you whether it fits a Hidden Scaffold Review.</p>
-    <p style="color:var(--gray); margin-bottom:1rem; font-size:0.95rem; max-width:620px; margin-left:auto; margin-right:auto;">Not sure if this is a guidance failure? Send the flow anyway.</p>
-    <div class="brief-list" aria-label="Hidden Scaffold Review brief checklist">
-      <div><span>Product URL</span></div>
-      <div><span>Flow that breaks</span></div>
-      <div><span>What users do instead</span></div>
-      <div><span>What this costs you</span></div>
-      <div><span>Who needs the review</span></div>
-      <div><span>Evidence available</span></div>
-    </div>
-    <div class="contact-note-stack">
-      <p class="safety-note">Do not send private customer data, credentials, or regulated data in the first email. Describe the pattern first.</p>
-      <p class="cooperation-note">A Hidden Scaffold Review works only when there is evidence to inspect and an owner willing to act on the finding.</p>
-    </div>
+    <p class="contact-intro">Send the flow your team keeps explaining, compensating for, or routing around. I will tell you whether it fits a Hidden Scaffold Review.</p>
+    <p class="contact-intro low-friction">Not sure if this is a guidance failure? Send the flow anyway.</p>
+
+    <form class="brief-form" id="brief-form" action="/api/brief" method="post" novalidate>
+      <input class="website-field" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <div class="form-grid">
+        {fields.map(([name, label, type, required]) => (
+          <label><span>{label}</span><input name={name} type={type} required={required} /></label>
+        ))}
+      </div>
+      <div class="textarea-stack">
+        {textareas.map(([name, label]) => (
+          <label><span>{label}</span><textarea name={name} rows="3" required></textarea></label>
+        ))}
+      </div>
+      <div class="contact-note-stack">
+        <p class="safety-note">Do not send private customer data, credentials, or regulated data in the first email. Describe the pattern first.</p>
+        <p class="cooperation-note">A Hidden Scaffold Review works only when there is evidence to inspect and an owner willing to act on the finding.</p>
+      </div>
+      <div class="form-actions">
+        <button class="btn-primary contact-cta" type="submit">Request a Hidden Scaffold Review</button>
+        <p class="form-status" id="brief-status" role="status" aria-live="polite"></p>
+      </div>
+    </form>
+
     <div class="contact-links">
-      <a href={`mailto:yassergandhi.dev@gmail.com?subject=Hidden%20Scaffold%20Review&body=${mailtoBody}`} class="contact-link btn-primary contact-cta">Request a Hidden Scaffold Review</a>
       <a href="https://www.linkedin.com/in/yassergandhi/" target="_blank" rel="noopener" class="contact-link"><span class="contact-link-label">LinkedIn</span><span class="contact-link-value">/in/yassergandhi</span></a>
       <a href="https://github.com/yassergandhi/" target="_blank" rel="noopener" class="contact-link"><span class="contact-link-label">GitHub</span><span class="contact-link-value">/yassergandhi</span></a>
     </div>
     <div class="terminal-footer">Ciudad de México · Remote · Guidance Failure Architecture · TypeScript · Supabase · Zod · 2026 <span class="cursor"></span></div>
   </div>
 </section>
+
+<script define:vars={{ fallbackMailto }}>
+  const form = document.getElementById('brief-form');
+  const status = document.getElementById('brief-status');
+
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    status.textContent = 'Sending…';
+    status.className = 'form-status is-pending';
+
+    try {
+      const formData = new FormData(form);
+      const payload = Object.fromEntries(formData.entries());
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: JSON.stringify(payload),
+        headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+      });
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        const fallback = result.fallbackMailto || fallbackMailto;
+        status.innerHTML = `${result.error || 'The brief could not be sent.'} <a href="${fallback}">Use email fallback</a>.`;
+        status.className = 'form-status is-error';
+        return;
+      }
+
+      form.reset();
+      status.textContent = result.message || 'Brief sent. I will review the flow and respond if it fits.';
+      status.className = 'form-status is-success';
+    } catch (error) {
+      status.innerHTML = `The brief could not be sent. <a href="${fallbackMailto}">Use email fallback</a>.`;
+      status.className = 'form-status is-error';
+    }
+  });
+</script>

@@ -1,5 +1,5 @@
 ---
-const transfers = [
+const leaks = [
   ['Unclear next action', 'user guesses', 'support tickets'],
   ['Weak intake scaffold', 'user submits bad data', 'qualification noise'],
   ['AI uncertainty', 'user asks humans to decide', 'CS workarounds'],
@@ -11,9 +11,14 @@ const secondary = ['onboarding calls', 'implementation delays', 'repeated intern
   <div class="container">
     <div class="section-label">Cost Transfer</div>
     <h2>A guidance failure rarely stays inside the screen.</h2>
-    <div class="transfer-map" role="table" aria-label="Cost transfer map">
-      <div class="transfer-head" role="row"><span>Product gap</span><span>User workaround</span><span>Team cost</span></div>
-      {transfers.map(([gap, workaround, cost]) => <div class="transfer-row" role="row"><span>{gap}</span><span>{workaround}</span><strong>{cost}</strong></div>)}
+    <div class="cost-leak-map" aria-label="Cost leak map">
+      {leaks.map(([gap, workaround, cost], index) => (
+        <article class="leak-step" style={`--step:${index}`} tabindex="0">
+          <span class="leak-number">{String(index + 1).padStart(2, '0')}</span>
+          <div class="leak-path"><strong>{gap}</strong><span aria-hidden="true">→</span><em>{workaround}</em><span aria-hidden="true">→</span></div>
+          <p>{cost}</p>
+        </article>
+      ))}
     </div>
     <div class="secondary-costs" aria-label="Secondary transferred costs">{secondary.map((item) => <span>{item}</span>)}</div>
     <p class="section-copy cost-transfer-close">A Hidden Scaffold Review maps where the user stopped, what the product assumed, and which team is now paying for the missing guidance.</p>

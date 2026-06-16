@@ -1,8 +1,5 @@
-/* ============================================================
-   Ubuntu Lynx Design System
-   Palette: Aubergine #300A24 · Orange #E95420 · White #F5F0F0
-   Exact replica of yassergandhi-dev-LANDING.html
-============================================================ */
+/* Ubuntu Lynx Design System
+   Palette: Aubergine #300A24 · Orange #E95420 · White #F5F0F0 */
 
 :root {
   --aubergine:       #300A24;
@@ -733,4 +730,73 @@ h1 { max-width: 760px; }
 @media (max-width: 880px) {
   .ledger-head, .ledger-row, .transfer-head, .transfer-row, .fit-layout, .ecosystem-card-grid { grid-template-columns: 1fr; }
   .review-output-preview ol { grid-template-columns: 1fr; }
+}
+
+/* Designed diagnostic objects: stacks, leaks, form */
+.misdiagnosis-stack { display: grid; gap: 0.85rem; margin: 2rem 0; }
+.misdiagnosis-card {
+  border: 1px solid rgba(233,84,32,0.2);
+  background: linear-gradient(135deg, rgba(48,10,36,0.72), rgba(12,3,10,0.54));
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 18px 44px rgba(0,0,0,0.18);
+}
+.misdiagnosis-card summary { cursor: pointer; display: grid; grid-template-columns: auto 0.8fr 1.4fr; gap: 1rem; align-items: center; padding: 1rem 1.1rem; list-style: none; }
+.misdiagnosis-card summary::-webkit-details-marker { display: none; }
+.stack-index, .stack-team, .misdiagnosis-card p span { font-family: var(--font-mono); color: var(--orange); text-transform: uppercase; letter-spacing: 0.11em; font-size: 0.68rem; }
+.misdiagnosis-card summary strong { color: var(--white-warm); font-size: 0.98rem; }
+.misdiagnosis-card p { border-top: 1px solid rgba(200,192,197,0.1); color: var(--white-warm); padding: 1rem 1.1rem 1.1rem; }
+.misdiagnosis-card p span { display: block; margin-bottom: 0.35rem; }
+.cost-leak-map { display: grid; gap: 0.75rem; margin: 2rem 0; }
+.leak-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr minmax(180px, 0.45fr);
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid rgba(233,84,32,0.22);
+  background: linear-gradient(120deg, rgba(48,10,36,0.72), rgba(26,5,20,0.88));
+  padding: 1rem 1.1rem;
+  transform: translateX(calc(var(--step) * 14px));
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+.leak-step:hover, .leak-step:focus { transform: translateX(calc(var(--step) * 14px + 6px)); border-color: rgba(233,84,32,0.48); box-shadow: 0 18px 50px rgba(0,0,0,0.24); outline: none; }
+.leak-number { font-family: var(--font-mono); color: var(--orange); font-size: 0.72rem; }
+.leak-path { display: flex; flex-wrap: wrap; gap: 0.55rem; align-items: center; color: var(--gray); }
+.leak-path strong { color: var(--white-warm); }
+.leak-path em { color: var(--gray); font-style: normal; }
+.leak-step p { color: var(--orange-light); font-weight: 700; text-align: right; }
+.cost-band-grid { align-items: start; }
+.cost-band { transform: rotate(-0.8deg); box-shadow: 0 18px 45px rgba(0,0,0,0.22); }
+.cost-band:nth-child(2) { transform: rotate(0.7deg) translateY(0.55rem); }
+.cost-band:nth-child(3) { transform: rotate(-0.45deg) translateY(1.1rem); }
+.cost-band:nth-child(4) { transform: rotate(0.85deg) translateY(1.65rem); }
+.contact-intro { color: var(--gray); margin-bottom: 0.75rem; font-size: 0.95rem; max-width: 620px; margin-left: auto; margin-right: auto; }
+.contact-intro.low-friction { margin-bottom: 1.4rem; color: var(--orange-light); }
+.brief-form { max-width: 780px; margin: 0 auto 2.5rem; text-align: left; }
+.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem; }
+.textarea-stack { display: grid; gap: 0.85rem; margin-top: 0.85rem; }
+.brief-form label { display: grid; gap: 0.35rem; }
+.brief-form label span { font-family: var(--font-mono); color: var(--gray-dim); text-transform: uppercase; letter-spacing: 0.09em; font-size: 0.68rem; }
+.brief-form input, .brief-form textarea {
+  width: 100%;
+  border: 1px solid rgba(200,192,197,0.16);
+  background: rgba(12,3,10,0.48);
+  color: var(--white-warm);
+  font: inherit;
+  padding: 0.8rem 0.9rem;
+}
+.brief-form input:focus, .brief-form textarea:focus { outline: 1px solid rgba(233,84,32,0.55); border-color: rgba(233,84,32,0.55); }
+.website-field { position: absolute; left: -9999px; opacity: 0; }
+.form-actions { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-top: 1.2rem; }
+.form-status { color: var(--gray); font-size: 0.88rem; }
+.form-status.is-success { color: #4ade80; }
+.form-status.is-error { color: var(--orange-light); }
+.form-status a { color: var(--white-warm); }
+@media (max-width: 880px) {
+  .misdiagnosis-card summary, .leak-step, .form-grid { grid-template-columns: 1fr; }
+  .leak-step { transform: none; }
+  .leak-step:hover, .leak-step:focus { transform: translateY(-3px); }
+  .leak-step p { text-align: left; }
+  .cost-band, .cost-band:nth-child(2), .cost-band:nth-child(3), .cost-band:nth-child(4) { transform: none; }
 }

@@ -1,5 +1,5 @@
 ---
-const rows = [
+const items = [
   ['Design', 'copy that needs another pass', 'missing sequence or context'],
   ['Product', 'onboarding friction', 'action requested too early'],
   ['Support', 'tickets that should not exist', 'product guidance moved to humans'],
@@ -12,11 +12,18 @@ const rows = [
   <div class="container">
     <div class="section-label">Recognition</div>
     <h2>Your team may already be naming the symptom wrong.</h2>
-    <div class="symptom-ledger" role="table" aria-label="Symptom ledger">
-      <div class="ledger-head" role="row"><span>Team</span><span>What they call it</span><span>What may actually be happening</span></div>
-      {rows.map(([team, label, diagnosis]) => <div class="ledger-row" role="row"><span>{team}</span><span>{label}</span><strong>{diagnosis}</strong></div>)}
+    <div class="misdiagnosis-stack" aria-label="Misdiagnosis stack">
+      {items.map(([team, surface, reveal], index) => (
+        <details class="misdiagnosis-card" open={index === 0}>
+          <summary>
+            <span class="stack-index">{String(index + 1).padStart(2, '0')}</span>
+            <span class="stack-team">{team}</span>
+            <strong>{surface}</strong>
+          </summary>
+          <p><span>Deeper diagnosis</span>{reveal}</p>
+        </details>
+      ))}
     </div>
-    <p class="section-copy">They may all be paying for the same failure from different budgets: the product asks the user to continue before the next move has been made legible.</p>
-    <p class="section-copy recognition-close">That is where the review begins.</p>
+    <p class="section-copy recognition-close">They may all be paying for the same failure from different budgets: the product asks the user to continue before the next move has been made legible.</p>
   </div>
 </section>

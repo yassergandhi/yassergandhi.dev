@@ -36,3 +36,25 @@ npm run dev        # http://localhost:4321
 npm run build
 npm run preview
 ```
+
+## Contact form
+
+The contact form posts to `/api/brief` and is intended to run as a Vercel Serverless Function. It validates required fields, rejects the `website` honeypot field, applies length limits, and sends mail through the Resend HTTP API when email environment variables are configured.
+
+Required environment variables:
+
+| Variable | Required | Purpose |
+| --- | --- | --- |
+| `RESEND_API_KEY` | Yes | API key used to call `https://api.resend.com/emails`. |
+| `CONTACT_TO` | Yes | Destination email address for Hidden Scaffold Review briefs. |
+| `CONTACT_FROM` | No | Sender address. Defaults to `onboarding@resend.dev` if omitted. |
+
+If `RESEND_API_KEY` or `CONTACT_TO` is missing, the endpoint returns a `503` JSON response with a fallback `mailto:` URL. The frontend does not fake success; it shows the fallback email link.
+
+Local testing:
+
+```bash
+npm run dev
+# submit the form at http://localhost:4321/#contact
+# without env vars, expect a 503 response and fallback mailto link
+```
