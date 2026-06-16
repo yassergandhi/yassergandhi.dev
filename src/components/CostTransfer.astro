@@ -1,28 +1,21 @@
 ---
-const costs = [
-  'support tickets',
-  'onboarding calls',
-  'implementation delays',
-  'bad intake decisions',
-  'poor qualification',
-  'repeated internal explanations',
-  'low adoption',
-  'customer success workarounds',
+const transfers = [
+  ['Unclear next action', 'user guesses', 'support tickets'],
+  ['Weak intake scaffold', 'user submits bad data', 'qualification noise'],
+  ['AI uncertainty', 'user asks humans to decide', 'CS workarounds'],
+  ['Dashboard without action logic', 'user delays', 'adoption / retention drag'],
 ];
+const secondary = ['onboarding calls', 'implementation delays', 'repeated internal explanations'];
 ---
-
 <section id="cost-transfer">
   <div class="container">
     <div class="section-label">Cost Transfer</div>
     <h2>A guidance failure rarely stays inside the screen.</h2>
-    <p class="section-copy">
-      If the product does not scaffold the next action, the cost moves somewhere else.
-    </p>
-    <ul class="deliverable-list compact-list">
-      {costs.map((cost) => <li>{cost}</li>)}
-    </ul>
-    <p class="section-copy cost-transfer-close">
-      A Hidden Scaffold Review maps where the user stopped, what the product assumed, and which team is now paying for the missing guidance.
-    </p>
+    <div class="transfer-map" role="table" aria-label="Cost transfer map">
+      <div class="transfer-head" role="row"><span>Product gap</span><span>User workaround</span><span>Team cost</span></div>
+      {transfers.map(([gap, workaround, cost]) => <div class="transfer-row" role="row"><span>{gap}</span><span>{workaround}</span><strong>{cost}</strong></div>)}
+    </div>
+    <div class="secondary-costs" aria-label="Secondary transferred costs">{secondary.map((item) => <span>{item}</span>)}</div>
+    <p class="section-copy cost-transfer-close">A Hidden Scaffold Review maps where the user stopped, what the product assumed, and which team is now paying for the missing guidance.</p>
   </div>
 </section>

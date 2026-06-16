@@ -8,46 +8,34 @@ What users do instead:
 What this costs you:
 
 Who needs the review:
+
+Evidence available:
 `);
+const snapshot = [
+  ['Review', 'Hidden Scaffold Review'],
+  ['Unit', 'One critical SaaS flow'],
+  ['Output', 'failure point · hidden assumption · cost transfer · next scaffold'],
+  ['Best fit', 'onboarding · intake · AI-assisted flow · support-heavy moment'],
+];
 ---
-
-<section id="hero">
-  <div class="container">
-    <div class="watermark" aria-hidden="true">GUIDE · SCAFFOLD · CONTINUE</div>
-
-    <div class="fade-up">
-      <div class="hero-label">Guidance Failure Architecture</div>
+<section id="hero" class="console-section hero-console">
+  <div class="container console-grid hero-grid">
+    <div>
+      <div class="hero-label">GUIDANCE FAILURE ARCHITECTURE</div>
+      <h1>Your product is losing money where guidance disappears.</h1>
+      <p class="hero-subheadline">Your product is not losing users because the interface is ugly. It is losing them where the system asks for action before the next move has been made legible.</p>
+      <p class="hero-summary hero-summary-large">I help SaaS and software teams locate the hidden breakdown inside the flow everyone keeps re-explaining: onboarding that delays activation, intake that creates unusable data, AI flows that increase uncertainty, dashboards that inform without directing action, and support-heavy moments the product should have handled earlier.</p>
+      <p class="authority-line">Not a UI pass. A read of where the missing scaffold becomes operational cost.</p>
+      <div class="hero-ctas">
+        <a href={`mailto:yassergandhi.dev@gmail.com?subject=Hidden%20Scaffold%20Review&body=${mailtoBody}`} class="btn-primary">Send the flow that breaks</a>
+        <a href="#offer" class="btn-outline">See what the review includes</a>
+      </div>
     </div>
-
-    <div class="fade-up">
-      <h1>Your product is not losing users because the interface is ugly.</h1>
-      <p class="hero-subheadline">It is losing them where guidance disappears.</p>
-    </div>
-
-    <div class="fade-up">
-      <p class="hero-summary hero-summary-large">
-        I help SaaS and software teams locate the hidden breakdown inside the flow everyone keeps arguing about:
-        onboarding that does not activate, intake that returns unusable data, AI flows that increase uncertainty,
-        dashboards that inform without guiding, and support-heavy moments the product should have handled earlier.
-      </p>
-      <p class="authority-line">Not a UI pass. A read of the missing scaffold behind the screen.</p>
-    </div>
-
-    <div class="fade-up hero-ctas">
-      <a href="#contact" class="btn-primary">
-        Send the flow that breaks
-      </a>
-      <a href="#offer" class="btn-outline">
-        See what the review includes
-      </a>
-    </div>
-
-    <div class="fade-up hero-tags">
-      <span class="tag">Guidance failure</span>
-      <span class="tag">Hidden scaffold</span>
-      <span class="tag">Onboarding</span>
-      <span class="tag">Intake</span>
-      <span class="tag">AI-assisted flows</span>
-    </div>
+    <aside class="diagnostic-panel" aria-label="Review Snapshot">
+      <div class="panel-kicker">Review Snapshot</div>
+      <dl class="snapshot-list">
+        {snapshot.map(([label, value]) => <div><dt>{label}</dt><dd>{value}</dd></div>)}
+      </dl>
+    </aside>
   </div>
 </section>

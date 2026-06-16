@@ -1,0 +1,18 @@
+---
+const cards = [
+  ['Literature', 'Reading beyond paraphrase: what a text organizes, omits, presupposes, and makes possible.'],
+  ['Pedagogy', 'Fifteen years observing how people continue, freeze, guess, resist, or learn when guidance disappears.'],
+  ['Web systems', 'TypeScript, Supabase, Zod, domain contracts, and governed AI: turning hidden assumptions into explicit systems.'],
+  ['Verified academic formation', 'UNAM · German Language and Literature\nUNAM · Pedagogy\nUdeG · Web Systems Development'],
+];
+---
+<section id="authorial-proof">
+  <div class="container">
+    <div class="section-label">Authorial Proof</div>
+    <h2>Why I can read this.</h2>
+    <p class="verification-line">Verified academic formation across literature, pedagogy, and web systems.</p>
+    <div class="proof-grid evidence-grid">
+      {cards.map(([title, copy]) => <article class="proof-card evidence-card" tabindex="0"><span>{title}</span><p>{copy}</p></article>)}
+    </div>
+  </div>
+</section>

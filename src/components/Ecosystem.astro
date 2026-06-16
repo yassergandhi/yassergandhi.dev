@@ -1,23 +1,24 @@
 ---
+const items = [
+  { name: 'yassergandhi.dev', thesis: 'When the product stops guiding, the organization starts paying for the missing scaffold elsewhere.', status: 'live', href: '/' },
+  { name: 'huhuGERMAN', thesis: 'When the classroom stops guiding, German becomes consequence.', status: 'proof', href: 'https://huhugerman.com' },
+  { name: 'Fernweh Together', thesis: 'Forthcoming. When the platform only gives a link, the shared experience can disappear before it reaches the other person.', status: 'forthcoming' },
+];
 ---
-
 <section id="ecosystem">
   <div class="container">
     <div class="section-label">Ecosystem</div>
     <h2>One signature. Three moments where guidance disappears.</h2>
-    <div class="friction-grid ecosystem-grid">
-      <div class="friction-card">
-        <strong>huhuGERMAN</strong>
-        <span>When the classroom stops guiding, German becomes consequence.</span>
-      </div>
-      <div class="friction-card">
-        <strong>Fernweh Together</strong>
-        <span>Forthcoming. When the platform only gives a link, the shared experience can disappear before it reaches the other person.</span>
-      </div>
-      <div class="friction-card">
-        <strong>yassergandhi.dev</strong>
-        <span>When the product stops guiding, users do not always complain. They guess, leave, submit bad data, or make support carry the missing scaffold.</span>
-      </div>
+    <div class="ecosystem-card-grid">
+      {items.map((item) => item.href ? (
+        <a class="ecosystem-link-card" href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener' : undefined}>
+          <span class={`status-badge ${item.status}`}>{item.status}</span><strong>{item.name}</strong><p>{item.thesis}</p>
+        </a>
+      ) : (
+        <article class="ecosystem-link-card is-static">
+          <span class="status-badge forthcoming">forthcoming</span><strong>{item.name}</strong><p>{item.thesis}</p>
+        </article>
+      ))}
     </div>
     <p class="section-copy ecosystem-line">When the system stops guiding, the real design begins.</p>
   </div>

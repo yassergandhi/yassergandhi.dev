@@ -3,91 +3,68 @@ import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Hero from '../components/Hero.astro';
 import Problem from '../components/Problem.astro';
+import CostTransfer from '../components/CostTransfer.astro';
+import CostOfInaction from '../components/CostOfInaction.astro';
 import Offer from '../components/Offer.astro';
+import BeforeAfter from '../components/BeforeAfter.astro';
+import Fit from '../components/Fit.astro';
 import Method from '../components/Method.astro';
-import Proof from '../components/Proof.astro';
+import AuthorialProof from '../components/AuthorialProof.astro';
 import Ecosystem from '../components/Ecosystem.astro';
+import FAQ from '../components/FAQ.astro';
 import Contact from '../components/Contact.astro';
 
 const title = 'Guidance Failure Architecture for SaaS · Yasser Gandhi';
-const description = 'Hidden Scaffold Reviews for SaaS flows where users stop, guess, abandon, submit bad data, or push missing guidance into support.';
+const description = 'Hidden Scaffold Reviews for SaaS flows where users stop, guess, abandon, submit bad data, or push missing guidance into support, onboarding, implementation, and customer success.';
 const canonical = 'https://yassergandhi.dev/';
-const ogTitle = 'Your product is losing users where guidance disappears.';
-const ogDescription = 'A Hidden Scaffold Review locates the point where a SaaS flow looks clear but fails when users have to act.';
+const ogTitle = 'Your product is losing money where guidance disappears.';
+const ogDescription = 'A Hidden Scaffold Review locates the missing scaffold inside SaaS flows that look clear but fail when users have to act.';
+
+const credentials = [
+  { '@type': 'EducationalOccupationalCredential', name: 'B.A. Modern German Language and Literature', credentialCategory: 'degree', recognizedBy: { '@type': 'CollegeOrUniversity', name: 'Universidad Nacional Autónoma de México' } },
+  { '@type': 'EducationalOccupationalCredential', name: 'M.A. Pedagogy', credentialCategory: 'degree', recognizedBy: { '@type': 'CollegeOrUniversity', name: 'Universidad Nacional Autónoma de México' } },
+  { '@type': 'EducationalOccupationalCredential', name: 'B.Sc. Web Systems Development', credentialCategory: 'degree', recognizedBy: { '@type': 'CollegeOrUniversity', name: 'Universidad de Guadalajara' } },
+];
 
 const personSchema = {
-  '@type': 'Person',
-  '@id': 'https://yassergandhi.dev/#person',
-  name: 'Yasser Gandhi Hernández Esquivel',
-  url: 'https://yassergandhi.dev/',
-  sameAs: [
-    'https://www.linkedin.com/in/yassergandhi/',
-    'https://github.com/yassergandhi/',
-    'https://huhugerman.com',
-  ],
-  jobTitle: 'SaaS Friction Architecture Consultant',
-  knowsAbout: [
-    'Guidance Failure Architecture',
-    'Hidden Scaffold Reviews',
-    'behavioral diagnosis',
-    'qualitative research',
-    'domain-driven systems',
-    'TypeScript',
-    'Supabase',
-    'Zod',
-    'German as a foreign language pedagogy',
-  ],
+  '@type': 'Person', '@id': 'https://yassergandhi.dev/#person', name: 'Yasser Gandhi Hernández Esquivel', url: canonical,
+  sameAs: ['https://www.linkedin.com/in/yassergandhi/','https://github.com/yassergandhi/','https://huhugerman.com'],
+  jobTitle: 'Guidance Failure Architecture consultant',
+  description: 'Verified academic formation across literature, pedagogy, and web systems.',
+  knowsAbout: ['Guidance Failure Architecture','Hidden Scaffold Review','SaaS onboarding','intake flows','support cost transfer','TypeScript','Supabase','Zod','pedagogy','German literature'],
   alumniOf: [
     { '@type': 'CollegeOrUniversity', name: 'Universidad Nacional Autónoma de México' },
     { '@type': 'CollegeOrUniversity', name: 'Universidad de Guadalajara' },
   ],
+  hasCredential: credentials,
 };
-
-
-const websiteSchema = {
-  '@type': 'WebSite',
-  '@id': 'https://yassergandhi.dev/#website',
-  name: 'yassergandhi.dev',
-  url: canonical,
-  description,
-  publisher: { '@id': 'https://yassergandhi.dev/#person' },
-};
-
-const serviceSchema = {
-  '@type': 'Service',
-  '@id': 'https://yassergandhi.dev/#hidden-scaffold-review',
-  name: 'Hidden Scaffold Review',
-  serviceType: 'Guidance failure review for SaaS and software flows',
-  provider: { '@id': 'https://yassergandhi.dev/#person' },
-  areaServed: 'Global',
-  audience: {
-    '@type': 'BusinessAudience',
-    audienceType: 'B2B SaaS and software teams',
-  },
-  description,
-  offers: {
-    '@type': 'Offer',
-    availability: 'https://schema.org/InStock',
-    url: canonical,
-  },
-};
+const websiteSchema = { '@type': 'WebSite', '@id': 'https://yassergandhi.dev/#website', name: 'yassergandhi.dev', url: canonical, description, publisher: { '@id': 'https://yassergandhi.dev/#person' } };
+const serviceSchema = { '@type': 'Service', '@id': 'https://yassergandhi.dev/#hidden-scaffold-review', name: 'Hidden Scaffold Review', serviceType: 'Guidance Failure Architecture review for SaaS flows', provider: { '@id': 'https://yassergandhi.dev/#person' }, areaServed: 'Global', audience: { '@type': 'BusinessAudience', audienceType: 'B2B SaaS and software teams' }, description, offers: { '@type': 'Offer', availability: 'https://schema.org/InStock', url: canonical } };
+const aboutPageSchema = { '@type': 'AboutPage', '@id': 'https://yassergandhi.dev/#authorial-proof', url: canonical, name: 'Authorial proof', about: { '@id': 'https://yassergandhi.dev/#person' }, isPartOf: { '@id': 'https://yassergandhi.dev/#website' } };
+const faqSchema = { '@type': 'FAQPage', '@id': 'https://yassergandhi.dev/#faq', mainEntity: [
+  ['What is Guidance Failure Architecture?', 'A way to diagnose where a product, service, or system stops making the next human action legible and starts transferring that missing guidance into operational cost.'],
+  ['What is a Hidden Scaffold Review?', 'A focused review of one critical SaaS flow that identifies where guidance disappears, what the system assumes too early, and what scaffold should exist before the user acts.'],
+  ['How do I know if my SaaS has a guidance failure?', 'Look for flows that users keep asking about, abandoning, misusing, completing with bad data, or requiring support, onboarding, implementation, or customer success to explain repeatedly.'],
+  ['What evidence should I send?', 'Send the product URL, the flow that breaks, what users do instead, the internal cost you see, and the owner who needs to act on the diagnosis.'],
+  ['What changes after the review?', 'The failure point is named, the hidden product assumption becomes visible, the cost transfer is mapped, and the next scaffold becomes specific enough to defend.'],
+  ['Who is this not for?', 'Teams with no real users, no observable breakdown, no internal owner, or only a desire for visual polish are not a fit.'],
+  ['Why does literature, pedagogy, and systems development matter here?', 'Literature trained the reading of sequence, omission and presupposition; pedagogy explains how people continue or freeze when guidance disappears; systems development turns hidden assumptions into explicit flows and contracts.'],
+].map(([name, text]) => ({ '@type': 'Question', name, acceptedAnswer: { '@type': 'Answer', text } })) };
 ---
-
-<Layout {title} {description} {canonical} {ogTitle} {ogDescription} extraSchema={[personSchema, websiteSchema, serviceSchema]}>
+<Layout {title} {description} {canonical} {ogTitle} {ogDescription} extraSchema={[personSchema, websiteSchema, serviceSchema, aboutPageSchema, faqSchema, ...credentials]}>
   <Nav />
   <main>
-    <Hero />
-    <hr class="divider" />
-    <Problem />
-    <hr class="divider" />
-    <Offer />
-    <hr class="divider" />
-    <Method />
-    <hr class="divider" />
-    <Proof />
-    <hr class="divider" />
-    <Ecosystem />
-    <hr class="divider" />
+    <Hero /><hr class="divider" />
+    <Problem /><hr class="divider" />
+    <CostTransfer /><hr class="divider" />
+    <CostOfInaction /><hr class="divider" />
+    <Offer /><hr class="divider" />
+    <BeforeAfter /><hr class="divider" />
+    <Fit /><hr class="divider" />
+    <Method /><hr class="divider" />
+    <AuthorialProof /><hr class="divider" />
+    <Ecosystem /><hr class="divider" />
+    <FAQ /><hr class="divider" />
     <Contact />
   </main>
 </Layout>

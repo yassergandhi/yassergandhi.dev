@@ -1,0 +1,16 @@
+---
+const ranges = [
+  ['Early SaaS', '$300–$3,000/month', 'founder time, repeated explanation, failed activation'],
+  ['Small SaaS', '$2,000–$15,000/month', 'support load, onboarding drag, qualification noise'],
+  ['Medium SaaS', '$10,000–$75,000/month', 'Product, Support, CS and Implementation carrying the same gap'],
+  ['Larger mid-market systems', '$50,000+/month', 'activation, retention or implementation timelines affected'],
+];
+---
+<section id="cost-of-inaction">
+  <div class="container">
+    <div class="section-label">Cost of inaction</div>
+    <h2>The cost is already being paid. Usually under the wrong line item.</h2>
+    <div class="cost-band-grid">{ranges.map(([label, range, note]) => <div class="cost-band"><span>{label}</span><strong>{range}</strong><p>{note}</p></div>)}</div>
+    <p class="caution-note">These ranges are not a promise. They are a way to ask the right question: is the recurring cost of not diagnosing the flow already higher than the cost of the review?</p>
+  </div>
+</section>
