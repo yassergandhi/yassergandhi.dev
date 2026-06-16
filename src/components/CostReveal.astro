@@ -3,22 +3,38 @@ const costs = [
   {
     front: '$2k-$15k / month',
     label: 'Support-heavy flow',
-    back: 'Support thinks it is a ticket problem. Product thinks it is friction. The missing scaffold keeps moving the cost across teams.',
+    back: [
+      ['Misread as', 'ticket volume.'],
+      ['Paid by', 'Support + Product.'],
+      ['If ignored', 'the same missing scaffold keeps returning as "user confusion."'],
+    ],
   },
   {
     front: '$10k-$75k / month',
     label: 'Repeated onboarding drag',
-    back: 'Implementation explains what the product should have sequenced. Activation slows while the same gap is re-taught.',
+    back: [
+      ['Misread as', 'slow activation.'],
+      ['Paid by', 'Onboarding + Implementation.'],
+      ['If ignored', 'every new user must be re-taught what the product failed to sequence.'],
+    ],
   },
   {
     front: 'Bad data',
     label: 'Weak intake scaffold',
-    back: 'The team debates lead quality after the form already invited the wrong answer. Qualification absorbs the missing guidance.',
+    back: [
+      ['Misread as', 'low-quality leads.'],
+      ['Paid by', 'Sales + Qualification.'],
+      ['If ignored', 'the form keeps inviting the wrong answer before anyone can qualify the case.'],
+    ],
   },
   {
     front: 'Retention drag',
     label: 'Decision flow without action logic',
-    back: 'Users understand the dashboard but not the move. Delay becomes a product problem after looking like low engagement.',
+    back: [
+      ['Misread as', 'low engagement.'],
+      ['Paid by', 'Customer Success + Leadership.'],
+      ['If ignored', 'users keep seeing information without knowing what to do next.'],
+    ],
   },
 ];
 ---
@@ -37,7 +53,13 @@ const costs = [
             <strong>{cost.front}</strong>
             <em>{cost.label}</em>
           </span>
-          <span class="metric-back">{cost.back}</span>
+          <span class="metric-back">
+            {cost.back.map(([term, detail]) => (
+              <span>
+                <strong>{term}:</strong> {detail}
+              </span>
+            ))}
+          </span>
         </button>
       ))}
     </div>

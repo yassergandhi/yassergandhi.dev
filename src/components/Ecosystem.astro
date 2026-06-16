@@ -2,18 +2,24 @@
 const items = [
   {
     title: 'yassergandhi.dev',
-    copy: 'SaaS and software flows where missing guidance becomes operating cost.',
+    thesis: 'Product stops guiding -> operational cost.',
     href: '/',
+    status: 'live',
+    className: 'site',
   },
   {
     title: 'huhuGERMAN',
-    copy: 'Language, behavior, and scaffolded practice under real-world pressure.',
+    thesis: 'Classroom stops guiding -> German becomes consequence.',
     href: 'https://huhugerman.com',
+    status: 'live proof',
+    className: 'huhu',
   },
   {
     title: 'Fernweh Together',
-    copy: 'Forthcoming: shared experience design where the platform must guide the moment.',
+    thesis: 'Platform only gives a link -> shared experience disappears.',
     href: '',
+    status: 'forthcoming',
+    className: 'fernweh',
   },
 ];
 ---
@@ -22,17 +28,26 @@ const items = [
     <div class="section-label">Ecosystem</div>
     <h2>One authorial signature, three contexts where guidance disappears.</h2>
     <p class="section-copy">The proof is the same reading discipline applied across product systems, language systems, and shared experience systems.</p>
-    <div class="ecosystem-grid">
+    <div class="ecosystem-map" aria-label="Authorial ecosystem map">
+      <div class="ecosystem-center">Where the system stops guiding</div>
       {items.map((item) => item.href ? (
-        <a class="ecosystem-link" href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener' : undefined}>
+        <a class={`ecosystem-node ${item.className}`} href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener' : undefined}>
+          <span class="status-pill">
+            <span aria-hidden="true"></span>
+            {item.status}
+          </span>
           <strong>{item.title}</strong>
-          <span>{item.copy}</span>
+          <span>{item.thesis}</span>
         </a>
       ) : (
-        <div class="ecosystem-link is-static">
-          <span class="badge">forthcoming</span>
+        <div class={`ecosystem-node ${item.className} is-static`}>
+          <span class="badge" tabindex="0" aria-describedby="fernweh-status-tip">
+            <span aria-hidden="true"></span>
+            {item.status}
+          </span>
+          <span id="fernweh-status-tip" class="tooltip" role="tooltip">Concept stage · not public yet</span>
           <strong>{item.title}</strong>
-          <span>{item.copy}</span>
+          <span>{item.thesis}</span>
         </div>
       ))}
     </div>
