@@ -1,18 +1,24 @@
 ---
 const items = [
   {
+    context: 'Product systems',
     title: 'yassergandhi.dev',
-    copy: 'SaaS and software flows where missing guidance becomes operating cost.',
+    copy: 'Product stops guiding -> operational cost.',
+    status: 'live',
     href: '/',
   },
   {
+    context: 'Language systems',
     title: 'huhuGERMAN',
-    copy: 'Language, behavior, and scaffolded practice under real-world pressure.',
+    copy: 'Classroom stops guiding -> German becomes consequence.',
+    status: 'live proof',
     href: 'https://huhugerman.com',
   },
   {
+    context: 'Shared experience systems',
     title: 'Fernweh Together',
-    copy: 'Forthcoming: shared experience design where the platform must guide the moment.',
+    copy: 'Platform only gives a link -> shared experience disappears.',
+    status: 'forthcoming',
     href: '',
   },
 ];
@@ -21,16 +27,20 @@ const items = [
   <div class="container">
     <div class="section-label">Ecosystem</div>
     <h2>One authorial signature, three contexts where guidance disappears.</h2>
-    <p class="section-copy">The proof is the same reading discipline applied across product systems, language systems, and shared experience systems.</p>
-    <div class="ecosystem-grid">
+    <p class="section-copy">The same diagnostic gesture appears in three contexts: product systems, language systems, and shared experience systems.</p>
+    <div class="ecosystem-relay ecosystem-spine" aria-label="Guidance failure spine">
+      <div class="ecosystem-anchor">Where the system stops guiding</div>
       {items.map((item) => item.href ? (
-        <a class="ecosystem-link" href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener' : undefined}>
+        <a class="ecosystem-link" data-node={item.title} href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener' : undefined}>
+          <span class={`status-pill ${item.status === 'live proof' ? 'proof' : 'live'}`}>{item.status}</span>
+          <span class="ecosystem-context">{item.context}</span>
           <strong>{item.title}</strong>
           <span>{item.copy}</span>
         </a>
       ) : (
-        <div class="ecosystem-link is-static">
-          <span class="badge">forthcoming</span>
+        <div class="ecosystem-link is-static" data-node={item.title}>
+          <span class="status-pill forthcoming">{item.status}</span>
+          <span class="ecosystem-context">{item.context}</span>
           <strong>{item.title}</strong>
           <span>{item.copy}</span>
         </div>

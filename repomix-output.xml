@@ -1,0 +1,1909 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+public/
+  favicon.svg
+  og-image.svg
+  robots.txt
+  sitemap-0.xml
+  sitemap-index.xml
+src/
+  assets/
+    astro.svg
+    background.svg
+  components/
+    Contact.astro
+    CostReveal.astro
+    DiagnosticTerminal.astro
+    Ecosystem.astro
+    Hero.astro
+    Nav.astro
+    ReviewChanges.astro
+    VennDiagram.astro
+  layouts/
+    Layout.astro
+  pages/
+    index.astro
+  styles/
+    global.css
+.gitignore
+astro.config.mjs
+nueva
+package.json
+README.md
+tsconfig.json
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="nueva">
+
+</file>
+
+<file path="public/og-image.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Guidance Failure Architecture</title>
+  <desc id="desc">Your product is losing users where guidance disappears.</desc>
+  <rect width="1200" height="630" fill="#1a0514" />
+  <circle cx="930" cy="120" r="360" fill="#300A24" opacity="0.88" />
+  <circle cx="220" cy="540" r="310" fill="#7A2050" opacity="0.28" />
+  <line x1="86" y1="164" x2="1114" y2="164" stroke="#E95420" stroke-width="4" />
+  <text x="86" y="245" fill="#F5F0F0" font-family="Ubuntu, Arial, sans-serif" font-size="58" font-weight="700">
+    Your product is losing users
+  </text>
+  <text x="86" y="318" fill="#F5F0F0" font-family="Ubuntu, Arial, sans-serif" font-size="58" font-weight="700">
+    where guidance disappears.
+  </text>
+  <text x="90" y="420" fill="#E95420" font-family="Ubuntu Mono, monospace" font-size="30" letter-spacing="5">
+    GUIDANCE FAILURE ARCHITECTURE
+  </text>
+  <text x="90" y="512" fill="#C8C0C5" font-family="Ubuntu Mono, monospace" font-size="28" letter-spacing="2">
+    yassergandhi.dev
+  </text>
+</svg>
+</file>
+
+<file path="public/robots.txt">
+User-agent: *
+Allow: /
+
+Sitemap: https://yassergandhi.dev/sitemap-index.xml
+</file>
+
+<file path="public/sitemap-0.xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://yassergandhi.dev/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
+</file>
+
+<file path="public/sitemap-index.xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://yassergandhi.dev/sitemap-0.xml</loc>
+  </sitemap>
+</sitemapindex>
+</file>
+
+<file path="src/assets/astro.svg">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" width="115" height="48"><path fill="#17191E" d="M7.77 36.35C6.4 35.11 6 32.51 6.57 30.62c.99 1.2 2.35 1.57 3.75 1.78 2.18.33 4.31.2 6.33-.78.23-.12.44-.27.7-.42.18.55.23 1.1.17 1.67a4.56 4.56 0 0 1-1.94 3.23c-.43.32-.9.61-1.34.91-1.38.94-1.76 2.03-1.24 3.62l.05.17a3.63 3.63 0 0 1-1.6-1.38 3.87 3.87 0 0 1-.63-2.1c0-.37 0-.74-.05-1.1-.13-.9-.55-1.3-1.33-1.32a1.56 1.56 0 0 0-1.63 1.26c0 .06-.03.12-.05.2Z"/><path fill="url(#a)" d="M7.77 36.35C6.4 35.11 6 32.51 6.57 30.62c.99 1.2 2.35 1.57 3.75 1.78 2.18.33 4.31.2 6.33-.78.23-.12.44-.27.7-.42.18.55.23 1.1.17 1.67a4.56 4.56 0 0 1-1.94 3.23c-.43.32-.9.61-1.34.91-1.38.94-1.76 2.03-1.24 3.62l.05.17a3.63 3.63 0 0 1-1.6-1.38 3.87 3.87 0 0 1-.63-2.1c0-.37 0-.74-.05-1.1-.13-.9-.55-1.3-1.33-1.32a1.56 1.56 0 0 0-1.63 1.26c0 .06-.03.12-.05.2Z"/><path fill="#17191E" d="M.02 30.31s4.02-1.95 8.05-1.95l3.04-9.4c.11-.45.44-.76.82-.76.37 0 .7.31.82.76l3.04 9.4c4.77 0 8.05 1.95 8.05 1.95L17 11.71c-.2-.56-.53-.91-.98-.91H7.83c-.44 0-.76.35-.97.9L.02 30.31Zm42.37-5.97c0 1.64-2.05 2.62-4.88 2.62-1.85 0-2.5-.45-2.5-1.41 0-1 .8-1.49 2.65-1.49 1.67 0 3.09.03 4.73.23v.05Zm.03-2.04a21.37 21.37 0 0 0-4.37-.36c-5.32 0-7.82 1.25-7.82 4.18 0 3.04 1.71 4.2 5.68 4.2 3.35 0 5.63-.84 6.46-2.92h.14c-.03.5-.05 1-.05 1.4 0 1.07.18 1.16 1.06 1.16h4.15a16.9 16.9 0 0 1-.36-4c0-1.67.06-2.93.06-4.62 0-3.45-2.07-5.64-8.56-5.64-2.8 0-5.9.48-8.26 1.19.22.93.54 2.83.7 4.06 2.04-.96 4.95-1.37 7.2-1.37 3.11 0 3.97.71 3.97 2.15v.57Zm11.37 3c-.56.07-1.33.07-2.12.07-.83 0-1.6-.03-2.12-.1l-.02.58c0 2.85 1.87 4.52 8.45 4.52 6.2 0 8.2-1.64 8.2-4.55 0-2.74-1.33-4.09-7.2-4.39-4.58-.2-4.99-.7-4.99-1.28 0-.66.59-1 3.65-1 3.18 0 4.03.43 4.03 1.35v.2a46.13 46.13 0 0 1 4.24.03l.02-.55c0-3.36-2.8-4.46-8.2-4.46-6.08 0-8.13 1.49-8.13 4.39 0 2.6 1.64 4.23 7.48 4.48 4.3.14 4.77.62 4.77 1.28 0 .7-.7 1.03-3.71 1.03-3.47 0-4.35-.48-4.35-1.47v-.13Zm19.82-12.05a17.5 17.5 0 0 1-6.24 3.48c.03.84.03 2.4.03 3.24l1.5.02c-.02 1.63-.04 3.6-.04 4.9 0 3.04 1.6 5.32 6.58 5.32 2.1 0 3.5-.23 5.23-.6a43.77 43.77 0 0 1-.46-4.13c-1.03.34-2.34.53-3.78.53-2 0-2.82-.55-2.82-2.13 0-1.37 0-2.65.03-3.84 2.57.02 5.13.07 6.64.11-.02-1.18.03-2.9.1-4.04-2.2.04-4.65.07-6.68.07l.07-2.93h-.16Zm13.46 6.04a767.33 767.33 0 0 1 .07-3.18H82.6c.07 1.96.07 3.98.07 6.92 0 2.95-.03 4.99-.07 6.93h5.18c-.09-1.37-.11-3.68-.11-5.65 0-3.1 1.26-4 4.12-4 1.33 0 2.28.16 3.1.46.03-1.16.26-3.43.4-4.43-.86-.25-1.81-.41-2.96-.41-2.46-.03-4.26.98-5.1 3.38l-.17-.02Zm22.55 3.65c0 2.5-1.8 3.66-4.64 3.66-2.81 0-4.61-1.1-4.61-3.66s1.82-3.52 4.61-3.52c2.82 0 4.64 1.03 4.64 3.52Zm4.71-.11c0-4.96-3.87-7.18-9.35-7.18-5.5 0-9.23 2.22-9.23 7.18 0 4.94 3.49 7.59 9.21 7.59 5.77 0 9.37-2.65 9.37-7.6Z"/><defs><linearGradient id="a" x1="6.33" x2="19.43" y1="40.8" y2="34.6" gradientUnits="userSpaceOnUse"><stop stop-color="#D83333"/><stop offset="1" stop-color="#F041FF"/></linearGradient></defs></svg>
+</file>
+
+<file path="src/assets/background.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1024" fill="none"><path fill="url(#a)" fill-rule="evenodd" d="M-217.58 475.75c91.82-72.02 225.52-29.38 341.2-44.74C240 415.56 372.33 315.14 466.77 384.9c102.9 76.02 44.74 246.76 90.31 366.31 29.83 78.24 90.48 136.14 129.48 210.23 57.92 109.99 169.67 208.23 155.9 331.77-13.52 121.26-103.42 264.33-224.23 281.37-141.96 20.03-232.72-220.96-374.06-196.99-151.7 25.73-172.68 330.24-325.85 315.72-128.6-12.2-110.9-230.73-128.15-358.76-12.16-90.14 65.87-176.25 44.1-264.57-26.42-107.2-167.12-163.46-176.72-273.45-10.15-116.29 33.01-248.75 124.87-320.79Z" clip-rule="evenodd" style="opacity:.154"/><path fill="url(#b)" fill-rule="evenodd" d="M1103.43 115.43c146.42-19.45 275.33-155.84 413.5-103.59 188.09 71.13 409 212.64 407.06 413.88-1.94 201.25-259.28 278.6-414.96 405.96-130 106.35-240.24 294.39-405.6 265.3-163.7-28.8-161.93-274.12-284.34-386.66-134.95-124.06-436-101.46-445.82-284.6-9.68-180.38 247.41-246.3 413.54-316.9 101.01-42.93 207.83 21.06 316.62 6.61Z" clip-rule="evenodd" style="opacity:.154"/><defs><linearGradient id="b" x1="373" x2="1995.44" y1="1100" y2="118.03" gradientUnits="userSpaceOnUse"><stop stop-color="#D83333"/><stop offset="1" stop-color="#F041FF"/></linearGradient><linearGradient id="a" x1="107.37" x2="1130.66" y1="1993.35" y2="1026.31" gradientUnits="userSpaceOnUse"><stop stop-color="#3245FF"/><stop offset="1" stop-color="#BC52EE"/></linearGradient></defs></svg>
+</file>
+
+<file path="src/components/CostReveal.astro">
+---
+const costs = [
+  {
+    front: '$2k-$15k / month',
+    label: 'Support-heavy flow',
+    back: ['ticket problem', 'support + customer success', 'the missing scaffold keeps moving cost across teams'],
+  },
+  {
+    front: '$10k-$75k / month',
+    label: 'Repeated onboarding drag',
+    back: ['activation friction', 'implementation + onboarding', 'the same gap gets taught again in every account'],
+  },
+  {
+    front: 'Bad data',
+    label: 'Weak intake scaffold',
+    back: ['lead quality', 'qualification + sales', 'the form keeps inviting answers nobody can use'],
+  },
+  {
+    front: 'Retention drag',
+    label: 'Decision flow without action logic',
+    back: ['low engagement', 'product + customer success', 'understanding does not become action'],
+  },
+];
+---
+
+<section id="cost" class="section-focus">
+  <div class="container">
+    <p class="section-label">Cost of not acting</p>
+    <div class="section-heading-row">
+      <h2>The cost is already being paid somewhere.</h2>
+      <p>These are decision signals, not promises. The question is whether the recurring cost of not diagnosing the flow is already higher than the review.</p>
+    </div>
+    <div class="metric-card-row">
+      {costs.map((cost) => (
+        <button class="metric-reveal-card" type="button" aria-expanded="false">
+          <span class="metric-front">
+            <strong>{cost.front}</strong>
+            <em>{cost.label}</em>
+          </span>
+          <span class="metric-back">
+            <span><strong>Misread as:</strong> {cost.back[0]}</span>
+            <span><strong>Paid by:</strong> {cost.back[1]}</span>
+            <span><strong>If ignored:</strong> {cost.back[2]}</span>
+          </span>
+        </button>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.metric-reveal-card').forEach((card) => {
+    card.addEventListener('click', () => {
+      document.querySelectorAll<HTMLButtonElement>('.metric-reveal-card').forEach((item) => {
+        if (item !== card) item.setAttribute('aria-expanded', 'false');
+      });
+      const expanded = card.getAttribute('aria-expanded') === 'true';
+      card.setAttribute('aria-expanded', String(!expanded));
+    });
+  });
+</script>
+</file>
+
+<file path="src/components/DiagnosticTerminal.astro">
+---
+const scenarios = [
+  {
+    id: 'onboarding',
+    label: 'onboarding',
+    lines: [
+      ['symptom', 'users complete onboarding but do not activate'],
+      ['translation', 'the next move is not legible'],
+      ['hidden assumption', 'user already trusts the request'],
+      ['cost transfer', 'support + customer success'],
+      ['likely fix', 'sequence + consequence-awareness + decision support'],
+    ],
+  },
+  {
+    id: 'intake',
+    label: 'intake',
+    lines: [
+      ['symptom', 'forms arrive complete but unusable'],
+      ['translation', 'the product collected answers before it framed judgment'],
+      ['hidden assumption', 'user knows what quality looks like'],
+      ['cost transfer', 'qualification + implementation'],
+      ['likely fix', 'constraint language + examples + refusal states'],
+    ],
+  },
+  {
+    id: 'ai',
+    label: 'ai-assisted flow',
+    lines: [
+      ['symptom', 'AI output increases follow-up questions'],
+      ['translation', 'confidence is not scaffolded'],
+      ['hidden assumption', 'user can evaluate the answer alone'],
+      ['cost transfer', 'CS workarounds + expert review'],
+      ['likely fix', 'uncertainty markers + handoff rules + next action'],
+    ],
+  },
+  {
+    id: 'dashboard',
+    label: 'dashboard / decision flow',
+    lines: [
+      ['symptom', 'users see the data and delay action'],
+      ['translation', 'information appears without decision logic'],
+      ['hidden assumption', 'user can infer priority'],
+      ['cost transfer', 'adoption + retention drag'],
+      ['likely fix', 'thresholds + recommendation hierarchy + action states'],
+    ],
+  },
+];
+---
+
+<section id="diagnostic">
+  <div class="container">
+    <p class="section-label">Ubuntu Diagnostic Terminal</p>
+    <div class="terminal-shell">
+      <div class="terminal-topbar" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="terminal-layout">
+        <div class="terminal-tabs" role="tablist" aria-label="Diagnostic scenarios">
+          {scenarios.map((scenario, index) => (
+            <button class={index === 0 ? 'is-active' : ''} type="button" data-scenario={scenario.id}>{scenario.label}</button>
+          ))}
+        </div>
+        <div class="terminal-output" aria-live="polite">
+          {scenarios.map((scenario, index) => (
+            <div class={index === 0 ? 'terminal-scenario is-active' : 'terminal-scenario'} data-output={scenario.id}>
+              {scenario.lines.map(([key, value]) => (
+                <p><span>&gt; {key}:</span> {value}</p>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const terminal = document.querySelector('.terminal-shell');
+  const tabs = terminal?.querySelectorAll<HTMLButtonElement>('[data-scenario]');
+  const outputs = terminal?.querySelectorAll<HTMLElement>('[data-output]');
+
+  tabs?.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      tabs.forEach((item) => item.classList.toggle('is-active', item === tab));
+      outputs?.forEach((output) => {
+        output.classList.toggle('is-active', output.dataset.output === tab.dataset.scenario);
+      });
+    });
+  });
+</script>
+</file>
+
+<file path="src/components/ReviewChanges.astro">
+---
+const before = ['users guess', 'support compensates', 'product debates symptoms'];
+const after = ['failure point is named', 'hidden assumption is visible', 'next scaffold is clear'];
+---
+
+<section id="changes" class="section-compact">
+  <div class="container split-section compact">
+    <div>
+      <p class="section-label">What the review changes</p>
+      <h2>Less debate about symptoms. More clarity about the missing scaffold.</h2>
+    </div>
+    <div class="before-after-simple" aria-label="Before and after Hidden Scaffold Review">
+      <div>
+        <h3>Before</h3>
+        <ul>{before.map((item) => <li>{item}</li>)}</ul>
+      </div>
+      <div>
+        <h3>After</h3>
+        <ul>{after.map((item) => <li>{item}</li>)}</ul>
+      </div>
+    </div>
+  </div>
+</section>
+</file>
+
+<file path="src/components/VennDiagram.astro">
+---
+const circles = [
+  {
+    title: 'Systems',
+    className: 'systems',
+    capabilities: ['flow boundaries', 'sequence logic', 'state contracts'],
+  },
+  {
+    title: 'Human Behavior',
+    className: 'behavior',
+    capabilities: ['trust under pressure', 'workarounds', 'decision delay'],
+  },
+  {
+    title: 'Language / Interpretation',
+    className: 'language',
+    capabilities: ['implicit assumptions', 'instruction load', 'meaning gaps'],
+  },
+];
+---
+
+<section id="venn" class="section-focus">
+  <div class="container split-section">
+    <div>
+      <p class="section-label">Why this reads differently</p>
+      <h2>Guidance failure sits between system logic, human behavior, and interpretation.</h2>
+      <p class="section-copy">Most teams diagnose the surface: copy, friction, tickets, edge cases. The review reads the crossing point where the product stopped making the next action understandable enough to take.</p>
+    </div>
+
+    <div class="venn-panel" aria-label="Guidance Failure Architecture Venn diagram">
+      <div class="venn-desktop">
+        <div class="venn-center">Guidance Failure Architecture</div>
+        {circles.map((circle) => (
+          <button class={`venn-circle ${circle.className}`} type="button">
+            <span>{circle.title}</span>
+            <ul>
+              {circle.capabilities.map((capability) => <li>{capability}</li>)}
+            </ul>
+          </button>
+        ))}
+      </div>
+
+      <div class="venn-mobile-orbit" aria-hidden="true">
+        <div class="orbit-line line-systems"></div>
+        <div class="orbit-line line-behavior"></div>
+        <div class="orbit-line line-language"></div>
+        <div class="orbit-node orbit-center">Guidance Failure Architecture</div>
+        {circles.map((circle) => (
+          <div class={`orbit-node orbit-${circle.className}`}>
+            <strong>{circle.title}</strong>
+            <span>{circle.capabilities[0]}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+</file>
+
+<file path=".gitignore">
+# build output
+dist/
+
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/
+.vercel
+</file>
+
+<file path="public/favicon.svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="4" fill="#300A24"/>
+  <text x="5" y="24" font-family="Ubuntu, sans-serif" font-weight="700" font-size="22" fill="#E95420">Y</text>
+</svg>
+</file>
+
+<file path="tsconfig.json">
+{
+  "extends": "astro/tsconfigs/strict",
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"],
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
+  }
+}
+</file>
+
+<file path="src/components/Ecosystem.astro">
+---
+const items = [
+  {
+    context: 'Product systems',
+    title: 'yassergandhi.dev',
+    copy: 'Product stops guiding -> operational cost.',
+    status: 'live',
+    href: '/',
+  },
+  {
+    context: 'Language systems',
+    title: 'huhuGERMAN',
+    copy: 'Classroom stops guiding -> German becomes consequence.',
+    status: 'live proof',
+    href: 'https://huhugerman.com',
+  },
+  {
+    context: 'Shared experience systems',
+    title: 'Fernweh Together',
+    copy: 'Platform only gives a link -> shared experience disappears.',
+    status: 'forthcoming',
+    href: '',
+  },
+];
+---
+<section id="ecosystem">
+  <div class="container">
+    <div class="section-label">Ecosystem</div>
+    <h2>One authorial signature, three contexts where guidance disappears.</h2>
+    <p class="section-copy">The same diagnostic gesture appears in three contexts: product systems, language systems, and shared experience systems.</p>
+    <div class="ecosystem-relay ecosystem-spine" aria-label="Guidance failure spine">
+      <div class="ecosystem-anchor">Where the system stops guiding</div>
+      {items.map((item) => item.href ? (
+        <a class="ecosystem-link" data-node={item.title} href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener' : undefined}>
+          <span class={`status-pill ${item.status === 'live proof' ? 'proof' : 'live'}`}>{item.status}</span>
+          <span class="ecosystem-context">{item.context}</span>
+          <strong>{item.title}</strong>
+          <span>{item.copy}</span>
+        </a>
+      ) : (
+        <div class="ecosystem-link is-static" data-node={item.title}>
+          <span class="status-pill forthcoming">{item.status}</span>
+          <span class="ecosystem-context">{item.context}</span>
+          <strong>{item.title}</strong>
+          <span>{item.copy}</span>
+        </div>
+      ))}
+    </div>
+    <p class="section-copy ecosystem-line">When the system stops guiding, the real design begins.</p>
+  </div>
+</section>
+</file>
+
+<file path="src/components/Nav.astro">
+---
+---
+<nav>
+  <div class="container">
+    <a href="/" class="nav-brand">yassergandhi.dev</a>
+    <ul class="nav-links">
+      <li><a href="#venn">Method</a></li>
+      <li><a href="#diagnostic">Diagnostic</a></li>
+      <li><a href="#cost">Cost</a></li>
+      <li><a href="#changes">Review</a></li>
+      <li><a href="#ecosystem">Proof</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+</file>
+
+<file path="astro.config.mjs">
+// @ts-check
+import { defineConfig } from 'astro/config';
+import react from '@astrojs/react';
+import tailwindcss from '@tailwindcss/vite';
+
+export default defineConfig({
+  integrations: [react()],
+  vite: {
+    plugins: [tailwindcss()]
+  }
+});
+</file>
+
+<file path="package.json">
+{
+  "name": "yassergandhi-dev",
+  "type": "module",
+  "version": "2.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.4.2",
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/react": "^19.2.8",
+    "@types/react-dom": "^19.2.3",
+    "astro": "^5.16.11",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "tailwindcss": "^4.1.18"
+  }
+}
+</file>
+
+<file path="src/layouts/Layout.astro">
+---
+import '../styles/global.css';
+
+const siteUrl = 'https://yassergandhi.dev';
+const defaultTitle = 'Guidance Failure Architecture for SaaS · Yasser Gandhi';
+const defaultDescription = 'Hidden Scaffold Reviews for SaaS flows where users stop, guess, abandon, submit bad data, or push missing guidance into support.';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  ogImageAlt?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
+  noindex?: boolean;
+  extraSchema?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const {
+  title = defaultTitle,
+  description = defaultDescription,
+  canonical = `${siteUrl}/`,
+  ogTitle = title,
+  ogDescription = description,
+  ogImage = `${siteUrl}/og-image.svg`,
+  ogImageAlt = 'Guidance Failure Architecture by Yasser Gandhi',
+  ogImageWidth = 1200,
+  ogImageHeight = 630,
+  noindex = false,
+  extraSchema,
+} = Astro.props;
+
+const schemaGraph = Array.isArray(extraSchema) ? extraSchema : extraSchema ? [extraSchema] : [];
+const jsonLd = schemaGraph.length > 0 ? JSON.stringify({ '@context': 'https://schema.org', '@graph': schemaGraph }) : '';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Yasser Gandhi Hernández Esquivel" />
+    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+    <link rel="canonical" href={canonical} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="yassergandhi.dev" />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content={String(ogImageWidth)} />
+    <meta property="og:image:height" content={String(ogImageHeight)} />
+    <meta property="og:image:alt" content={ogImageAlt} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={ogTitle} />
+    <meta name="twitter:description" content={ogDescription} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
+
+    {jsonLd && <script type="application/ld+json" set:html={jsonLd} />}
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+
+  <body>
+    <div class="aura"></div>
+    <slot />
+  </body>
+</html>
+</file>
+
+<file path="src/styles/global.css">
+:root {
+  --aubergine: #300a24;
+  --aubergine-deep: #170411;
+  --aubergine-soft: #4b1237;
+  --orange: #e95420;
+  --orange-bright: #ff7a3d;
+  --green: #4ade80;
+  --green-soft: rgba(74, 222, 128, 0.12);
+  --cream: #f5f0f0;
+  --muted: #c8c0c5;
+  --dim: #8f838b;
+  --line: rgba(245, 240, 240, 0.12);
+  --panel: rgba(23, 4, 17, 0.62);
+  --font-main: 'Ubuntu', sans-serif;
+  --font-mono: 'Ubuntu Mono', monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--aubergine-deep);
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 82% 14%, rgba(233, 84, 32, 0.1), transparent 18rem),
+    radial-gradient(circle at 50% -10%, rgba(122, 32, 80, 0.42), transparent 42rem),
+    linear-gradient(180deg, var(--aubergine) 0%, var(--aubergine-deep) 58%);
+  color: var(--cream);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(233, 84, 32, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(233, 84, 32, 0.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(to bottom, black, transparent 72%);
+}
+
+.aura {
+  display: none;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+section {
+  padding: clamp(3.75rem, 7vw, 6.25rem) 0;
+}
+
+.section-compact {
+  padding: clamp(3rem, 5vw, 4.5rem) 0;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid rgba(233, 84, 32, 0.16);
+  background: rgba(23, 4, 17, 0.82);
+  backdrop-filter: blur(16px);
+}
+
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.nav-brand,
+.nav-links a,
+.eyebrow,
+.authority-line,
+.terminal-tabs button,
+.terminal-output {
+  font-family: var(--font-mono);
+}
+
+.nav-brand {
+  color: var(--orange);
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.nav-links a {
+  color: var(--muted);
+  font-size: 0.76rem;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--orange-bright);
+}
+
+#hero {
+  min-height: min(860px, calc(100vh - 58px));
+  display: grid;
+  align-items: center;
+  padding: clamp(5rem, 11vw, 9rem) 0;
+}
+
+.hero-grid {
+  max-width: 900px;
+}
+
+.eyebrow,
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--orange-bright);
+}
+
+.section-label::after {
+  content: '';
+  width: min(9rem, 22vw);
+  height: 1px;
+  background: linear-gradient(90deg, rgba(233, 84, 32, 0.38), transparent);
+}
+
+.section-label {
+  font-family: var(--font-main);
+  font-size: clamp(1rem, 1.2vw, 1.25rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-transform: none;
+}
+
+.eyebrow {
+  display: inline-flex;
+  margin-bottom: 0.35rem;
+  color: var(--orange-bright);
+  font-size: clamp(0.95rem, 1.4vw, 1.12rem);
+  letter-spacing: 0.08em;
+  text-transform: none;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 2.75rem;
+  height: 1px;
+  background: var(--orange);
+  box-shadow: 0 0 18px rgba(233, 84, 32, 0.42);
+}
+
+h1,
+h2 {
+  max-width: 900px;
+  color: var(--cream);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+h1 {
+  margin-top: 1.3rem;
+  font-size: clamp(3rem, 7vw, 6.8rem);
+  line-height: 0.96;
+}
+
+h2 {
+  margin-top: 0.85rem;
+  font-size: clamp(1.9rem, 3.2vw, 3.35rem);
+  line-height: 1.06;
+}
+
+h3 {
+  color: var(--cream);
+  font-size: clamp(1.15rem, 1.5vw, 1.35rem);
+  font-weight: 700;
+  line-height: 1.18;
+}
+
+.hero-subheadline {
+  max-width: 720px;
+  margin-top: 1.7rem;
+  color: var(--muted);
+  font-size: clamp(1.18rem, 2vw, 1.55rem);
+  line-height: 1.5;
+}
+
+.authority-line {
+  margin-top: 1.35rem;
+  color: var(--orange-bright);
+  font-size: 0.92rem;
+  letter-spacing: 0.03em;
+}
+
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 2.5rem;
+}
+
+.btn-primary,
+.btn-outline {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.82rem 1.25rem;
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  text-transform: none;
+  transition: border-color 0.2s, background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.btn-primary {
+  border: 1px solid rgba(233, 84, 32, 0.9);
+  background: linear-gradient(180deg, var(--orange-bright), var(--orange));
+  color: var(--cream);
+  box-shadow: 0 0 0 1px rgba(245, 240, 240, 0.04), 0 18px 38px rgba(233, 84, 32, 0.14);
+}
+
+.btn-outline {
+  border: 1px solid rgba(233, 84, 32, 0.32);
+  background: rgba(48, 10, 36, 0.3);
+  color: var(--cream);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible,
+.btn-outline:hover,
+.btn-outline:focus-visible {
+  transform: translateY(-1px);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--aubergine-soft);
+  border-color: var(--orange-bright);
+  color: var(--cream);
+  box-shadow: 0 0 0 4px rgba(233, 84, 32, 0.16), 0 20px 52px rgba(122, 32, 80, 0.28);
+  outline: none;
+}
+
+.btn-outline:hover,
+.btn-outline:focus-visible {
+  background: var(--aubergine-soft);
+  border-color: var(--orange-bright);
+  color: var(--cream);
+  box-shadow: 0 0 0 4px rgba(233, 84, 32, 0.12);
+  outline: none;
+}
+
+.section-focus {
+  background: linear-gradient(180deg, rgba(23, 4, 17, 0), rgba(23, 4, 17, 0.34), rgba(23, 4, 17, 0));
+}
+
+.split-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(340px, 1.05fr);
+  gap: clamp(2.5rem, 7vw, 6rem);
+  align-items: center;
+}
+
+.split-section.compact {
+  align-items: start;
+}
+
+.section-copy {
+  max-width: 650px;
+  margin-top: 1.25rem;
+  color: var(--muted);
+  font-size: 1.04rem;
+}
+
+.venn-panel {
+  position: relative;
+  min-height: 560px;
+}
+
+.venn-desktop {
+  position: relative;
+  min-height: 520px;
+  border: 1px solid rgba(233, 84, 32, 0.18);
+  background:
+    radial-gradient(circle at 50% 48%, rgba(233, 84, 32, 0.08), transparent 13rem),
+    linear-gradient(145deg, rgba(48, 10, 36, 0.34), rgba(23, 4, 17, 0.56));
+  box-shadow: inset 0 1px 0 rgba(245, 240, 240, 0.04), 0 28px 90px rgba(0, 0, 0, 0.18);
+}
+
+.venn-circle {
+  position: absolute;
+  display: flex;
+  width: 320px;
+  height: 320px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 2.5rem 2rem;
+  border: 1px solid rgba(233, 84, 32, 0.5);
+  border-radius: 50%;
+  background: rgba(48, 10, 36, 0.56);
+  color: var(--cream);
+  cursor: pointer;
+  text-align: center;
+  box-shadow: inset 0 0 42px rgba(122, 32, 80, 0.18);
+  opacity: 0.86;
+  transition: border-color 0.22s, background 0.22s, box-shadow 0.22s, opacity 0.22s, transform 0.22s;
+}
+
+.venn-circle span {
+  z-index: 2;
+  display: block;
+  width: min(205px, 78%);
+  color: var(--cream);
+  font-size: clamp(0.95rem, 1.2vw, 1.18rem);
+  font-weight: 700;
+  line-height: 1.18;
+  transition: color 0.22s, transform 0.22s;
+}
+
+.venn-circle ul {
+  display: grid;
+  width: min(225px, 74%);
+  max-height: 0;
+  gap: 0.34rem;
+  margin-top: 0;
+  padding: 0;
+  color: var(--muted);
+  font-size: clamp(0.82rem, 0.95vw, 0.9rem);
+  line-height: 1.35;
+  list-style: none;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(12px);
+  transition: max-height 0.22s, margin-top 0.22s, opacity 0.22s, transform 0.22s;
+}
+
+.venn-desktop:has(.venn-circle:hover) .venn-circle:not(:hover),
+.venn-desktop:has(.venn-circle:focus-visible) .venn-circle:not(:focus-visible) {
+  opacity: 0.56;
+}
+
+.venn-circle:hover,
+.venn-circle:focus-visible {
+  z-index: 6;
+  border-color: var(--orange-bright);
+  background: rgba(48, 10, 36, 0.98);
+  box-shadow: 0 0 0 1px rgba(255, 122, 61, 0.5), 0 0 46px rgba(233, 84, 32, 0.28), inset 0 0 72px rgba(122, 32, 80, 0.34);
+  opacity: 1;
+  outline: none;
+}
+
+.venn-circle:hover span,
+.venn-circle:focus-visible span {
+  color: var(--orange-bright);
+  transform: translateY(-1.1rem);
+}
+
+.venn-circle:hover ul,
+.venn-circle:focus-visible ul {
+  max-height: 7rem;
+  margin-top: 0.1rem;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.venn-circle.systems {
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.venn-circle.systems:hover,
+.venn-circle.systems:focus-visible {
+  transform: translateX(-50%) scale(1.1);
+}
+
+.venn-circle.behavior {
+  bottom: 1.1rem;
+  left: 2%;
+}
+
+.venn-circle.behavior:hover,
+.venn-circle.behavior:focus-visible {
+  transform: scale(1.1);
+}
+
+.venn-circle.language {
+  bottom: 1.1rem;
+  right: 2%;
+}
+
+.venn-circle.language:hover,
+.venn-circle.language:focus-visible {
+  transform: scale(1.1);
+}
+
+.venn-center {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  z-index: 4;
+  width: 210px;
+  transform: translate(-50%, -50%);
+  color: var(--orange-bright);
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  line-height: 1.35;
+  pointer-events: none;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 0 22px rgba(233, 84, 32, 0.28);
+}
+
+.venn-mobile-orbit {
+  display: none;
+}
+
+.terminal-shell {
+  overflow: hidden;
+  margin-top: 2rem;
+  border: 1px solid rgba(233, 84, 32, 0.28);
+  background: linear-gradient(160deg, rgba(6, 2, 5, 0.88), rgba(23, 4, 17, 0.88));
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28), 0 0 48px rgba(122, 32, 80, 0.18);
+}
+
+.terminal-topbar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(245, 240, 240, 0.1);
+  background: linear-gradient(180deg, rgba(75, 18, 55, 0.82), rgba(48, 10, 36, 0.74));
+}
+
+.terminal-topbar span {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--orange);
+}
+
+.terminal-topbar span:nth-child(2) {
+  background: #f4b350;
+}
+
+.terminal-topbar span:nth-child(3) {
+  background: #72b37e;
+}
+
+.terminal-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 360px;
+}
+
+.terminal-tabs {
+  display: grid;
+  align-content: start;
+  gap: 0.25rem;
+  padding: 1rem;
+  border-right: 1px solid rgba(245, 240, 240, 0.1);
+}
+
+.terminal-tabs button {
+  width: 100%;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--dim);
+  cursor: pointer;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.terminal-tabs button:hover,
+.terminal-tabs button:focus-visible,
+.terminal-tabs button.is-active {
+  border-color: rgba(233, 84, 32, 0.36);
+  background: rgba(233, 84, 32, 0.06);
+  color: var(--orange-bright);
+  outline: none;
+}
+
+.terminal-output {
+  padding: clamp(1.2rem, 4vw, 2rem);
+  color: var(--cream);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.8;
+}
+
+.terminal-scenario {
+  display: none;
+}
+
+.terminal-scenario.is-active {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.terminal-output span {
+  color: var(--orange-bright);
+}
+
+.section-heading-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.55fr);
+  gap: 2rem;
+  align-items: end;
+}
+
+.section-heading-row p {
+  color: var(--muted);
+}
+
+.metric-card-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.metric-reveal-card {
+  position: relative;
+  min-height: 250px;
+  overflow: hidden;
+  border: 1px solid rgba(233, 84, 32, 0.26);
+  background:
+    linear-gradient(150deg, rgba(48, 10, 36, 0.62), rgba(23, 4, 17, 0.82));
+  color: var(--cream);
+  cursor: pointer;
+  padding: 1.25rem;
+  text-align: center;
+  box-shadow: inset 0 1px 0 rgba(245, 240, 240, 0.04);
+  transition: border-color 0.2s, transform 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.metric-reveal-card::before,
+.metric-reveal-card::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.24s;
+}
+
+.metric-reveal-card::before {
+  top: 16%;
+  right: -12%;
+  width: 65%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 122, 61, 0.9), transparent);
+  transform: rotate(-18deg);
+  box-shadow: 0 0 18px rgba(255, 122, 61, 0.38);
+}
+
+.metric-reveal-card::after {
+  inset: auto -20% -35% -20%;
+  height: 70%;
+  background: radial-gradient(ellipse at center, rgba(233, 84, 32, 0.18), transparent 65%);
+}
+
+.metric-reveal-card:hover,
+.metric-reveal-card:focus-visible,
+.metric-reveal-card[aria-expanded='true'] {
+  border-color: rgba(233, 84, 32, 0.6);
+  background:
+    radial-gradient(circle at 70% 25%, rgba(233, 84, 32, 0.14), transparent 8rem),
+    linear-gradient(150deg, rgba(75, 18, 55, 0.78), rgba(23, 4, 17, 0.9));
+  box-shadow: 0 0 0 1px rgba(233, 84, 32, 0.18), 0 0 42px rgba(233, 84, 32, 0.16), inset 0 1px 0 rgba(245, 240, 240, 0.05);
+  outline: none;
+}
+
+.metric-reveal-card[aria-expanded='true']::before,
+.metric-reveal-card:hover::before,
+.metric-reveal-card:hover::after,
+.metric-reveal-card:focus-visible::before,
+.metric-reveal-card:focus-visible::after,
+.metric-reveal-card[aria-expanded='true']::after {
+  opacity: 1;
+}
+
+.metric-front,
+.metric-back {
+  position: absolute;
+  inset: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.24s, transform 0.24s;
+}
+
+.metric-front strong {
+  color: var(--orange-bright);
+  font-size: clamp(1.7rem, 3vw, 2.35rem);
+  line-height: 1;
+}
+
+.metric-front em {
+  margin-top: 0.85rem;
+  color: var(--muted);
+  font-style: normal;
+}
+
+.metric-back {
+  display: grid;
+  align-content: center;
+  gap: 0.75rem;
+  color: var(--cream);
+  line-height: 1.55;
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.metric-back span {
+  display: block;
+}
+
+.metric-back strong {
+  color: var(--orange-bright);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.metric-reveal-card:hover .metric-front,
+.metric-reveal-card:focus-visible .metric-front,
+.metric-reveal-card[aria-expanded='true'] .metric-front {
+  opacity: 0;
+  transform: translateY(-12px);
+}
+
+.metric-reveal-card:hover .metric-back,
+.metric-reveal-card:focus-visible .metric-back,
+.metric-reveal-card[aria-expanded='true'] .metric-back {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.before-after-simple {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1.5rem;
+}
+
+.before-after-simple h3 {
+  color: var(--orange-bright);
+  font-family: var(--font-main);
+  font-size: clamp(1.15rem, 1.5vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.18;
+  text-transform: none;
+}
+
+.before-after-simple ul,
+.email-brief ul {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+
+.ecosystem-relay {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 3vw, 2rem);
+  margin-top: 3rem;
+  padding-top: 5.75rem;
+}
+
+.ecosystem-relay::before {
+  content: '';
+  position: absolute;
+  top: 4.25rem;
+  right: 12%;
+  left: 12%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(74, 222, 128, 0.34), rgba(233, 84, 32, 0.6), rgba(143, 131, 139, 0.34));
+}
+
+.ecosystem-anchor {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(420px, 100%);
+  transform: translateX(-50%);
+  color: var(--orange-bright);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.35;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(233, 84, 32, 0.24);
+}
+
+.ecosystem-link {
+  position: relative;
+  display: flex;
+  min-height: 190px;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.58rem;
+  border-top: 1px solid rgba(233, 84, 32, 0.28);
+  background: linear-gradient(180deg, rgba(48, 10, 36, 0.18), rgba(23, 4, 17, 0));
+  color: var(--muted);
+  padding: 1.45rem 0.35rem 0;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.ecosystem-link::before {
+  content: '';
+  position: absolute;
+  top: -1.75rem;
+  left: 0;
+  width: 0.76rem;
+  height: 0.76rem;
+  border: 1px solid rgba(233, 84, 32, 0.72);
+  border-radius: 50%;
+  background: var(--aubergine-deep);
+  box-shadow: 0 0 0 6px rgba(233, 84, 32, 0.08), 0 0 18px rgba(233, 84, 32, 0.18);
+}
+
+.ecosystem-link[data-node='yassergandhi.dev']::before,
+.ecosystem-link[data-node='huhuGERMAN']::before {
+  border-color: rgba(74, 222, 128, 0.7);
+  box-shadow: 0 0 0 6px rgba(74, 222, 128, 0.08), 0 0 18px rgba(74, 222, 128, 0.12);
+}
+
+.ecosystem-link[data-node='Fernweh Together']::before {
+  border-color: rgba(143, 131, 139, 0.7);
+  box-shadow: 0 0 0 6px rgba(143, 131, 139, 0.08);
+}
+
+.ecosystem-context {
+  color: var(--orange-bright);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.ecosystem-link:hover,
+.ecosystem-link:focus-visible {
+  border-color: rgba(233, 84, 32, 0.58);
+  color: var(--cream);
+  outline: none;
+  transform: translateY(-3px);
+}
+
+.ecosystem-link.is-static:hover {
+  color: var(--muted);
+  transform: none;
+}
+
+.ecosystem-link strong {
+  color: var(--cream);
+  font-size: 1.12rem;
+  line-height: 1.25;
+}
+
+.status-pill,
+.tech-tag {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.42rem;
+  border: 1px solid rgba(200, 192, 197, 0.18);
+  color: var(--dim);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  padding: 0.18rem 0.5rem;
+  text-transform: uppercase;
+}
+
+.status-pill::before {
+  content: '';
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 50%;
+  background: var(--dim);
+}
+
+.status-pill.live,
+.status-pill.proof {
+  border-color: rgba(74, 222, 128, 0.24);
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.status-pill.live::before,
+.status-pill.proof::before {
+  background: var(--green);
+  box-shadow: 0 0 10px rgba(74, 222, 128, 0.36);
+}
+
+.status-pill.forthcoming {
+  border-color: rgba(200, 192, 197, 0.18);
+  background: rgba(200, 192, 197, 0.06);
+  color: var(--dim);
+}
+
+.ecosystem-line {
+  margin-top: 2.5rem;
+  color: var(--orange-bright);
+  font-family: var(--font-mono);
+}
+
+.contact-email {
+  padding-bottom: 5rem;
+}
+
+.email-brief {
+  border-left: 1px solid rgba(233, 84, 32, 0.36);
+  padding-left: 1.5rem;
+}
+
+.email-brief p:first-child {
+  color: var(--orange-bright);
+  font-family: var(--font-main);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-transform: none;
+}
+
+.safety-note {
+  margin-top: 1.5rem;
+  color: var(--dim);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 940px) {
+  .nav-links {
+    display: none;
+  }
+
+  .split-section,
+  .section-heading-row,
+  .terminal-layout,
+  .before-after-simple {
+    grid-template-columns: 1fr;
+  }
+
+  .terminal-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-right: 0;
+    border-bottom: 1px solid rgba(245, 240, 240, 0.1);
+  }
+
+  .metric-card-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .container {
+    width: min(100% - 28px, 1120px);
+  }
+
+  section {
+    padding: 3.75rem 0;
+  }
+
+  .section-compact {
+    padding: 3rem 0;
+  }
+
+  h1 {
+    font-size: clamp(2.55rem, 16vw, 4rem);
+  }
+
+  .venn-panel {
+    min-height: auto;
+  }
+
+  .venn-desktop {
+    display: none;
+  }
+
+  .venn-mobile-orbit {
+    position: relative;
+    display: block;
+    min-height: 340px;
+    border: 1px solid rgba(233, 84, 32, 0.18);
+    background:
+      radial-gradient(circle at 50% 50%, rgba(233, 84, 32, 0.08), transparent 9rem),
+      linear-gradient(145deg, rgba(48, 10, 36, 0.28), rgba(23, 4, 17, 0.5));
+  }
+
+  .orbit-node {
+    position: absolute;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: min(132px, 35vw);
+    min-height: 74px;
+    gap: 0.2rem;
+    border: 1px solid rgba(233, 84, 32, 0.28);
+    border-radius: 999px;
+    background: rgba(23, 4, 17, 0.72);
+    color: var(--muted);
+    padding: 0.62rem;
+    text-align: center;
+  }
+
+  .orbit-node strong {
+    color: var(--cream);
+    font-size: 0.86rem;
+    line-height: 1.1;
+  }
+
+  .orbit-node span {
+    color: var(--dim);
+    font-size: 0.76rem;
+    line-height: 1.15;
+  }
+
+  .orbit-center {
+    top: 50%;
+    left: 50%;
+    width: min(158px, 42vw);
+    min-height: 88px;
+    transform: translate(-50%, -50%);
+    color: var(--orange-bright);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    line-height: 1.25;
+    text-transform: uppercase;
+  }
+
+  .orbit-systems {
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .orbit-behavior {
+    bottom: 1rem;
+    left: 0.75rem;
+  }
+
+  .orbit-language {
+    right: 0.75rem;
+    bottom: 1rem;
+  }
+
+  .orbit-line {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 78px;
+    height: 1px;
+    border-top: 1px dotted rgba(233, 84, 32, 0.5);
+    background: transparent;
+    transform-origin: left center;
+  }
+
+  .line-systems {
+    transform: rotate(-90deg);
+  }
+
+  .line-behavior {
+    transform: rotate(138deg);
+  }
+
+  .line-language {
+    transform: rotate(42deg);
+  }
+
+  .ecosystem-relay {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 2.5rem;
+    padding: 4.25rem 0 0 2.25rem;
+  }
+
+  .ecosystem-relay::before {
+    top: 4.4rem;
+    bottom: 0.2rem;
+    left: 0.48rem;
+    width: 1px;
+    height: auto;
+    background: linear-gradient(180deg, rgba(74, 222, 128, 0.34), rgba(233, 84, 32, 0.58), rgba(143, 131, 139, 0.34));
+  }
+
+  .ecosystem-anchor {
+    left: 0;
+    width: 100%;
+    transform: none;
+    text-align: left;
+  }
+
+  .ecosystem-link {
+    min-height: 0;
+    padding: 1.15rem 0 2rem;
+  }
+
+  .ecosystem-link::before {
+    top: 1.42rem;
+    left: -2.25rem;
+  }
+
+  .ecosystem-link:hover,
+  .ecosystem-link:focus-visible {
+    transform: translateX(3px);
+  }
+
+  .ecosystem-link.is-static:hover {
+    transform: none;
+  }
+
+  .terminal-tabs,
+  .metric-card-row {
+    grid-template-columns: 1fr;
+  }
+
+  .metric-reveal-card {
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 410px) {
+  .venn-mobile-orbit {
+    min-height: 330px;
+  }
+
+  .orbit-node {
+    width: min(124px, 34vw);
+    min-height: 70px;
+    padding: 0.56rem;
+  }
+
+  .orbit-node strong {
+    font-size: 0.82rem;
+  }
+
+  .orbit-node span {
+    font-size: 0.76rem;
+  }
+
+  .orbit-center {
+    width: min(148px, 40vw);
+    min-height: 84px;
+    font-size: 0.76rem;
+  }
+
+  .orbit-behavior {
+    left: 0.45rem;
+  }
+
+  .orbit-language {
+    right: 0.45rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+</file>
+
+<file path="README.md">
+# yassergandhi.dev
+
+Commercial homepage for Yasser Gandhi Hernández Esquivel.
+
+Live at [yassergandhi.dev](https://yassergandhi.dev)
+
+## Positioning
+
+Guidance Failure Architecture and Hidden Scaffold Reviews for SaaS/software teams whose critical flows look clear but fail when users have to act.
+
+“When the system stops guiding, the real design begins.”
+
+The site presents the core phenomenon: a system assumes the human can continue, but the system has stopped guiding. The offer helps teams find the hidden scaffold their product assumes but never designed.
+
+## Stack
+
+| Layer | Choice |
+| --- | --- |
+| Framework | Astro |
+| Styling | CSS custom properties in `src/styles/global.css` |
+| Typography | Ubuntu and Ubuntu Mono via Google Fonts |
+| Metadata | Shared Astro layout props plus JSON-LD graph injection |
+| Contact | Mailto brief with prefilled inquiry prompts |
+| Static SEO files | `public/robots.txt`, `public/sitemap-index.xml`, `public/sitemap-0.xml` |
+
+## Technical notes
+
+- Shared layout exposes metadata props for title, description, canonical, Open Graph, Twitter card, robots and JSON-LD schema.
+- Home canonical: `https://yassergandhi.dev/`.
+
+## Contact
+
+Contact is email-only for now. The homepage uses a `mailto:` CTA with a prefilled `Hidden Scaffold Review Inquiry` subject and a short checklist for the flow brief. There is no active form submission endpoint or Resend integration.
+
+## Local development
+
+```bash
+npm install
+npm run dev        # http://localhost:4321
+npm run build
+npm run preview
+```
+</file>
+
+<file path="src/pages/index.astro">
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import VennDiagram from '../components/VennDiagram.astro';
+import DiagnosticTerminal from '../components/DiagnosticTerminal.astro';
+import CostReveal from '../components/CostReveal.astro';
+import ReviewChanges from '../components/ReviewChanges.astro';
+import Ecosystem from '../components/Ecosystem.astro';
+import Contact from '../components/Contact.astro';
+
+const title = 'Guidance Failure Architecture for SaaS · Yasser Gandhi';
+const description = 'Hidden Scaffold Reviews for SaaS flows where users stop, guess, abandon, submit bad data, or push missing guidance into support, onboarding, implementation, and customer success.';
+const canonical = 'https://yassergandhi.dev/';
+const ogTitle = 'Your product is losing money where guidance disappears.';
+const ogDescription = 'A Hidden Scaffold Review locates the missing scaffold inside SaaS flows that look clear but fail when users have to act.';
+
+const credentials = [
+  { '@type': 'EducationalOccupationalCredential', name: 'B.A. Modern German Language and Literature', credentialCategory: 'degree', recognizedBy: { '@type': 'CollegeOrUniversity', name: 'Universidad Nacional Autónoma de México' } },
+  { '@type': 'EducationalOccupationalCredential', name: 'M.A. Pedagogy', credentialCategory: 'degree', recognizedBy: { '@type': 'CollegeOrUniversity', name: 'Universidad Nacional Autónoma de México' } },
+  { '@type': 'EducationalOccupationalCredential', name: 'B.Sc. Web Systems Development', credentialCategory: 'degree', recognizedBy: { '@type': 'CollegeOrUniversity', name: 'Universidad de Guadalajara' } },
+];
+
+const personSchema = {
+  '@type': 'Person', '@id': 'https://yassergandhi.dev/#person', name: 'Yasser Gandhi Hernández Esquivel', url: canonical,
+  sameAs: ['https://www.linkedin.com/in/yassergandhi/','https://github.com/yassergandhi/','https://huhugerman.com'],
+  jobTitle: 'Guidance Failure Architecture consultant',
+  description: 'Verified academic formation across literature, pedagogy, and web systems.',
+  knowsAbout: ['Guidance Failure Architecture','Hidden Scaffold Review','SaaS onboarding','intake flows','support cost transfer','TypeScript','Supabase','Zod','pedagogy','German literature'],
+  alumniOf: [
+    { '@type': 'CollegeOrUniversity', name: 'Universidad Nacional Autónoma de México' },
+    { '@type': 'CollegeOrUniversity', name: 'Universidad de Guadalajara' },
+  ],
+  hasCredential: credentials,
+};
+const websiteSchema = { '@type': 'WebSite', '@id': 'https://yassergandhi.dev/#website', name: 'yassergandhi.dev', url: canonical, description, publisher: { '@id': 'https://yassergandhi.dev/#person' } };
+const serviceSchema = { '@type': 'Service', '@id': 'https://yassergandhi.dev/#hidden-scaffold-review', name: 'Hidden Scaffold Review', serviceType: 'Guidance Failure Architecture review for SaaS flows', provider: { '@id': 'https://yassergandhi.dev/#person' }, areaServed: 'Global', audience: { '@type': 'BusinessAudience', audienceType: 'B2B SaaS and software teams' }, description, offers: { '@type': 'Offer', availability: 'https://schema.org/InStock', url: canonical } };
+const aboutPageSchema = { '@type': 'AboutPage', '@id': 'https://yassergandhi.dev/#ecosystem', url: canonical, name: 'Ecosystem proof', about: { '@id': 'https://yassergandhi.dev/#person' }, isPartOf: { '@id': 'https://yassergandhi.dev/#website' } };
+---
+<Layout {title} {description} {canonical} {ogTitle} {ogDescription} extraSchema={[personSchema, websiteSchema, serviceSchema, aboutPageSchema, ...credentials]}>
+  <Nav />
+  <main>
+    <Hero />
+    <VennDiagram />
+    <DiagnosticTerminal />
+    <CostReveal />
+    <ReviewChanges />
+    <Ecosystem />
+    <Contact />
+  </main>
+</Layout>
+</file>
+
+<file path="src/components/Contact.astro">
+---
+const email = 'yassergandhi.dev@gmail.com';
+const subject = 'Hidden Scaffold Review Inquiry';
+const body = `Product URL:
+
+Flow that breaks:
+
+What users do instead:
+
+What this costs you:
+
+Who inside the team is feeling the pain:
+
+Any evidence available (screenshots, session recordings, support patterns):
+`;
+const mailto = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+const checklist = [
+  'Product URL',
+  'Flow that breaks',
+  'What users do instead',
+  'What this costs you',
+  'Who inside the team is feeling the pain',
+  'Any evidence available (screenshots, session recordings, support patterns)',
+];
+---
+
+<section id="contact" class="contact-email section-compact">
+  <div class="container split-section compact">
+    <div>
+      <p class="section-label">Contact by email</p>
+      <h2>Email the flow your team keeps routing around.</h2>
+      <p class="section-copy">Send the pattern first. I will tell you whether it fits a Hidden Scaffold Review.</p>
+      <a class="btn-primary" href={mailto}>Send this by email</a>
+    </div>
+    <div class="email-brief" aria-label="Email brief checklist">
+      <p>Include:</p>
+      <ul>
+        {checklist.map((item) => <li>{item}</li>)}
+      </ul>
+      <p class="safety-note">Do not send credentials or private customer data in the first email. Describe the pattern first.</p>
+    </div>
+  </div>
+</section>
+</file>
+
+<file path="src/components/Hero.astro">
+<section id="hero" class="console-section hero-console">
+  <div class="container hero-grid">
+    <p class="eyebrow">Guidance Failure Architecture</p>
+    <h1>Your product is losing money where guidance disappears.</h1>
+    <p class="hero-subheadline">A Hidden Scaffold Review shows where one SaaS flow asks users to act before the next move is legible.</p>
+    <p class="authority-line">When the system stops guiding, the real design begins.</p>
+    <div class="hero-ctas">
+      <a href="mailto:yassergandhi.dev@gmail.com?subject=Hidden%20Scaffold%20Review%20Inquiry" class="btn-primary">Email the broken flow</a>
+      <a href="#diagnostic" class="btn-outline">Run a sample diagnosis</a>
+    </div>
+  </div>
+</section>
+</file>
+
+</files>
