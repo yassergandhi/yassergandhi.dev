@@ -1,15 +1,44 @@
 ---
 const items = [
-  ['yassergandhi.dev', 'When the product stops guiding, the organization starts paying for the missing scaffold elsewhere.'],
-  ['huhuGERMAN', 'When the classroom stops guiding, German becomes consequence.'],
-  ['Fernweh Together', 'Forthcoming. When the platform only gives a link, the shared experience can disappear before it reaches the other person.'],
+  {
+    title: 'yassergandhi.dev',
+    copy: 'When the product stops guiding, the organization starts paying for the missing scaffold elsewhere.',
+    href: '/',
+    badge: 'home',
+  },
+  {
+    title: 'huhuGERMAN',
+    copy: 'When the classroom stops guiding, German becomes consequence.',
+    href: 'https://huhugerman.com',
+    badge: 'live',
+  },
+  {
+    title: 'Fernweh Together',
+    copy: 'When the platform only gives a link, the shared experience can disappear before it reaches the other person.',
+    href: '',
+    badge: 'forthcoming',
+  },
 ];
 ---
 <section id="ecosystem">
   <div class="container">
     <div class="section-label">Ecosystem</div>
     <h2>One signature. Three moments where guidance disappears.</h2>
-    <div class="friction-grid ecosystem-grid">{items.map(([title, copy]) => <div class="friction-card"><strong>{title}</strong><span>{copy}</span></div>)}</div>
+    <div class="ecosystem-grid">
+      {items.map((item) => item.href ? (
+        <a class="ecosystem-link-card" href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener' : undefined}>
+          <span class="badge">{item.badge}</span>
+          <strong>{item.title}</strong>
+          <span>{item.copy}</span>
+        </a>
+      ) : (
+        <div class="ecosystem-link-card is-static">
+          <span class="badge">{item.badge}</span>
+          <strong>{item.title}</strong>
+          <span>{item.copy}</span>
+        </div>
+      ))}
+    </div>
     <p class="section-copy ecosystem-line">When the system stops guiding, the real design begins.</p>
   </div>
 </section>

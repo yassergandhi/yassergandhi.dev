@@ -5,7 +5,7 @@ const notFor = ['teams looking for another visual pass','flows that have no user
   <div class="container">
     <div class="section-label">Fit</div>
     <h2>Who this is not for.</h2>
-    <div class="diagnostic-cards">{notFor.map((item) => <div class="metric-card warning"><span>Not for</span><strong>{item}</strong></div>)}</div>
+    <ul class="fit-list">{notFor.map((item) => <li>{item}</li>)}</ul>
     <div class="method-note">This is for teams with a critical flow that already creates support load, bad data, stalled onboarding, unclear qualification, or repeated internal debate.</div>
   </div>
 </section>

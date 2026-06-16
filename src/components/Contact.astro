@@ -1,5 +1,12 @@
 ---
-const mailtoBody = encodeURIComponent(`Product URL:
+const fallbackEmail = 'yassergandhi.dev@gmail.com';
+const mailtoBody = encodeURIComponent(`Name:
+
+Work email:
+
+Company / product:
+
+Product URL:
 
 Flow that breaks:
 
@@ -8,30 +15,87 @@ What users do instead:
 What this costs you:
 
 Who needs the review:
+
+Evidence available:
 `);
+const fallbackHref = `mailto:${fallbackEmail}?subject=Hidden%20Scaffold%20Review&body=${mailtoBody}`;
 ---
 
 <section id="contact">
   <div class="container">
     <div class="contact-tagline">Send me the flow that is already failing.</div>
 
-    <h2 style="margin-bottom:0.5rem;">Send this brief.</h2>
-    <p style="color:var(--gray); margin-bottom:2.5rem; font-size:0.95rem; max-width:620px; margin-left:auto; margin-right:auto;">
-      Send the flow your team keeps explaining away. I will tell you whether it fits a Hidden Scaffold Review.
+    <h2>Send this brief.</h2>
+    <p class="contact-intro">
+      Send the flow your team keeps explaining, compensating for, or routing around. I will tell you whether it fits a Hidden Scaffold Review.
     </p>
+    <p class="contact-intro contact-intro-small">Not sure if this is a guidance failure? Send the flow anyway.</p>
 
-    <div class="brief-list" aria-label="Hidden Scaffold Review brief checklist">
-      <div><span>Product URL</span></div>
-      <div><span>Flow that breaks</span></div>
-      <div><span>What users do instead</span></div>
-      <div><span>What this costs you</span></div>
-      <div><span>Who needs the review</span></div>
-    </div>
+    <form class="contact-form" data-fallback-href={fallbackHref}>
+      <div class="form-grid">
+        <label>
+          <span>Name</span>
+          <input name="name" autocomplete="name" required maxlength="120" />
+        </label>
+        <label>
+          <span>Work email</span>
+          <input name="email" type="email" autocomplete="email" required maxlength="160" />
+        </label>
+      </div>
 
-    <div class="contact-links">
-      <a href={`mailto:yassergandhi.dev@gmail.com?subject=Hidden%20Scaffold%20Review&body=${mailtoBody}`} class="contact-link btn-primary contact-cta">
-        Request a Hidden Scaffold Review
-      </a>
+      <label>
+        <span>Company / product</span>
+        <input name="companyProduct" required maxlength="180" />
+      </label>
+
+      <label>
+        <span>Product URL</span>
+        <input name="productUrl" type="url" inputmode="url" placeholder="https://" maxlength="300" />
+      </label>
+
+      <label>
+        <span>Flow that breaks</span>
+        <textarea name="flowBreaks" required maxlength="1200" rows="4"></textarea>
+      </label>
+
+      <label>
+        <span>What users do instead</span>
+        <textarea name="userWorkaround" required maxlength="1200" rows="4"></textarea>
+      </label>
+
+      <label>
+        <span>What this costs you</span>
+        <textarea name="cost" required maxlength="1200" rows="4"></textarea>
+      </label>
+
+      <div class="form-grid">
+        <label>
+          <span>Who needs the review</span>
+          <input name="reviewOwner" required maxlength="180" />
+        </label>
+        <label>
+          <span>Evidence available</span>
+          <input name="evidence" required maxlength="300" />
+        </label>
+      </div>
+
+      <label class="website-field" aria-hidden="true" tabindex="-1">
+        <span>Website</span>
+        <input name="website" autocomplete="off" tabindex="-1" />
+      </label>
+
+      <p class="contact-note">Safety note: Do not send private customer data, credentials, or regulated data in the first message. Describe the pattern first.</p>
+      <p class="contact-note">Cooperation note: A Hidden Scaffold Review works only when there is evidence to inspect and an owner willing to act on the finding.</p>
+
+      <div class="form-actions">
+        <button class="btn-primary" type="submit">Send brief</button>
+        <a class="fallback-mailto" href={fallbackHref}>Email instead</a>
+      </div>
+
+      <p class="form-status" role="status" aria-live="polite" data-form-status></p>
+    </form>
+
+    <div class="contact-links" aria-label="Profile links">
       <a href="https://www.linkedin.com/in/yassergandhi/" target="_blank" rel="noopener" class="contact-link">
         <span class="contact-link-label">LinkedIn</span>
         <span class="contact-link-value">/in/yassergandhi</span>
@@ -40,15 +104,52 @@ Who needs the review:
         <span class="contact-link-label">GitHub</span>
         <span class="contact-link-value">/yassergandhi</span>
       </a>
-      <a href="https://huhugerman.com" target="_blank" rel="noopener" class="contact-link">
-        <span class="contact-link-label">Proof</span>
-        <span class="contact-link-value">huhugerman.com</span>
-      </a>
     </div>
 
     <div class="terminal-footer">
-      Ciudad de México · Remote · Guidance Failure Architecture · TypeScript · Supabase · Zod · 2026
+      Ciudad de Mexico · Remote · Guidance Failure Architecture · TypeScript · Supabase · Zod · 2026
       <span class="cursor"></span>
     </div>
   </div>
 </section>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('.contact-form');
+  const status = form?.querySelector<HTMLElement>('[data-form-status]');
+  const fallback = form?.dataset.fallbackHref ?? '';
+
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!status) return;
+
+    const submitButton = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+    const data = Object.fromEntries(new FormData(form).entries());
+    status.className = 'form-status';
+    status.textContent = 'Sending brief...';
+    submitButton?.setAttribute('disabled', 'true');
+
+    try {
+      const response = await fetch('/api/brief', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const result = await response.json().catch(() => ({}));
+
+      if (response.ok) {
+        form.reset();
+        status.classList.add('success');
+        status.textContent = 'Brief sent. I will review whether the flow fits a Hidden Scaffold Review.';
+        return;
+      }
+
+      status.classList.add('error');
+      status.innerHTML = `${result.message ?? 'The brief could not be sent.'} <a href="${fallback}">Email it instead.</a>`;
+    } catch {
+      status.classList.add('error');
+      status.innerHTML = `The server is unavailable. <a href="${fallback}">Email it instead.</a>`;
+    } finally {
+      submitButton?.removeAttribute('disabled');
+    }
+  });
+</script>

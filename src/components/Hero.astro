@@ -1,16 +1,3 @@
----
-const mailtoBody = encodeURIComponent(`Product URL:
-
-Flow that breaks:
-
-What users do instead:
-
-What this costs you:
-
-Who needs the review:
-`);
----
-
 <section id="hero" class="console-section hero-console">
   <div class="container console-grid hero-grid">
     <div>
@@ -20,16 +7,18 @@ Who needs the review:
       <p class="hero-summary hero-summary-large">I help SaaS and software teams locate the hidden breakdown inside the flow everyone keeps re-explaining: onboarding that delays activation, intake that creates unusable data, AI flows that increase uncertainty, dashboards that inform without directing action, and support-heavy moments the product should have handled earlier.</p>
       <p class="authority-line">Not a UI pass. A read of where the missing scaffold becomes operational cost.</p>
       <div class="hero-ctas">
-        <a href={`mailto:yassergandhi.dev@gmail.com?subject=Hidden%20Scaffold%20Review&body=${mailtoBody}`} class="btn-primary">Send the flow that breaks</a>
+        <a href="#contact" class="btn-primary">Send the flow that breaks</a>
         <a href="#offer" class="btn-outline">See what the review includes</a>
       </div>
     </div>
-    <aside class="diagnostic-panel" aria-label="Diagnostic console summary">
-      <div class="panel-kicker">Diagnostic console</div>
-      <div class="metric-card"><span>Failure type</span><strong>Missing scaffold</strong></div>
-      <div class="metric-card"><span>Typical signal</span><strong>Re-explained flow</strong></div>
-      <div class="metric-card"><span>Cost location</span><strong>Support · onboarding · CS</strong></div>
-      <div class="metric-card"><span>Review unit</span><strong>One critical SaaS flow</strong></div>
+    <aside class="review-snapshot" aria-label="Review snapshot">
+      <div class="panel-kicker">Review Snapshot</div>
+      <dl>
+        <div><dt>Review</dt><dd>Hidden Scaffold Review</dd></div>
+        <div><dt>Unit</dt><dd>One critical SaaS flow</dd></div>
+        <div><dt>Output</dt><dd>failure point · hidden assumption · cost transfer · next scaffold</dd></div>
+        <div><dt>Best fit</dt><dd>onboarding · intake · AI-assisted flow · support-heavy moment</dd></div>
+      </dl>
     </aside>
   </div>
 </section>
