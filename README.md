@@ -6,11 +6,15 @@ Live at [yassergandhi.dev](https://yassergandhi.dev)
 
 ## Positioning
 
-Guidance Failure Architecture and Hidden Scaffold Reviews for SaaS/software teams whose critical flows look clear but fail when users have to act.
+yassergandhi.dev sells qualitative friction analysis for SaaS onboarding, support, forms, handoffs and activation.
 
-“When the system stops guiding, the real design begins.”
+Core message:
 
-The site presents the core phenomenon: a system assumes the human can continue, but the system has stopped guiding. The offer helps teams find the hidden scaffold their product assumes but never designed.
+“Find where your users stop acting — before support absorbs the cost.”
+
+The homepage is positioned for Customer Success, Implementation, Support, Product Education and early-stage B2B SaaS teams dealing with repeated support questions, onboarding gaps, weak intake data and incomplete handoffs.
+
+huhuGERMAN is referenced only as a protected living lab for structured friction, user reflection and feedback design. The site does not expose internal method details, private data or testimonials.
 
 ## Stack
 
@@ -27,10 +31,11 @@ The site presents the core phenomenon: a system assumes the human can continue, 
 
 - Shared layout exposes metadata props for title, description, canonical, Open Graph, Twitter card, robots and JSON-LD schema.
 - Home canonical: `https://yassergandhi.dev/`.
+- Homepage sections are modular Astro components composed in `src/pages/index.astro`.
 
 ## Contact
 
-Contact is email-only for now. The homepage uses a `mailto:` CTA with a prefilled `Hidden Scaffold Review Inquiry` subject and a short checklist for the flow brief. There is no active form submission endpoint or Resend integration.
+Contact is email-only for now. The homepage uses a `mailto:` CTA with a prefilled `Friction Audit Inquiry` subject and a short checklist for the friction brief. There is no active form submission endpoint or Resend integration.
 
 ## Local development
 
