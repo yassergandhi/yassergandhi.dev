@@ -1,0 +1,37 @@
+---
+const steps = [
+  {
+    title: 'Collect friction',
+    copy: 'Tickets, forms, onboarding flows, handoffs, support notes, customer messages.',
+  },
+  {
+    title: 'Map where users stop acting',
+    copy: 'Not just where they click. Where they lose the next step.',
+  },
+  {
+    title: 'Reframe the confusion',
+    copy: 'Identify what the user believes went wrong and what the product should say next.',
+  },
+  {
+    title: 'Redesign guidance',
+    copy: 'Feedback, copy, intake, handoff and activation improvements.',
+  },
+];
+---
+
+<section id="how-it-works" class="section-compact">
+  <div class="container split-section compact">
+    <div>
+      <p class="section-label">How the audit works</p>
+      <h2>From recurring confusion to specific guidance changes.</h2>
+    </div>
+    <ol class="process-list">
+      {steps.map((step) => (
+        <li>
+          <h3>{step.title}</h3>
+          <p>{step.copy}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

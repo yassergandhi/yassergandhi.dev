@@ -1,0 +1,23 @@
+---
+const problems = [
+  'Users complete onboarding, but do not activate.',
+  'Support answers the same questions every week.',
+  'Forms collect data, but not the real situation.',
+  'Sales hands off customers without enough context.',
+  'Docs exist, but users do not read them at the moment of need.',
+  'You track completion, but not what users misunderstood.',
+];
+---
+
+<section id="problem" class="section-focus">
+  <div class="container split-section">
+    <div>
+      <p class="section-label">Where guidance fails in SaaS</p>
+      <h2>You have product. You have docs. You have support. And users still get stuck.</h2>
+      <p class="section-copy">The user is not lazy. Your system disappears at the moment they need guidance most.</p>
+    </div>
+    <ul class="problem-list" aria-label="Common SaaS guidance failures">
+      {problems.map((problem) => <li>{problem}</li>)}
+    </ul>
+  </div>
+</section>

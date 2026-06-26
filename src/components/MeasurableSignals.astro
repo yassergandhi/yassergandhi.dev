@@ -1,0 +1,26 @@
+---
+const signals = [
+  'repeated ticket volume',
+  'onboarding completion vs activation',
+  'time-to-first-value',
+  'implementation time',
+  'support escalations',
+  'handoff completeness',
+  'quality of intake data',
+  'repeated questions',
+  'drop-off points',
+];
+---
+
+<section id="signals" class="section-focus section-compact">
+  <div class="container">
+    <p class="section-label">What to measure after the audit</p>
+    <div class="section-heading-row">
+      <h2>No fake ROI claims.</h2>
+      <p>Each recommendation becomes a hypothesis your team can test.</p>
+    </div>
+    <ul class="signal-list" aria-label="Signals to review after a friction audit">
+      {signals.map((signal) => <li>{signal}</li>)}
+    </ul>
+  </div>
+</section>

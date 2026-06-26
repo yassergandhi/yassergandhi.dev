@@ -1,44 +1,46 @@
 ---
 const email = 'yassergandhi.dev@gmail.com';
-const subject = 'Hidden Scaffold Review Inquiry';
+const subject = 'Friction Audit Inquiry';
 const body = `Product URL:
 
-Flow that breaks:
+Flow, support issue or handoff that breaks:
 
 What users do instead:
 
-What this costs you:
+What this costs or delays:
 
-Who inside the team is feeling the pain:
+Who absorbs the pain: support, onboarding, implementation, CS or sales?
 
-Any evidence available (screenshots, session recordings, support patterns):
+Evidence available: tickets, forms, recordings, notes or emails?
+
+Do not send credentials or private customer data in the first email.
 `;
 const mailto = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
 const checklist = [
   'Product URL',
-  'Flow that breaks',
+  'Flow, support issue or handoff that breaks',
   'What users do instead',
-  'What this costs you',
-  'Who inside the team is feeling the pain',
-  'Any evidence available (screenshots, session recordings, support patterns)',
+  'What this costs or delays',
+  'Who absorbs the pain: support, onboarding, implementation, CS or sales?',
+  'Evidence available: tickets, forms, recordings, notes or emails?',
 ];
 ---
 
 <section id="contact" class="contact-email section-compact">
   <div class="container split-section compact">
     <div>
-      <p class="section-label">Contact by email</p>
-      <h2>Email the flow your team keeps routing around.</h2>
-      <p class="section-copy">Send the pattern first. I will tell you whether it fits a Hidden Scaffold Review.</p>
-      <a class="btn-primary" href={mailto}>Send this by email</a>
+      <p class="section-label">Send one friction point.</p>
+      <h2>Start with one flow, one repeated support issue, or one handoff your team keeps routing around.</h2>
+      <p class="section-copy">Send the pattern first. I will tell you whether it fits a focused friction audit.</p>
+      <a class="btn-primary" href={mailto}>Email the friction point</a>
     </div>
     <div class="email-brief" aria-label="Email brief checklist">
       <p>Include:</p>
       <ul>
         {checklist.map((item) => <li>{item}</li>)}
       </ul>
-      <p class="safety-note">Do not send credentials or private customer data in the first email. Describe the pattern first.</p>
+      <p class="safety-note">Do not send credentials or private customer data in the first email.</p>
     </div>
   </div>
 </section>

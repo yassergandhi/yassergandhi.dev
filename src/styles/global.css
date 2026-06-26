@@ -316,6 +316,121 @@ h3 {
   font-size: 1.04rem;
 }
 
+.problem-list,
+.process-list,
+.signal-list,
+.service-card ul {
+  display: grid;
+  gap: 0.75rem;
+  color: var(--muted);
+}
+
+.problem-list {
+  margin: 0;
+  border-left: 1px solid rgba(233, 84, 32, 0.36);
+  padding: 0 0 0 1.5rem;
+  font-size: clamp(1.02rem, 1.35vw, 1.16rem);
+}
+
+.problem-list li::marker,
+.service-card li::marker,
+.email-brief li::marker {
+  color: var(--orange-bright);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.service-card {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  border-top: 1px solid rgba(233, 84, 32, 0.3);
+  background: linear-gradient(180deg, rgba(48, 10, 36, 0.24), rgba(23, 4, 17, 0.08));
+  padding: 1.35rem 0.25rem 0;
+}
+
+.service-card p {
+  margin-top: 0.8rem;
+  color: var(--muted);
+}
+
+.service-card ul {
+  margin: 1.1rem 0 1.35rem;
+  padding-left: 1.1rem;
+  font-size: 0.95rem;
+}
+
+.service-link {
+  margin-top: auto;
+  color: var(--orange-bright);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.service-link:hover,
+.service-link:focus-visible {
+  color: var(--cream);
+  outline: none;
+}
+
+.process-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  counter-reset: process;
+}
+
+.process-list li {
+  padding-left: 0.35rem;
+}
+
+.process-list li::marker {
+  color: var(--orange-bright);
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+.process-list p {
+  margin-top: 0.35rem;
+  color: var(--muted);
+}
+
+.signal-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 2.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.signal-list li {
+  border-top: 1px solid rgba(233, 84, 32, 0.24);
+  padding-top: 0.8rem;
+}
+
+.proof-panel {
+  border-left: 1px solid rgba(233, 84, 32, 0.36);
+  padding-left: 1.5rem;
+}
+
+.proof-panel p {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 1.04rem;
+}
+
+.section-note {
+  max-width: 760px;
+  margin-top: 1.25rem;
+  color: var(--orange-bright);
+  font-family: var(--font-mono);
+}
+
 .venn-panel {
   position: relative;
   min-height: 560px;
@@ -797,8 +912,7 @@ h3 {
   box-shadow: 0 0 0 6px rgba(233, 84, 32, 0.08), 0 0 18px rgba(233, 84, 32, 0.18);
 }
 
-.ecosystem-link[data-node='yassergandhi.dev']::before,
-.ecosystem-link[data-node='huhuGERMAN']::before {
+.ecosystem-link[data-node='yassergandhi.dev']::before {
   border-color: rgba(74, 222, 128, 0.7);
   box-shadow: 0 0 0 6px rgba(74, 222, 128, 0.08), 0 0 18px rgba(74, 222, 128, 0.12);
 }
@@ -1043,6 +1157,11 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .service-grid,
+  .signal-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .terminal-tabs {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     border-right: 0;
@@ -1226,7 +1345,9 @@ h3 {
   }
 
   .terminal-tabs,
-  .metric-card-row {
+  .metric-card-row,
+  .service-grid,
+  .signal-list {
     grid-template-columns: 1fr;
   }
 
