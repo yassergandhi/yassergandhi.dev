@@ -1,9 +1,8 @@
 ---
-import '../styles/global.css';
+import Analytics from "@vercel/analytics/astro";
+import "../styles/global.css";
 
-const siteUrl = 'https://yassergandhi.dev';
-const defaultTitle = 'yassergandhi.dev — SaaS Guidance Failure & Feedback Architecture';
-const defaultDescription = 'Diagnose where SaaS users stop acting across onboarding, support, forms and handoffs. Turn recurring confusion into feedback, activation and next action.';
+const siteUrl = "https://yassergandhi.dev";
 
 interface Props {
   title?: string;
@@ -13,70 +12,67 @@ interface Props {
   ogDescription?: string;
   ogImage?: string;
   ogImageAlt?: string;
-  ogImageWidth?: number;
-  ogImageHeight?: number;
   noindex?: boolean;
-  extraSchema?: Record<string, unknown> | Record<string, unknown>[];
+  extraSchema?: Record<string, unknown>[];
 }
 
 const {
-  title = defaultTitle,
-  description = defaultDescription,
+  title = "Sitios y sistemas web con investigación cualitativa | Yasser Gandhi",
+  description = "No empiezo por la página. Reconstruyo qué ocurrió, quién todavía podía ayudar y qué sitio o sistema hace falta construir.",
   canonical = `${siteUrl}/`,
-  ogTitle = title,
-  ogDescription = description,
-  ogImage = `${siteUrl}/og-image.svg`,
-  ogImageAlt = 'Find where SaaS users stop acting before support absorbs the cost',
-  ogImageWidth = 1200,
-  ogImageHeight = 630,
+  ogTitle = "Tu negocio no empezó con una página.",
+  ogDescription = "Empezó con una vida que alguien quería construir. Primero pregunto, después reconstruyo y sólo entonces construyo.",
+  ogImage = `${siteUrl}/og-image.png`,
+  ogImageAlt = "Tu negocio no empezó con una página. Empezó con una vida que alguien quería construir.",
   noindex = false,
-  extraSchema,
+  extraSchema = [],
 } = Astro.props;
 
-const schemaGraph = Array.isArray(extraSchema) ? extraSchema : extraSchema ? [extraSchema] : [];
-const jsonLd = schemaGraph.length > 0 ? JSON.stringify({ '@context': 'https://schema.org', '@graph': schemaGraph }) : '';
+const jsonLd = extraSchema.length
+  ? JSON.stringify({ "@context": "https://schema.org", "@graph": extraSchema })
+  : "";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es-MX">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet" />
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Ubuntu+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Yasser Gandhi Hernández Esquivel" />
-    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+    <meta
+      name="robots"
+      content={noindex ? "noindex, follow" : "index, follow"}
+    />
     <link rel="canonical" href={canonical} />
-
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content="es_MX" />
     <meta property="og:site_name" content="yassergandhi.dev" />
     <meta property="og:title" content={ogTitle} />
     <meta property="og:description" content={ogDescription} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:image:width" content={String(ogImageWidth)} />
-    <meta property="og:image:height" content={String(ogImageHeight)} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={ogImageAlt} />
-
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={ogTitle} />
     <meta name="twitter:description" content={ogDescription} />
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content={ogImageAlt} />
-
     {jsonLd && <script type="application/ld+json" set:html={jsonLd} />}
-
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
-
   <body>
     <div class="aura"></div>
     <slot />
+    <Analytics />
   </body>
 </html>

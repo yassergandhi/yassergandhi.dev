@@ -8,10 +8,16 @@ dist/
 node_modules/
 
 # logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+
+# temporary editor and scratch files
+*.tmp
+*.swp
+.vscode/settings.json
 
 # environment variables
 .env
@@ -22,4 +28,11 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
-.vercel
+.vercel/
+
+# Documentos estratégicos locales
+NORTH_STAR_YASSERGANDHI_DEV_V2_TALLY_METHOD_2026-07-23.md
+
+# Repomix local exports
+repomix-output*.xml
+*.repomix.xml

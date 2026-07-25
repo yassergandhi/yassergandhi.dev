@@ -1,57 +1,130 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Nav from '../components/Nav.astro';
-import Hero from '../components/Hero.astro';
-import ProblemSection from '../components/ProblemSection.astro';
-import ServicesSection from '../components/ServicesSection.astro';
-import DiagnosticTerminal from '../components/DiagnosticTerminal.astro';
-import HowItWorksSection from '../components/HowItWorksSection.astro';
-import MeasurableSignals from '../components/MeasurableSignals.astro';
-import AuthoritySection from '../components/AuthoritySection.astro';
-import LivingLabSection from '../components/LivingLabSection.astro';
-import Contact from '../components/Contact.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Hero from "../components/Hero.astro";
+import FoundationalScene from "../components/FoundationalScene.astro";
+import CentralQuestion from "../components/CentralQuestion.astro";
+import FirstSolution from "../components/FirstSolution.astro";
+import HowItWorksSection from "../components/HowItWorksSection.astro";
+import OfferSection from "../components/OfferSection.astro";
+import ExperienceEvidence from "../components/ExperienceEvidence.astro";
+import TrustSection from "../components/TrustSection.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
 
-const title = 'yassergandhi.dev — SaaS Guidance Failure & Feedback Architecture';
-const description = 'Diagnose where SaaS users stop acting across onboarding, support, forms and handoffs. Turn recurring confusion into feedback, activation and next action.';
-const canonical = 'https://yassergandhi.dev/';
-const ogTitle = 'Find where your users stop acting — before support absorbs the cost.';
-const ogDescription = 'Qualitative friction analysis for SaaS onboarding, support, forms and handoffs.';
+const canonical = "https://yassergandhi.dev/";
+const description =
+  "No empiezo por la página. Reconstruyo qué ocurrió, quién todavía podía ayudar y qué sitio o sistema hace falta construir.";
 
-const credentials = [
-  { '@type': 'EducationalOccupationalCredential', name: 'B.A. Modern German Language and Literature', credentialCategory: 'degree', recognizedBy: { '@type': 'CollegeOrUniversity', name: 'Universidad Nacional Autónoma de México' } },
-  { '@type': 'EducationalOccupationalCredential', name: 'M.A. Pedagogy', credentialCategory: 'degree', recognizedBy: { '@type': 'CollegeOrUniversity', name: 'Universidad Nacional Autónoma de México' } },
-  { '@type': 'EducationalOccupationalCredential', name: 'B.Sc. Web Systems Development', credentialCategory: 'degree', recognizedBy: { '@type': 'CollegeOrUniversity', name: 'Universidad de Guadalajara' } },
+const schema = [
+  {
+    "@type": "Person",
+    "@id": `${canonical}#person`,
+    name: "Yasser Gandhi Hernández Esquivel",
+    url: canonical,
+    email: "mailto:yassergandhi.dev@gmail.com",
+    jobTitle: "Docente-investigador y desarrollador de sistemas web",
+    affiliation: {
+      "@type": "Organization",
+      name: "CELEX — Centro de Lenguas Extranjeras, UAM Azcapotzalco",
+    },
+    alumniOf: [
+      {
+        "@type": "CollegeOrUniversity",
+        name: "Universidad Nacional Autónoma de México",
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        name: "Universidad de Guadalajara",
+      },
+    ],
+    hasCredential: [
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: "Licenciatura en Lengua y Literaturas Modernas (Letras Alemanas)",
+        credentialCategory: "Licenciatura",
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: "Maestría en Pedagogía",
+        credentialCategory: "Maestría",
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: "Licenciatura en Desarrollo de Sistemas Web",
+        credentialCategory: "Licenciatura",
+      },
+    ],
+    sameAs: [
+      "https://www.linkedin.com/in/yassergandhi/",
+      "https://github.com/yassergandhi/",
+      "https://orcid.org/0000-0002-8736-184X",
+      "https://scholar.google.com/citations?user=YnqLK4oAAAAJ",
+    ],
+    subjectOf: [
+      {
+        "@type": "CreativeWork",
+        name: "Trayectoria de investigación",
+        url: "https://huhugerman.com/investigacion",
+      },
+      {
+        "@type": "Dataset",
+        name: "Corpus CELEX-UAM Azcapotzalco 2026",
+        url: "https://osf.io/b7895/overview",
+      },
+    ],
+  },
+  {
+    "@type": "WebSite",
+    "@id": `${canonical}#website`,
+    name: "yassergandhi.dev",
+    url: canonical,
+    inLanguage: "es-MX",
+    publisher: { "@id": `${canonical}#person` },
+  },
+  {
+    "@type": "ProfessionalService",
+    "@id": `${canonical}#professional-service`,
+    name: "yassergandhi.dev",
+    url: canonical,
+    areaServed: ["Ciudad de México", "Remoto"],
+    founder: { "@id": `${canonical}#person` },
+    description,
+  },
+  {
+    "@type": "Service",
+    "@id": `${canonical}#service`,
+    name: "Proyecto de sitio o sistema web con investigación cualitativa",
+    serviceType: "Proyecto de sitio o sistema web con investigación cualitativa",
+    provider: { "@id": `${canonical}#professional-service` },
+    areaServed: ["Ciudad de México", "Remoto"],
+    description,
+  },
 ];
-
-const personSchema = {
-  '@type': 'Person', '@id': 'https://yassergandhi.dev/#person', name: 'Yasser Gandhi Hernández Esquivel', url: canonical,
-  sameAs: ['https://www.linkedin.com/in/yassergandhi/','https://github.com/yassergandhi/','https://huhugerman.com'],
-  jobTitle: 'SaaS friction analysis and feedback architecture consultant',
-  description: 'Qualitative friction research, feedback design and web systems for SaaS onboarding, support, forms and handoffs.',
-  knowsAbout: ['SaaS onboarding','Customer Success','support friction','handoff gaps','qualitative friction analysis','feedback architecture','product adoption','implementation workflows','TypeScript','Astro'],
-  alumniOf: [
-    { '@type': 'CollegeOrUniversity', name: 'Universidad Nacional Autónoma de México' },
-    { '@type': 'CollegeOrUniversity', name: 'Universidad de Guadalajara' },
-  ],
-  hasCredential: credentials,
-};
-const websiteSchema = { '@type': 'WebSite', '@id': 'https://yassergandhi.dev/#website', name: 'yassergandhi.dev', url: canonical, description, publisher: { '@id': 'https://yassergandhi.dev/#person' } };
-const serviceSchema = { '@type': 'Service', '@id': 'https://yassergandhi.dev/#support-friction-audit', name: 'Support Friction Audit', serviceType: 'Qualitative friction analysis for SaaS onboarding, support, forms and handoffs', provider: { '@id': 'https://yassergandhi.dev/#person' }, areaServed: 'Global', audience: { '@type': 'BusinessAudience', audienceType: 'B2B SaaS, Customer Success, Implementation, Support and Product Education teams' }, description, offers: { '@type': 'Offer', availability: 'https://schema.org/InStock', url: canonical } };
-const aboutPageSchema = { '@type': 'AboutPage', '@id': 'https://yassergandhi.dev/#authority', url: canonical, name: 'SaaS friction analysis proof', about: { '@id': 'https://yassergandhi.dev/#person' }, isPartOf: { '@id': 'https://yassergandhi.dev/#website' } };
 ---
-<Layout {title} {description} {canonical} {ogTitle} {ogDescription} extraSchema={[personSchema, websiteSchema, serviceSchema, aboutPageSchema, ...credentials]}>
+
+<Layout
+  title="Sitios y sistemas web con investigación cualitativa | Yasser Gandhi"
+  {description}
+  {canonical}
+  ogTitle="Tu negocio no empezó con una página."
+  ogDescription="Empezó con una vida que alguien quería construir. Primero pregunto, después reconstruyo y sólo entonces construyo."
+  ogImageAlt="Tu negocio no empezó con una página. Empezó con una vida que alguien quería construir."
+  extraSchema={schema}
+>
   <Nav />
+
   <main>
     <Hero />
-    <ProblemSection />
-    <ServicesSection />
-    <DiagnosticTerminal />
+    <FoundationalScene />
+    <CentralQuestion />
+    <FirstSolution />
     <HowItWorksSection />
-    <MeasurableSignals />
-    <AuthoritySection />
-    <LivingLabSection />
+    <OfferSection />
+    <ExperienceEvidence />
+    <TrustSection />
     <Contact />
   </main>
+
   <Footer />
 </Layout>

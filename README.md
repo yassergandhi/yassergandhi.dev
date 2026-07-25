@@ -1,47 +1,57 @@
 # yassergandhi.dev
 
-Commercial homepage for Yasser Gandhi Hernández Esquivel.
+Sitio comercial de Yasser Gandhi Hernández Esquivel.
 
-Live at [yassergandhi.dev](https://yassergandhi.dev)
+North Star V6: **Tu negocio no empezó con una página. Empezó con una vida que alguien quería construir.**
 
-## Positioning
+La categoría pública es **sitios y sistemas web con investigación cualitativa**. La oferta fijada para validación es **Proyecto de sitio o sistema web con investigación cualitativa**, desde **$24,999 MXN, IVA incluido**. El alcance final se define después de la evaluación.
 
-yassergandhi.dev sells qualitative friction analysis for SaaS onboarding, support, forms, handoffs and activation.
+La distinción pública está en las preguntas: primero se recupera por qué vale la pena mantener vivo el negocio, después se reconstruye un caso reciente y sólo entonces se decide qué construir. V5 conserva autoridad sobre oferta, precio, evaluación, URLs, métricas y validación CANACO.
 
-Core message:
+La identidad visual usa aubergine oscuro como superficie premium principal, crema para texto y revelaciones puntuales, y naranja Ubuntu `#E95420` para identificar y avanzar. El papel cálido dejó de ser el fondo dominante.
 
-“Find where your users stop acting — before support absorbs the cost.”
+## Estado confirmado
 
-The homepage is positioned for Customer Success, Implementation, Support, Product Education and early-stage B2B SaaS teams dealing with repeated support questions, onboarding gaps, weak intake data and incomplete handoffs.
+- Tally publicado: `https://tally.so/r/MeQjR0`
+- ID de Tally: `MeQjR0`
+- DNS administrado en Cloudflare.
+- Vercel Web Analytics activo.
+- Google Search Console activo.
+- GA4 suspendido; tampoco se usan Google Tag Manager, Clarity ni píxeles.
+- Precio público: desde `$24,999 MXN, IVA incluido`.
 
-huhuGERMAN is referenced only as a protected living lab for structured friction, user reflection and feedback design. The site does not expose internal method details, private data or testimonials.
+## Rutas
+
+- `/`: escena fundacional, preguntas, método, cambios posibles, oferta, trayectoria y límites.
+- `/evaluacion`: copy visible, privacidad, resultados posibles y un único embed de Tally dentro de un shell visual; usa `noindex, follow`.
+- `/contacto`: compatibilidad mediante redirect permanente a `/evaluacion`, conservando la cadena de consulta en Vercel; incluye respaldo HTML y no se publica como CTA.
 
 ## Stack
 
-| Layer | Choice |
+| Capa | Elección |
 | --- | --- |
 | Framework | Astro |
-| Styling | CSS custom properties in `src/styles/global.css` |
-| Typography | Ubuntu and Ubuntu Mono via Google Fonts |
-| Metadata | Shared Astro layout props plus JSON-LD graph injection |
-| Contact | Mailto brief with prefilled inquiry prompts |
-| Static SEO files | `public/robots.txt`, `public/sitemap-index.xml`, `public/sitemap-0.xml` |
+| Estilos | Sistema editorial aubergine oscuro con propiedades personalizadas |
+| Tipografía | Ubuntu y Ubuntu Mono |
+| Analítica | Vercel Web Analytics |
+| Formulario | Tally `MeQjR0` |
+| SEO | Metadata compartida, JSON-LD, robots y sitemap estático |
 
-## Technical notes
+El sitio no almacena respuestas del formulario ni manda texto libre o datos personales a Analytics.
 
-- Shared layout exposes metadata props for title, description, canonical, Open Graph, Twitter card, robots and JSON-LD schema.
-- Home canonical: `https://yassergandhi.dev/`.
-- Homepage sections are modular Astro components composed in `src/pages/index.astro`.
+El repositorio sólo puede diseñar el contenedor exterior del formulario. El interior del iframe se configura manualmente dentro de Tally; consulta `docs/TALLY_THEME.md`.
 
-## Contact
+El menú móvil permanece disponible mediante `details` y `summary`. Se conserva el favicon existente y el wordmark `yassergandhi.dev_`.
 
-Contact is email-only for now. The homepage uses a `mailto:` CTA with a prefilled `Friction Audit Inquiry` subject and a short checklist for the friction brief. There is no active form submission endpoint or Resend integration.
+La home no oculta información esencial detrás de tarjetas. Los disclosures se reservan para detalle secundario y el shell de Tally conserva su superficie propia.
 
-## Local development
+Las URLs impresas de CANACO están fijadas en `docs/CANACO_CAMPAIGN_URLS.md`.
+
+## Desarrollo local
 
 ```bash
 npm install
-npm run dev        # http://localhost:4321
+npm run dev
 npm run build
 npm run preview
 ```

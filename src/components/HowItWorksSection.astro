@@ -1,37 +1,94 @@
 ---
 const steps = [
   {
-    title: 'Collect friction',
-    copy: 'Tickets, forms, onboarding flows, handoffs, support notes, customer messages.',
+    title: "¿Por qué debe continuar el negocio?",
+    copy: "Recupero qué se quería construir y qué no debería perderse.",
   },
   {
-    title: 'Map where users stop acting',
-    copy: 'Not just where they click. Where they lose the next step.',
+    title: "¿Qué problema están tratando de resolver?",
+    copy: "Entiendo lo que ocurrió realmente.",
   },
   {
-    title: 'Reframe the confusion',
-    copy: 'Identify what the user believes went wrong and what the product should say next.',
+    title: "¿Qué decisión humana debería tomarse?",
+    copy: "Reconstruyo qué información había, qué podía decidirse y qué hizo falta.",
   },
   {
-    title: 'Redesign guidance',
-    copy: 'Feedback, copy, intake, handoff and activation improvements.',
+    title: "¿Qué se volvió incongruente?",
+    copy: "Comparo lo que el negocio quería hacer con lo que las personas viven hoy.",
+  },
+  {
+    title: "¿Qué vale la pena cambiar?",
+    copy: "Decidimos si hace falta una página, una pregunta, una regla, otra forma de responder o no construir todavía.",
+  },
+  {
+    title: "¿Qué puede continuar sin depender de ti?",
+    copy: "Diseño y desarrollo una solución que conserve el criterio más allá de una sola persona.",
+  },
+];
+
+const outcomes = [
+  {
+    marker: "A",
+    title: "Rediseñar la página.",
+    copy: "Cuando la información no permite entender la oferta o el siguiente paso.",
+  },
+  {
+    marker: "B",
+    title: "Cambiar una pregunta o respuesta.",
+    copy: "Cuando se reciben datos, pero no el contexto necesario para decidir.",
+  },
+  {
+    marker: "C",
+    title: "Definir cómo continúa el caso.",
+    copy: "Cuando cambia de persona y se tiene que volver a explicar lo mismo.",
+  },
+  {
+    marker: "D",
+    title: "No construir todavía.",
+    copy: "Cuando primero debe resolverse una decisión interna o reunirse más información.",
   },
 ];
 ---
 
-<section id="how-it-works" class="section-compact">
-  <div class="container split-section compact">
+<section id="metodo" class="surface-raised">
+  <div class="container method-layout">
     <div>
-      <p class="section-label">How the audit works</p>
-      <h2>From recurring confusion to specific guidance changes.</h2>
+      <p class="section-label">Cómo trabajo</p>
+      <h2>Cada respuesta<br />abre otra pregunta.</h2>
     </div>
     <ol class="process-list">
-      {steps.map((step) => (
-        <li>
-          <h3>{step.title}</h3>
-          <p>{step.copy}</p>
-        </li>
-      ))}
+      {
+        steps.map((step, index) => (
+          <li>
+            <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+            <div>
+              <h3>{step.title}</h3>
+              <p>{step.copy}</p>
+            </div>
+          </li>
+        ))
+      }
     </ol>
+  </div>
+</section>
+
+<section id="resultados" class="surface-surface results-section">
+  <div class="container">
+    <p class="section-label">Qué puede cambiar</p>
+    <h2>Lo que hace falta<br />no siempre es una página nueva.</h2>
+    <div class="outcome-disclosures">
+      {
+        outcomes.map((outcome) => (
+          <details>
+            <summary>
+              <span aria-hidden="true">{outcome.marker}</span>
+              <strong>{outcome.title}</strong>
+              <i aria-hidden="true" />
+            </summary>
+            <p>{outcome.copy}</p>
+          </details>
+        ))
+      }
+    </div>
   </div>
 </section>

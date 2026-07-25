@@ -1,0 +1,127 @@
+---
+const TALLY_ID = 'MeQjR0';
+const SHARE_URL = `https://tally.so/r/${TALLY_ID}`;
+const EMBED_URL = `https://tally.so/embed/${TALLY_ID}`;
+---
+
+<div class="tally-shell" data-tally-shell data-state="loading">
+  <div class="tally-shell-header">
+    <span>Evaluación inicial</span>
+    <a href={SHARE_URL} target="_blank" rel="noopener">Abrir en Tally</a>
+  </div>
+
+  <div class="tally-loading" data-tally-loading role="status">
+    <span aria-hidden="true"></span>
+    Cargando la evaluación…
+  </div>
+
+  <div class="tally-frame" data-tally-frame>
+    <iframe
+      data-tally-src={`${EMBED_URL}?alignLeft=1&hideTitle=1&dynamicHeight=1`}
+      width="100%"
+      height="900"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0"
+      title="Formulario de evaluación inicial"
+    ></iframe>
+  </div>
+
+  <div class="tally-error" data-tally-error hidden>
+    <p>No fue posible mostrar la evaluación en esta página.</p>
+    <a href={SHARE_URL} target="_blank" rel="noopener">Abrir el formulario en Tally</a>
+  </div>
+
+  <noscript>
+    <div class="tally-error">
+      <p>No fue posible mostrar la evaluación en esta página.</p>
+      <a href={SHARE_URL} target="_blank" rel="noopener">Abrir el formulario en Tally</a>
+    </div>
+  </noscript>
+</div>
+
+<script is:inline>
+  (() => {
+    const SCRIPT_ID = 'tally-embed-script';
+    const TIMEOUT_MS = 20_000;
+    const allowedParameters = [
+      'utm_source',
+      'utm_medium',
+      'utm_campaign',
+      'utm_content',
+      'originPage',
+      'offer',
+    ];
+    const initializeShells = () => document.querySelectorAll('[data-tally-shell]').forEach((shell) => {
+      if (!(shell instanceof HTMLElement) || shell.dataset.initialized === 'true') return;
+      shell.dataset.initialized = 'true';
+      const iframe = shell.querySelector('iframe[data-tally-src]');
+      const loading = shell.querySelector('[data-tally-loading]');
+      const error = shell.querySelector('[data-tally-error]');
+      if (!(iframe instanceof HTMLIFrameElement) || !(loading instanceof HTMLElement) || !(error instanceof HTMLElement)) return;
+
+      const pageUrl = new URL(window.location.href);
+      const tallyUrl = new URL(iframe.dataset.tallySrc);
+      allowedParameters.forEach((key) => {
+        const value = pageUrl.searchParams.get(key);
+        if (value) tallyUrl.searchParams.set(key, value);
+      });
+      iframe.dataset.tallySrc = tallyUrl.toString();
+
+      let loaded = false;
+
+      const onLoad = () => {
+        loaded = true;
+        window.clearTimeout(timeout);
+        shell.dataset.state = 'loaded';
+        loading.hidden = true;
+        error.hidden = true;
+      };
+      iframe.addEventListener('load', onLoad);
+
+      const timeout = window.setTimeout(() => {
+        if (loaded) return;
+        shell.dataset.state = 'error';
+        loading.hidden = true;
+        error.hidden = false;
+      }, TIMEOUT_MS);
+    });
+
+    const loadEmbeds = () => window.Tally?.loadEmbeds?.();
+    const showScriptError = () => {
+      document.querySelectorAll('[data-tally-shell]').forEach((shell) => {
+        if (!(shell instanceof HTMLElement) || shell.dataset.state === 'loaded') return;
+        shell.dataset.state = 'error';
+        const loading = shell.querySelector('[data-tally-loading]');
+        const error = shell.querySelector('[data-tally-error]');
+        if (loading instanceof HTMLElement) loading.hidden = true;
+        if (error instanceof HTMLElement) error.hidden = false;
+      });
+    };
+
+    const initialize = () => {
+      initializeShells();
+      const existingScript = document.getElementById(SCRIPT_ID);
+      if (window.Tally?.loadEmbeds) {
+        loadEmbeds();
+      } else if (existingScript) {
+        existingScript.addEventListener('load', loadEmbeds, { once: true });
+        existingScript.addEventListener('error', showScriptError, { once: true });
+      } else {
+      const script = document.createElement('script');
+      script.id = SCRIPT_ID;
+      script.src = 'https://tally.so/widgets/embed.js';
+      script.async = true;
+      script.onload = loadEmbeds;
+      script.onerror = showScriptError;
+      document.body.appendChild(script);
+      }
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initialize, { once: true });
+    } else {
+      initialize();
+    }
+  })();
+</script>
