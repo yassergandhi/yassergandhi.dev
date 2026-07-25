@@ -1,46 +1,17 @@
----
-const email = 'yassergandhi.dev@gmail.com';
-const subject = 'Friction Audit Inquiry';
-const body = `Product URL:
-
-Flow, support issue or handoff that breaks:
-
-What users do instead:
-
-What this costs or delays:
-
-Who absorbs the pain: support, onboarding, implementation, CS or sales?
-
-Evidence available: tickets, forms, recordings, notes or emails?
-
-Do not send credentials or private customer data in the first email.
-`;
-const mailto = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-const checklist = [
-  'Product URL',
-  'Flow, support issue or handoff that breaks',
-  'What users do instead',
-  'What this costs or delays',
-  'Who absorbs the pain: support, onboarding, implementation, CS or sales?',
-  'Evidence available: tickets, forms, recordings, notes or emails?',
-];
----
-
-<section id="contact" class="contact-email section-compact">
-  <div class="container split-section compact">
-    <div>
-      <p class="section-label">Send one friction point.</p>
-      <h2>Start with one flow, one repeated support issue, or one handoff your team keeps routing around.</h2>
-      <p class="section-copy">Send the pattern first. I will tell you whether it fits a focused friction audit.</p>
-      <a class="btn-primary" href={mailto}>Email the friction point</a>
-    </div>
-    <div class="email-brief" aria-label="Email brief checklist">
-      <p>Include:</p>
-      <ul>
-        {checklist.map((item) => <li>{item}</li>)}
-      </ul>
-      <p class="safety-note">Do not send credentials or private customer data in the first email.</p>
-    </div>
+<section id="evaluar" class="surface-deep final-cta-section">
+  <div class="container final-cta">
+    <h2>
+      No empieces por la página.<br /><br />Empieza por contarme<br />cuál es tu
+      problema.
+    </h2>
+    <p>
+      Describe ununa situación reciente:<br /><br />qué ocurrió,<br />qué se
+      respondió,<br />qué tuvo que explicarse otra vez<br />y que falló.
+    </p>
+    <a
+      class="btn-primary"
+      href="/evaluacion?originPage=home&offer=evaluacion_inicial"
+      >Cuéntame qué pasó</a
+    >
   </div>
 </section>

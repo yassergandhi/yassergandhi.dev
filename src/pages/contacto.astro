@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Continuar a la evaluación | yassergandhi.dev"
+  description="La ruta de contacto se trasladó a la evaluación inicial del caso."
+  canonical="https://yassergandhi.dev/evaluacion"
+  noindex
+>
+  <main class="redirect-page">
+    <div class="container narrow">
+      <h1>La evaluación cambió de dirección.</h1>
+      <p>Te llevaremos a la evaluación inicial conservando los parámetros de esta visita.</p>
+      <p><a class="btn-primary" data-contact-fallback href="/evaluacion?originPage=contacto">Continuar a la evaluación</a></p>
+    </div>
+  </main>
+  <script is:inline>
+    (() => {
+      const source = new URL(window.location.href);
+      const destination = new URL('/evaluacion', window.location.origin);
+      source.searchParams.forEach((value, key) => destination.searchParams.set(key, value));
+      if (!destination.searchParams.has('originPage')) destination.searchParams.set('originPage', 'contacto');
+      const fallback = document.querySelector('[data-contact-fallback]');
+      if (fallback) fallback.href = `${destination.pathname}${destination.search}`;
+      window.location.replace(`${destination.pathname}${destination.search}`);
+    })();
+  </script>
+</Layout>
