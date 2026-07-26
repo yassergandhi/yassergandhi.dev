@@ -11,8 +11,14 @@ import ExperienceEvidence from "../components/ExperienceEvidence.astro";
 import TrustSection from "../components/TrustSection.astro";
 import Contact from "../components/Contact.astro";
 import Footer from "../components/Footer.astro";
+import {
+  LAST_SIGNIFICANT_UPDATE,
+  SITE_URL,
+} from "../config/siteMetadata.mjs";
 
-const canonical = "https://yassergandhi.dev/";
+const canonical = `${SITE_URL}/`;
+const title =
+  "Sitios y sistemas web con investigación cualitativa | Yasser Gandhi";
 const description =
   "No empiezo por la página. Reconstruyo qué ocurrió, quién todavía podía ayudar y qué sitio o sistema hace falta construir.";
 
@@ -83,6 +89,16 @@ const schema = [
     publisher: { "@id": `${canonical}#person` },
   },
   {
+    "@type": "WebPage",
+    "@id": `${canonical}#webpage`,
+    url: canonical,
+    name: title,
+    description,
+    inLanguage: "es-MX",
+    dateModified: LAST_SIGNIFICANT_UPDATE,
+    isPartOf: { "@id": `${canonical}#website` },
+  },
+  {
     "@type": "ProfessionalService",
     "@id": `${canonical}#professional-service`,
     name: "yassergandhi.dev",
@@ -104,7 +120,7 @@ const schema = [
 ---
 
 <Layout
-  title="Sitios y sistemas web con investigación cualitativa | Yasser Gandhi"
+  {title}
   {description}
   {canonical}
   ogTitle="Tu negocio no empezó con una página."
