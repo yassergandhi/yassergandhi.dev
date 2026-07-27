@@ -29,6 +29,7 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 .vercel/
+tmp/
 
 # Documentos estratégicos locales
 NORTH_STAR_YASSERGANDHI_DEV_V2_TALLY_METHOD_2026-07-23.md

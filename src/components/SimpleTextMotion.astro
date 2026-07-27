@@ -25,10 +25,10 @@ const evaluationUrl =
   <section class="motion-section motion-origin" aria-labelledby="origin-title">
     <div class="motion-container motion-origin-grid">
       <h2 id="origin-title" class="motion-word-stack" aria-label="Vida, oficio, independencia, legado">
-        <span data-origin-word>Vida</span>
-        <span data-origin-word>Oficio</span>
-        <span data-origin-word>Independencia</span>
-        <span data-origin-word>Legado</span>
+        <span class="origin-life" data-origin-word>Vida</span>
+        <span class="origin-work" data-origin-word>Oficio</span>
+        <span class="origin-independence" data-origin-word>Independencia</span>
+        <span class="origin-legacy" data-origin-word>Legado</span>
       </h2>
       <p class="motion-copy">
         Antes de la página hubo una intención, una necesidad y una forma de
@@ -79,7 +79,11 @@ const evaluationUrl =
       <div>
         <p class="motion-kicker">Una colaboración situada</p>
         <h2 id="offer-title" data-offer-heading>
-          Proyecto de sitio o sistema web con investigación cualitativa
+          <span>Proyecto de</span>
+          <span>sitio o sistema</span>
+          <span>web con</span>
+          <span>investigación</span>
+          <span>cualitativa</span>
         </h2>
       </div>
       <div class="motion-offer-details">
@@ -98,4 +102,6 @@ const evaluationUrl =
   </section>
 </div>
 
-<script src="../scripts/simpleTextMotion.ts"></script>
+<script>
+  import "../scripts/simpleTextMotion";
+</script>

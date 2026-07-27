@@ -3,15 +3,18 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const reduceMotion = window.matchMedia(
-  "(prefers-reduced-motion: reduce)",
-).matches;
+async function initializeMotion() {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-if (!reduceMotion) {
-  void document.fonts.ready.then(() => {
+  await Promise.race([
+    document.fonts?.ready ?? Promise.resolve(),
+    new Promise((resolve) => setTimeout(resolve, 1200)),
+  ]);
+
     const root = document.querySelector<HTMLElement>("[data-simple-motion]");
     if (!root) return;
 
+    root.dataset.motionInitialized = "true";
     root.classList.add("motion-ready");
 
     const ctx = gsap.context(() => {
@@ -88,15 +91,10 @@ if (!reduceMotion) {
           { autoAlpha: 1, y: 0, duration: 0.5 },
           "-=0.12",
         );
-
     }, root);
 
+    ScrollTrigger.refresh();
     window.addEventListener("pagehide", () => ctx.revert(), { once: true });
-  });
 }
 
-document.querySelectorAll<HTMLDetailsElement>(".nav-mobile").forEach((menu) => {
-  menu.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => menu.removeAttribute("open"));
-  });
-});
+void initializeMotion();
