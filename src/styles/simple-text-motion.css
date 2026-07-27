@@ -24,6 +24,8 @@
 .motion-offer-grid,
 .method-composition,
 .method-composition span {
+  min-inline-size: 0;
+  max-inline-size: 100%;
   min-width: 0;
   max-width: 100%;
 }
@@ -67,7 +69,7 @@
 }
 
 .motion-hero-title {
-  max-width: 13ch;
+  max-width: 100%;
   margin: 0;
   font-size: clamp(2.35rem, 10.5vw, 7.2rem);
   letter-spacing: -0.055em;
@@ -78,10 +80,6 @@
 .motion-hero-title span,
 .motion-word-stack span {
   display: block;
-}
-
-.motion-hero-title span {
-  white-space: nowrap;
 }
 
 .motion-hero-title span:nth-child(2) {
@@ -116,7 +114,7 @@
 }
 
 .motion-word-stack .origin-independence {
-  font-size: 0.72em;
+  font-size: 0.68em;
 }
 
 .motion-word-stack span:nth-child(2),
@@ -138,12 +136,12 @@
   text-wrap: balance;
 }
 
-.motion-stamps {
+.motion-sequence {
   display: grid;
   gap: 0.55rem;
 }
 
-.motion-stamps span {
+.motion-sequence span {
   display: block;
   width: fit-content;
   border: 1px solid var(--motion-line);
@@ -154,15 +152,16 @@
   letter-spacing: 0.08em;
   line-height: 1.2;
   text-transform: uppercase;
+  max-inline-size: 100%;
 }
 
-.motion-stamps span:nth-child(2),
-.motion-stamps span:nth-child(4) {
+.motion-sequence span:nth-child(2),
+.motion-sequence span:nth-child(4) {
   margin-left: clamp(1.5rem, 12vw, 6rem);
   color: var(--motion-orange-bright);
 }
 
-.motion-loss-question {
+.motion-loss-conclusion {
   display: grid;
   min-width: 0;
   max-width: 100%;
@@ -171,11 +170,21 @@
 }
 
 .motion-loss h2 {
-  max-width: 8ch;
+  max-width: 100%;
   margin: 0;
-  font-size: clamp(2.8rem, 8vw, 7rem);
+  font-size: clamp(2.25rem, 5.5vw, 4rem);
   letter-spacing: -0.06em;
-  line-height: 0.91;
+  line-height: 0.94;
+}
+
+.motion-loss h2 > span {
+  display: block;
+}
+
+.motion-loss h2 > span:last-child {
+  color: var(--motion-orange-bright);
+  font-kerning: none;
+  text-rendering: optimizeSpeed;
 }
 
 .method-composition {
@@ -206,10 +215,23 @@
 .method-then { grid-area: then; color: #ff8558; font-size: .48em; }
 .method-decide { grid-area: decide; font-size: .62em; }
 .method-build {
+  --method-line-scale: 1;
   grid-area: build;
+  position: relative;
   font-size: .75em;
   width: fit-content;
-  border-bottom: 0.08em solid var(--motion-orange);
+}
+
+.method-build::after {
+  position: absolute;
+  right: 0;
+  bottom: -0.04em;
+  left: 0;
+  height: 0.08em;
+  background: var(--motion-orange);
+  content: "";
+  transform: scaleX(var(--method-line-scale));
+  transform-origin: left;
 }
 
 .motion-trajectory {
@@ -217,6 +239,14 @@
   margin: clamp(3rem, 10vw, 5rem) 0 0;
   color: var(--motion-muted);
   font-size: clamp(1.05rem, 3.8vw, 1.3rem);
+  line-height: 1.5;
+}
+
+.motion-method-remate {
+  max-width: 48ch;
+  margin: 0.8rem 0 0;
+  color: color-mix(in srgb, var(--motion-muted) 76%, transparent);
+  font-size: clamp(0.9rem, 3.2vw, 1.05rem);
   line-height: 1.5;
 }
 
@@ -232,12 +262,33 @@
   font-weight: 700;
   line-height: 1.2;
   text-decoration: none;
-  transition: color 180ms ease, background-color 180ms ease;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    transform 180ms ease;
 }
 
-.motion-button:hover {
+.motion-button::after {
+  margin-left: 0.5rem;
+  content: "→";
+  transition: transform 180ms ease;
+}
+
+.motion-button:hover,
+.motion-button:focus-visible {
   color: var(--motion-bg);
   background: var(--motion-orange-bright);
+  transform: scale(1.015);
+}
+
+.motion-button:hover::after,
+.motion-button:focus-visible::after {
+  transform: translateX(4px);
+}
+
+.motion-button:focus-visible {
+  outline: 2px solid var(--motion-white);
+  outline-offset: 0.25rem;
 }
 
 .motion-offer {
@@ -299,6 +350,37 @@
   clip-path: inset(50%);
 }
 
+.site-nav .nav-links a,
+.site-nav .nav-evaluation,
+.site-nav .nav-back {
+  position: relative;
+}
+
+.site-nav .nav-links a::after,
+.site-nav .nav-evaluation::after,
+.site-nav .nav-back::after {
+  position: absolute;
+  right: 0;
+  bottom: -0.22rem;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  content: "";
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 180ms ease;
+}
+
+.site-nav .nav-links a:hover::after,
+.site-nav .nav-links a:focus-visible::after,
+.site-nav .nav-evaluation:hover::after,
+.site-nav .nav-evaluation:focus-visible::after,
+.site-nav .nav-back:hover::after,
+.site-nav .nav-back:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
 @media (min-width: 48rem) {
   .motion-hero-title {
     font-size: clamp(2.65rem, 12vw, 7.2rem);
@@ -315,6 +397,10 @@
     align-items: end;
   }
 
+  .motion-loss h2 {
+    max-width: 12ch;
+  }
+
   .method-composition {
     grid-template-areas:
       "first first"
@@ -322,7 +408,7 @@
       "rebuild rebuild"
       "then decide"
       "build build";
-    grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: baseline;
     font-size: clamp(3.2rem, 8.2vw, 7rem);
   }
@@ -342,5 +428,15 @@
     scroll-behavior: auto !important;
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .method-build {
+    --method-line-scale: 1 !important;
+  }
+
+  .site-nav .nav-links a::after,
+  .site-nav .nav-evaluation::after,
+  .site-nav .nav-back::after {
+    transition: none;
   }
 }

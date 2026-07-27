@@ -3,98 +3,308 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-async function initializeMotion() {
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+const ANIMATED_SELECTOR = [
+  "[data-hero-kicker]",
+  "[data-hero-line]",
+  "[data-hero-copy]",
+  "[data-origin-word]",
+  "[data-loss-step]",
+  "[data-loss-response]",
+  "[data-loss-continuity]",
+  "[data-loss-copy]",
+  "[data-method-word]",
+  "[data-method-trajectory]",
+  "[data-method-remate]",
+].join(",");
 
+function restoreVisibleState(root: HTMLElement) {
+  root.classList.remove("motion-ready");
+  root.querySelectorAll<HTMLElement>(ANIMATED_SELECTOR).forEach((element) => {
+    element.style.removeProperty("opacity");
+    element.style.removeProperty("visibility");
+    element.style.removeProperty("transform");
+    element.style.removeProperty("translate");
+    element.style.removeProperty("rotate");
+    element.style.removeProperty("scale");
+  });
+
+  root
+    .querySelector<HTMLElement>(".method-build")
+    ?.style.removeProperty("--method-line-scale");
+}
+
+async function waitForFonts() {
   await Promise.race([
     document.fonts?.ready ?? Promise.resolve(),
-    new Promise((resolve) => setTimeout(resolve, 1200)),
+    new Promise((resolve) => window.setTimeout(resolve, 1200)),
   ]);
+}
 
-    const root = document.querySelector<HTMLElement>("[data-simple-motion]");
-    if (!root) return;
+async function initializeMotion() {
+  const root = document.querySelector<HTMLElement>("[data-simple-motion]");
+  if (!root) return;
 
-    root.dataset.motionInitialized = "true";
+  const currentStatus = root.dataset.motionStatus;
+  if (
+    currentStatus === "starting" ||
+    currentStatus === "full" ||
+    currentStatus === "fallback" ||
+    currentStatus === "reduced"
+  ) {
+    return;
+  }
+
+  root.dataset.motionStatus = "starting";
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    restoreVisibleState(root);
+    root.dataset.motionStatus = "reduced";
+    root.dataset.motionTriggers = "0";
+    return;
+  }
+
+  let coreContext: gsap.Context | null = null;
+  let continuityContext: gsap.Context | null = null;
+  let responseSplit: { revert: () => void } | null = null;
+  let continuitySplit: { revert: () => void } | null = null;
+
+  try {
+    await waitForFonts();
     root.classList.add("motion-ready");
 
-    const ctx = gsap.context(() => {
-      const heroItems = [
-        "[data-hero-kicker]",
-        "[data-hero-line]",
-        "[data-hero-copy]",
-      ];
-      const originWords = gsap.utils.toArray<HTMLElement>("[data-origin-word]");
-      const lossStamps = gsap.utils.toArray<HTMLElement>("[data-loss-stamp]");
-      const methodWords = gsap.utils.toArray<HTMLElement>("[data-method-word]");
-
-      gsap.set(heroItems, { autoAlpha: 0 });
-      gsap.set("[data-hero-line]", { y: 24 });
-      gsap.set(originWords, { autoAlpha: 0, y: 20 });
-      gsap.set(lossStamps, { autoAlpha: 0, y: 20, scale: 0.98 });
-      gsap.set(["[data-loss-question]", "[data-loss-copy]"], {
-        autoAlpha: 0,
-        y: 20,
-      });
-      gsap.set(methodWords, { autoAlpha: 0, y: 20 });
-      gsap.set("[data-method-trajectory]", { autoAlpha: 0, y: 20 });
+    coreContext = gsap.context(() => {
+      const heroLines = gsap.utils.toArray<HTMLElement>("[data-hero-line]");
+      const originWords =
+        gsap.utils.toArray<HTMLElement>("[data-origin-word]");
+      const methodWords =
+        gsap.utils.toArray<HTMLElement>("[data-method-word]");
 
       gsap
         .timeline({ defaults: { ease: "power2.out" } })
-        .to("[data-hero-kicker]", { autoAlpha: 1, duration: 0.3 })
-        .to(
-          "[data-hero-line]",
-          { autoAlpha: 1, y: 0, duration: 0.45, stagger: 0.08 },
-          "-=0.12",
+        .from("[data-hero-kicker]", { autoAlpha: 0, duration: 0.25 })
+        .from(
+          heroLines,
+          { autoAlpha: 0, y: 20, duration: 0.45, stagger: 0.08 },
+          "-=0.05",
         )
-        .to("[data-hero-copy]", { autoAlpha: 1, duration: 0.3 }, "-=0.2");
-
-      gsap
-        .timeline({
-          scrollTrigger: { trigger: ".motion-origin", start: "top 82%", once: true },
-        })
-        .to(originWords, {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.55,
-          stagger: 0.12,
-          ease: "power2.out",
-        });
-
-      gsap
-        .timeline({
-          scrollTrigger: { trigger: ".motion-loss", start: "top 82%", once: true },
-          defaults: { ease: "power2.out" },
-        })
-        .to(lossStamps, {
-          autoAlpha: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.5,
-          stagger: 0.12,
-        })
-        .to("[data-loss-question]", { autoAlpha: 1, y: 0, duration: 0.5 })
-        .to("[data-loss-copy]", { autoAlpha: 1, y: 0, duration: 0.45 }, "-=0.2");
-
-      gsap
-        .timeline({
-          scrollTrigger: { trigger: ".motion-method", start: "top 82%", once: true },
-          defaults: { ease: "power2.out" },
-        })
-        .to(methodWords, {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.5,
-          stagger: 0.09,
-        })
-        .to(
-          "[data-method-trajectory]",
-          { autoAlpha: 1, y: 0, duration: 0.5 },
+        .from(
+          "[data-hero-copy]",
+          { autoAlpha: 0, y: 10, duration: 0.3 },
           "-=0.12",
+        );
+
+      gsap.from(originWords, {
+        autoAlpha: 0,
+        y: 18,
+        duration: 0.48,
+        stagger: 0.1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".motion-origin",
+          start: "top 84%",
+          once: true,
+        },
+      });
+
+      gsap
+        .timeline({
+          defaults: { ease: "power2.out" },
+          scrollTrigger: {
+            trigger: ".motion-method",
+            start: "top 82%",
+            once: true,
+          },
+        })
+        .from(methodWords, {
+          autoAlpha: 0,
+          y: 18,
+          duration: 0.42,
+          stagger: 0.08,
+        })
+        .from(
+          "[data-method-trajectory]",
+          { autoAlpha: 0, y: 18, duration: 0.38 },
+          "-=0.1",
+        )
+        .from(
+          "[data-method-remate]",
+          { autoAlpha: 0, y: 18, duration: 0.32 },
+          "-=0.16",
+        )
+        .fromTo(
+          ".method-build",
+          { "--method-line-scale": 0 },
+          {
+            "--method-line-scale": 1,
+            duration: 0.38,
+            ease: "power2.out",
+          },
+          "-=0.24",
         );
     }, root);
 
+    let SplitTextPlugin = null as
+      | null
+      | (typeof import("gsap/SplitText"))["SplitText"];
+
+    try {
+      const module = await import("gsap/SplitText");
+      SplitTextPlugin = module.SplitText;
+      gsap.registerPlugin(SplitTextPlugin);
+    } catch {
+      SplitTextPlugin = null;
+    }
+
+    const lossSteps = gsap.utils.toArray<HTMLElement>(
+      root.querySelectorAll("[data-loss-step]"),
+    );
+    const lossResponse = root.querySelector<HTMLElement>(
+      "[data-loss-response]",
+    );
+    const lossContinuity = root.querySelector<HTMLElement>(
+      "[data-loss-continuity]",
+    );
+
+    if (SplitTextPlugin && lossResponse && lossContinuity) {
+      continuityContext = gsap.context(() => {
+        responseSplit = SplitTextPlugin.create(lossResponse, {
+          type: "words",
+          aria: "auto",
+          wordsClass: "loss-word",
+        });
+        continuitySplit = SplitTextPlugin.create(lossContinuity, {
+          type: "words,chars",
+          aria: "auto",
+          wordsClass: "loss-word",
+          charsClass: "loss-char",
+        });
+
+        const continuityWord = continuitySplit.words.find((word) =>
+          word.textContent
+            ?.toLocaleUpperCase("es-MX")
+            .startsWith("CONTINUIDAD"),
+        );
+        const continuityChars = continuityWord
+          ? continuitySplit.chars.filter((char) =>
+              continuityWord.contains(char),
+            )
+          : continuitySplit.chars;
+
+        gsap
+          .timeline({
+            defaults: { ease: "power2.out" },
+            scrollTrigger: {
+              trigger: ".motion-loss",
+              start: "top 78%",
+              once: true,
+            },
+            onComplete: () => {
+              gsap.set(lossSteps, { clearProps: "all" });
+              gsap.set("[data-loss-copy]", { clearProps: "all" });
+              responseSplit?.revert();
+              continuitySplit?.revert();
+            },
+          })
+          .from(lossSteps, {
+            autoAlpha: 0,
+            y: 18,
+            duration: 0.22,
+            stagger: 0.08,
+          })
+          .from(
+            responseSplit.words,
+            { autoAlpha: 0, y: 20, duration: 0.3, stagger: 0.035 },
+            "-=0.08",
+          )
+          .from(
+            continuityChars,
+            {
+              autoAlpha: 0,
+              x: () => gsap.utils.random(-4, 4, 1),
+              y: () => gsap.utils.random(20, 30, 1),
+              rotation: () => gsap.utils.random(-2, 2, 0.5),
+              duration: 0.38,
+              stagger: 0.016,
+            },
+            "-=0.12",
+          )
+          .from(
+            "[data-loss-copy]",
+            { autoAlpha: 0, y: 16, duration: 0.28 },
+            "-=0.08",
+          );
+      }, root);
+
+      root.dataset.motionStatus = "full";
+    } else {
+      continuityContext = gsap.context(() => {
+        gsap
+          .timeline({
+            defaults: { ease: "power2.out" },
+            scrollTrigger: {
+              trigger: ".motion-loss",
+              start: "top 78%",
+              once: true,
+            },
+            onComplete: () => {
+              gsap.set(
+                [
+                  ...lossSteps,
+                  "[data-loss-response]",
+                  "[data-loss-continuity]",
+                  "[data-loss-copy]",
+                ],
+                { clearProps: "all" },
+              );
+            },
+          })
+          .from(lossSteps, {
+            autoAlpha: 0,
+            y: 18,
+            duration: 0.22,
+            stagger: 0.08,
+          })
+          .from(
+            ["[data-loss-response]", "[data-loss-continuity]"],
+            { autoAlpha: 0, y: 20, duration: 0.34, stagger: 0.08 },
+            "-=0.06",
+          )
+          .from(
+            "[data-loss-copy]",
+            { autoAlpha: 0, y: 16, duration: 0.28 },
+            "-=0.08",
+          );
+      }, root);
+
+      root.dataset.motionStatus = "fallback";
+    }
+
     ScrollTrigger.refresh();
-    window.addEventListener("pagehide", () => ctx.revert(), { once: true });
+    root.dataset.motionTriggers = String(
+      ScrollTrigger.getAll().filter((trigger) =>
+        root.contains(trigger.trigger as Node),
+      ).length,
+    );
+
+    window.addEventListener(
+      "pagehide",
+      () => {
+        continuityContext?.revert();
+        coreContext?.revert();
+        responseSplit?.revert();
+        continuitySplit?.revert();
+      },
+      { once: true },
+    );
+  } catch {
+    continuityContext?.revert();
+    coreContext?.revert();
+    responseSplit?.revert();
+    continuitySplit?.revert();
+    restoreVisibleState(root);
+    root.dataset.motionStatus = "error";
+    root.dataset.motionTriggers = "0";
+  }
 }
 
 void initializeMotion();
