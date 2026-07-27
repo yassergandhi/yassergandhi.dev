@@ -24,6 +24,8 @@
 .motion-offer-grid,
 .method-composition,
 .method-composition span {
+  min-inline-size: 0;
+  max-inline-size: 100%;
   min-width: 0;
   max-width: 100%;
 }
@@ -67,7 +69,7 @@
 }
 
 .motion-hero-title {
-  max-width: 13ch;
+  max-width: 100%;
   margin: 0;
   font-size: clamp(2.35rem, 10.5vw, 7.2rem);
   letter-spacing: -0.055em;
@@ -78,10 +80,6 @@
 .motion-hero-title span,
 .motion-word-stack span {
   display: block;
-}
-
-.motion-hero-title span {
-  white-space: nowrap;
 }
 
 .motion-hero-title span:nth-child(2) {
@@ -116,7 +114,7 @@
 }
 
 .motion-word-stack .origin-independence {
-  font-size: 0.72em;
+  font-size: 0.68em;
 }
 
 .motion-word-stack span:nth-child(2),
@@ -154,6 +152,7 @@
   letter-spacing: 0.08em;
   line-height: 1.2;
   text-transform: uppercase;
+  max-inline-size: 100%;
 }
 
 .motion-sequence span:nth-child(2),
@@ -176,10 +175,6 @@
   font-size: clamp(2.25rem, 5.5vw, 4rem);
   letter-spacing: -0.06em;
   line-height: 0.94;
-}
-
-.motion-loss .loss-word {
-  white-space: nowrap;
 }
 
 .motion-loss h2 > span {
@@ -413,7 +408,7 @@
       "rebuild rebuild"
       "then decide"
       "build build";
-    grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: baseline;
     font-size: clamp(3.2rem, 8.2vw, 7rem);
   }
