@@ -1,31 +1,42 @@
 ---
+const isEvaluation = Astro.url.pathname.replace(/\/+$/, "") === "/evaluacion";
 const links = [
-  { label: 'La escena', href: '/#escena' },
-  { label: 'Las preguntas', href: '/#preguntas' },
-  { label: 'Cómo trabajo', href: '/#metodo' },
-  { label: 'Qué puede cambiar', href: '/#resultados' },
+  { label: "Método", href: "/#metodo" },
+  { label: "Oferta", href: "/#oferta" },
 ];
 ---
 
 <nav class="site-nav" aria-label="Navegación principal">
   <div class="container nav-inner">
-    <a href="/" class="nav-brand" aria-label="yassergandhi.dev, inicio">
+    <a
+      href="/"
+      class="nav-brand"
+      aria-label="yassergandhi.dev, inicio"
+      aria-current={!isEvaluation ? "page" : undefined}
+    >
       yassergandhi.dev<span aria-hidden="true">_</span>
     </a>
 
-    <ul class="nav-links nav-desktop">
-      {links.map((link) => <li><a href={link.href}>{link.label}</a></li>)}
-      <li><a href="/evaluacion?originPage=home&offer=evaluacion_inicial" class="nav-cta">Cuéntame qué pasó</a></li>
-    </ul>
-
-    <details class="nav-mobile">
-      <summary aria-label="Abrir menú de navegación"><span>Menú</span></summary>
-      <div class="nav-mobile-panel">
-        <ul class="nav-links">
-          {links.map((link) => <li><a href={link.href}>{link.label}</a></li>)}
-          <li><a href="/evaluacion?originPage=home&offer=evaluacion_inicial" class="nav-cta">Cuéntame qué pasó</a></li>
-        </ul>
-      </div>
-    </details>
+    {
+      isEvaluation ? (
+        <a class="nav-back" href="/">
+          Volver al inicio
+        </a>
+      ) : (
+        <>
+          <ul class="nav-links">
+            {links.map((link) => (
+              <li><a href={link.href}>{link.label}</a></li>
+            ))}
+          </ul>
+          <a
+            class="nav-evaluation"
+            href="/evaluacion?originPage=home&offer=evaluacion_inicial"
+          >
+            Evaluación
+          </a>
+        </>
+      )
+    }
   </div>
 </nav>

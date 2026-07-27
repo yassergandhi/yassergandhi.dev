@@ -1,0 +1,107 @@
+---
+import "../styles/simple-text-motion.css";
+
+const evaluationUrl =
+  "/evaluacion?originPage=home&offer=evaluacion_inicial";
+---
+
+<div class="simple-motion" data-simple-motion>
+  <section class="motion-section motion-hero" aria-labelledby="hero-title">
+    <div class="motion-container">
+      <p class="motion-kicker" data-hero-kicker>
+        Sitios y sistemas web con investigación cualitativa
+      </p>
+      <h1 id="hero-title" class="motion-hero-title">
+        <span data-hero-line>Tu negocio</span>
+        <span data-hero-line>No empezó</span>
+        <span data-hero-line>Con una página.</span>
+      </h1>
+      <p class="motion-intro" data-hero-copy>
+        Empezó con una vida que alguien quería construir.
+      </p>
+    </div>
+  </section>
+
+  <section class="motion-section motion-origin" aria-labelledby="origin-title">
+    <div class="motion-container motion-origin-grid">
+      <h2 id="origin-title" class="motion-word-stack" aria-label="Vida, oficio, independencia, legado">
+        <span class="origin-life" data-origin-word>Vida</span>
+        <span class="origin-work" data-origin-word>Oficio</span>
+        <span class="origin-independence" data-origin-word>Independencia</span>
+        <span class="origin-legacy" data-origin-word>Legado</span>
+      </h2>
+      <p class="motion-copy">
+        Antes de la página hubo una intención, una necesidad y una forma de
+        sostener algo importante.
+      </p>
+    </div>
+  </section>
+
+  <section class="motion-section motion-loss" aria-labelledby="loss-title">
+    <div class="motion-container motion-loss-grid">
+      <div class="motion-stamps" aria-label="Se respondió cinco veces">
+        <span data-loss-stamp>Se respondió</span>
+        <span data-loss-stamp>Se respondió</span>
+        <span data-loss-stamp>Se respondió</span>
+        <span data-loss-stamp>Se respondió</span>
+        <span data-loss-stamp>Se respondió</span>
+      </div>
+      <div class="motion-loss-question">
+        <h2 id="loss-title" data-loss-question>¿Qué seguía?</h2>
+        <p class="motion-copy" data-loss-copy>
+          A veces la confianza ya se perdió y el negocio todavía no lo sabe.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="metodo" class="motion-section motion-method" aria-labelledby="method-title">
+    <div class="motion-container">
+      <h2 id="method-title" class="sr-only">Método de trabajo</h2>
+      <div class="method-composition" aria-label="Primero pregunto. Después reconstruyo. Sólo entonces decidimos qué construir.">
+        <span class="method-first" data-method-word>Primero</span>
+        <span class="method-ask" data-method-word>Pregunto</span>
+        <span class="method-after" data-method-word>Después</span>
+        <span class="method-rebuild" data-method-word>Reconstruyo</span>
+        <span class="method-then" data-method-word>Sólo entonces</span>
+        <span class="method-decide" data-method-word>Decidimos</span>
+        <span class="method-build" data-method-word>Qué construir</span>
+      </div>
+      <p class="motion-trajectory" data-method-trajectory>
+        15 años analizando sistemas, textos y situaciones para identificar
+        dónde se rompe la comprensión.
+      </p>
+    </div>
+  </section>
+
+  <section id="oferta" class="motion-section motion-offer" aria-labelledby="offer-title">
+    <div class="motion-container motion-offer-grid">
+      <div>
+        <p class="motion-kicker">Una colaboración situada</p>
+        <h2 id="offer-title" data-offer-heading>
+          <span>Proyecto de</span>
+          <span>sitio o sistema</span>
+          <span>web con</span>
+          <span>investigación</span>
+          <span>cualitativa</span>
+        </h2>
+      </div>
+      <div class="motion-offer-details">
+        <p class="motion-offer-lead">
+          Primero reconstruimos el caso. Después decidimos qué hace falta
+          construir.
+        </p>
+        <p class="motion-price">Desde $24,999 MXN, IVA incluido.</p>
+        <p class="motion-limit">
+          Trabajo con pocos proyectos a la vez para reconstruir cada caso antes
+          de construir.
+        </p>
+        <a class="motion-button" href={evaluationUrl}>Cuéntame qué pasó</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+  import "../scripts/simpleTextMotion";
+</script>

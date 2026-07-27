@@ -247,6 +247,9 @@ section {
 }
 
 .nav-brand {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
   color: var(--orange-bright);
   font: 700 clamp(1rem, 2vw, 1.2rem)/1 "Ubuntu Mono", monospace;
   text-decoration: none;
@@ -270,6 +273,9 @@ section {
 }
 
 .nav-links a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
   color: var(--muted);
   font-size: .9rem;
   font-weight: 500;
@@ -280,8 +286,27 @@ section {
   color: var(--cream);
 }
 
-.nav-mobile {
-  display: none;
+.nav-evaluation,
+.nav-back {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--orange);
+  border-radius: 8px;
+  padding: .58rem .85rem;
+  color: var(--aubergine-deep);
+  background: var(--orange);
+  font-size: .88rem;
+  font-weight: 700;
+  line-height: 1.1;
+  text-decoration: none;
+}
+
+.nav-evaluation:hover,
+.nav-back:hover {
+  color: var(--aubergine-deep);
+  background: var(--orange-bright);
 }
 
 .hero-layout {
@@ -728,66 +753,6 @@ section {
 }
 
 @media (max-width: 960px) {
-  .nav-desktop {
-    display: none;
-  }
-
-  .nav-mobile {
-    display: block;
-    position: relative;
-  }
-
-  .nav-mobile summary {
-    display: flex;
-    min-width: 64px;
-    min-height: 44px;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--line-accent);
-    border-radius: 8px;
-    color: var(--cream);
-    cursor: pointer;
-    list-style: none;
-  }
-
-  .nav-mobile summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .nav-mobile[open] summary {
-    border-color: var(--orange-bright);
-  }
-
-  .nav-mobile-panel {
-    position: absolute;
-    z-index: 10;
-    top: calc(100% + .75rem);
-    right: 0;
-    width: min(86vw, 330px);
-    border: 1px solid var(--line-accent);
-    border-radius: 10px;
-    padding: .8rem;
-    background: rgba(23, 4, 17, .98);
-    box-shadow: var(--shadow-soft);
-  }
-
-  .nav-mobile .nav-links {
-    display: grid;
-    gap: 0;
-  }
-
-  .nav-mobile .nav-links a {
-    display: flex;
-    min-height: 48px;
-    align-items: center;
-    padding: 0 .75rem;
-  }
-
-  .nav-mobile .nav-cta {
-    margin-top: .5rem;
-    justify-content: center;
-  }
-
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -817,6 +782,28 @@ section {
   .nav-inner,
   .site-nav {
     min-height: 62px;
+  }
+
+  .nav-inner {
+    flex-wrap: wrap;
+    gap: 0 .75rem;
+    padding-block: .35rem;
+  }
+
+  .nav-brand {
+    order: 1;
+  }
+
+  .nav-evaluation,
+  .nav-back {
+    order: 2;
+    margin-left: auto;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    gap: 1.5rem;
   }
 
   .split-section,

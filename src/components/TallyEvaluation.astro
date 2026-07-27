@@ -67,6 +67,7 @@ const EMBED_URL = `https://tally.so/embed/${TALLY_ID}`;
         if (value) tallyUrl.searchParams.set(key, value);
       });
       iframe.dataset.tallySrc = tallyUrl.toString();
+      iframe.src = tallyUrl.toString();
 
       let loaded = false;
 
