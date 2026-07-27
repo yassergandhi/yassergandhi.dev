@@ -1,9 +1,7 @@
 ---
 const links = [
-  { label: 'La escena', href: '/#escena' },
-  { label: 'Las preguntas', href: '/#preguntas' },
-  { label: 'Cómo trabajo', href: '/#metodo' },
-  { label: 'Qué puede cambiar', href: '/#resultados' },
+  { label: "Método", href: "/#metodo" },
+  { label: "Oferta", href: "/#oferta" },
 ];
 ---
 
@@ -15,7 +13,6 @@ const links = [
 
     <ul class="nav-links nav-desktop">
       {links.map((link) => <li><a href={link.href}>{link.label}</a></li>)}
-      <li><a href="/evaluacion?originPage=home&offer=evaluacion_inicial" class="nav-cta">Cuéntame qué pasó</a></li>
     </ul>
 
     <details class="nav-mobile">
@@ -23,7 +20,6 @@ const links = [
       <div class="nav-mobile-panel">
         <ul class="nav-links">
           {links.map((link) => <li><a href={link.href}>{link.label}</a></li>)}
-          <li><a href="/evaluacion?originPage=home&offer=evaluacion_inicial" class="nav-cta">Cuéntame qué pasó</a></li>
         </ul>
       </div>
     </details>
