@@ -35,3 +35,24 @@ La puntuación SEO de evaluación refleja su `noindex, follow` intencional. La
 evaluación también carga el iframe externo de Tally: su mediana transfirió
 917,209 bytes y solicitó cinco fuentes frente a 70,765 bytes y tres solicitudes
 de fuentes en la home. No se atribuyeron long tasks al sistema de motion.
+
+
+## V8.1 — Auditoría de voz e interacción
+
+El lenguaje defensivo de hero, posibilidades, método, alcance y evaluación se sustituyó por orientación concreta basada en situaciones escuchables: clientes que llegan desde Facebook, Google Maps o una recomendación; conversaciones que se enfrían; información que debe explicarse otra vez; y claridad sobre el siguiente paso.
+
+La verificación V8.1 cubre navegación activa, progreso de lectura, stagger por grupos, reentrada sin retirar `data-reveal-ready`, estados de Tally, hover, foco, active, JavaScript desactivado y reduced motion. Las evidencias locales se guardan en `tmp/visual-v8-1/`.
+
+
+### Resultados Lighthouse V8.1
+
+Mediana de tres corridas por perfil:
+
+| Perfil | Performance | Accessibility | Best Practices | SEO | LCP | CLS | TBT |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Home móvil | 100 | 100 | 96 | 100 | 1.504 s | 0.00053 | 0 ms |
+| Home escritorio | 100 | 100 | 96 | 100 | 0.578 s | 0.00049 | 0 ms |
+| Evaluación móvil | 95 | 100 | 96 | 66 | 2.407 s | 0.00266 | 0 ms |
+| Home, movimiento reducido | 95 | 100 | 96 | 100 | 2.422 s | 0.00053 | 0 ms |
+
+La puntuación SEO 66 de evaluación corresponde exclusivamente a su `noindex, follow` intencional. La home conserva tres solicitudes de fuentes, TBT de 0 ms y no registra long tasks atribuibles a motion.

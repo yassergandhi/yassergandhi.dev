@@ -18,10 +18,10 @@ interface Props {
 
 const {
   title = "Sitios y sistemas web con investigación cualitativa | yassergandhi.dev",
-  description = "Reconstruyo cómo llega una persona, qué espera y dónde pierde continuidad. Después decidimos si conviene cambiar una página, construir un sistema o no construir todavía.",
+  description = "Reconstruyo cómo llega una persona, qué espera y qué necesita para avanzar. Con esa información decidimos qué conviene cambiar o construir.",
   canonical = `${siteUrl}/`,
   ogTitle = "La promesa abre la puerta. El sistema debe permitir continuar.",
-  ogDescription = "Investigo qué esperaba una persona, qué encontró y qué tuvo que reparar para avanzar. Después decidimos qué construir.",
+  ogDescription = "Investigo cómo llega una persona, qué espera y qué necesita para avanzar. Después decidimos qué conviene cambiar o construir.",
   ogImage = `${siteUrl}/og-image.png`,
   ogImageAlt = "La promesa abre la puerta. El sistema debe permitir continuar.",
   noindex = false,
@@ -69,6 +69,16 @@ const jsonLd = extraSchema.length
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content={ogImageAlt} />
     <meta name="build-sha" content={import.meta.env.VERCEL_GIT_COMMIT_SHA || "local"} />
+    <script is:inline>
+      (() => {
+        const root = document.documentElement;
+        if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        root.setAttribute("data-motion-capable", "");
+        setTimeout(() => {
+          if (!root.hasAttribute("data-motion-initialized")) root.removeAttribute("data-motion-capable");
+        }, 1500);
+      })();
+    </script>
     {jsonLd && <script type="application/ld+json" set:html={jsonLd} />}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>

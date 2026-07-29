@@ -1,9 +1,9 @@
 ---
 import BrandMark from "./BrandMark.astro";
-const links=[{label:"Correo",href:"mailto:yassergandhi.dev@gmail.com"},{label:"LinkedIn",href:"https://www.linkedin.com/in/yassergandhi/"},{label:"GitHub",href:"https://github.com/yassergandhi/"},{label:"Evaluar un caso",href:"/evaluacion?originPage=home&offer=evaluacion_inicial"}];
+const links=[{label:"Correo",href:"mailto:yassergandhi.dev@gmail.com"},{label:"LinkedIn",href:"https://www.linkedin.com/in/yassergandhi/"},{label:"GitHub",href:"https://github.com/yassergandhi/"},{label:"Contar una situación",href:"/evaluacion?originPage=home&offer=evaluacion_inicial"}];
 ---
 <footer class="site-footer"><div class="container footer-grid">
-  <div class="footer-brand"><BrandMark /><p class="footer-wordmark">yassergandhi.dev<span aria-hidden="true">_</span></p><p>Yasser Gandhi Hernández Esquivel</p><p class="footer-meta">Sitios y sistemas web con investigación cualitativa<br/>Ciudad de México · Remoto</p></div>
+  <div class="footer-brand"><BrandMark /><p class="footer-wordmark" data-footer-wordmark>yassergandhi.dev<span aria-hidden="true">_</span></p><p>Yasser Gandhi Hernández Esquivel</p><p class="footer-meta">Sitios y sistemas web con investigación cualitativa<br/>Ciudad de México · Remoto</p></div>
   <nav class="footer-links" aria-label="Contacto y perfiles">{links.map(link => <a href={link.href}>{link.label}</a>)}</nav>
   <div class="footer-signature"><p class="label">Firma autoral</p><a href="https://huhugerman.com/investigacion">huhuGERMAN</a></div>
   <p class="footer-closing">Primero comprendo el problema de negocio.<br/>Después decidimos qué hace falta construir.</p>

@@ -2,11 +2,11 @@
 
 Sitio comercial en Astro, gobernado por North Star V7.
 
-V8 — Identidad impresa y continuidad visual añade el sistema negro/lima, Barlow Condensed, el isotipo Y y microtransiciones progresivas sin cambiar el posicionamiento.
+V8.1 — Lenguaje de confianza y continuidad interactiva conserva la identidad negra/lima, Barlow Condensed y el isotipo Y; orienta el copy hacia situaciones concretas y amplía las microinteracciones progresivas sin cambiar el posicionamiento.
 
 Categoría pública: **Sitios y sistemas web con investigación cualitativa**.
 
-Producto: **Proyecto de intervención digital con investigación cualitativa**: un proyecto delimitado para comprender una situación real, decidir qué intervención corresponde y construirla cuando existe evidencia suficiente.
+Producto: **Proyecto de intervención digital con investigación cualitativa**: un proyecto delimitado para comprender una situación real, definir junto con el negocio qué cambio tiene sentido y desarrollar la solución cuando el alcance está claro.
 
 La inversión se presenta después de comprender el caso y definir el alcance. Las narrativas SaaS, el catálogo histórico, North Star V2–V6, SplitText y el precio público son legacy; el historial se conserva en Git y documentación de archivo.
 

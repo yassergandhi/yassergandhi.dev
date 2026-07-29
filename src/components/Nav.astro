@@ -1,11 +1,11 @@
 ---
 import BrandMark from "./BrandMark.astro";
 const isEvaluation = Astro.url.pathname.replace(/\/+$/, "") === "/evaluacion";
-const links = [{label:"Problema",href:"/#problema"},{label:"Resultados",href:"/#resultados"},{label:"Método",href:"/#metodo"},{label:"Evidencia",href:"/#evidencia"}];
+const links = [{label:"Situaciones",href:"/#problema",id:"problema"},{label:"Posibilidades",href:"/#resultados",id:"resultados"},{label:"Cómo trabajo",href:"/#metodo",id:"metodo"},{label:"Trayectoria",href:"/#evidencia",id:"evidencia"}];
 ---
 <nav class="site-nav" aria-label="Navegación principal">
   <div class="container nav-inner">
     <a href="/" class="nav-brand" aria-label="yassergandhi.dev, inicio" aria-current={!isEvaluation ? "page" : undefined}><BrandMark /><span>yassergandhi.dev<span aria-hidden="true">_</span></span></a>
-    {isEvaluation ? <a class="nav-back" href="/">Volver al inicio</a> : <><ul class="nav-links">{links.map(link => <li><a href={link.href}>{link.label}</a></li>)}</ul><a class="nav-evaluation" href="/evaluacion?originPage=home&offer=evaluacion_inicial">Evaluar un caso</a></>}
-  </div>
+    {isEvaluation ? <a class="nav-back" href="/">Volver al inicio</a> : <><ul class="nav-links">{links.map(link => <li><a href={link.href} data-nav-section={link.id}>{link.label}</a></li>)}</ul><a class="nav-evaluation" href="/evaluacion?originPage=home&offer=evaluacion_inicial">Contar una situación <span aria-hidden="true">→</span></a></>}
+  </div><span class="reading-progress" aria-hidden="true"></span>
 </nav>
