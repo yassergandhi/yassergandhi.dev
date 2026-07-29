@@ -1,44 +1,11 @@
 ---
+import BrandMark from "./BrandMark.astro";
 const isEvaluation = Astro.url.pathname.replace(/\/+$/, "") === "/evaluacion";
-const links = [
-  { label: "Problema", href: "/#problema" },
-  { label: "Resultados", href: "/#resultados" },
-  { label: "Método", href: "/#metodo" },
-  { label: "Evidencia", href: "/#evidencia" },
-];
+const links = [{label:"Problema",href:"/#problema"},{label:"Resultados",href:"/#resultados"},{label:"Método",href:"/#metodo"},{label:"Evidencia",href:"/#evidencia"}];
 ---
-
 <nav class="site-nav" aria-label="Navegación principal">
   <div class="container nav-inner">
-    <a
-      href="/"
-      class="nav-brand"
-      aria-label="yassergandhi.dev, inicio"
-      aria-current={!isEvaluation ? "page" : undefined}
-    >
-      yassergandhi.dev<span aria-hidden="true">_</span>
-    </a>
-
-    {
-      isEvaluation ? (
-        <a class="nav-back" href="/">
-          Volver al inicio
-        </a>
-      ) : (
-        <>
-          <ul class="nav-links">
-            {links.map((link) => (
-              <li><a href={link.href}>{link.label}</a></li>
-            ))}
-          </ul>
-          <a
-            class="nav-evaluation"
-            href="/evaluacion?originPage=home&offer=evaluacion_inicial"
-          >
-            Evaluar un caso
-          </a>
-        </>
-      )
-    }
+    <a href="/" class="nav-brand" aria-label="yassergandhi.dev, inicio" aria-current={!isEvaluation ? "page" : undefined}><BrandMark /><span>yassergandhi.dev<span aria-hidden="true">_</span></span></a>
+    {isEvaluation ? <a class="nav-back" href="/">Volver al inicio</a> : <><ul class="nav-links">{links.map(link => <li><a href={link.href}>{link.label}</a></li>)}</ul><a class="nav-evaluation" href="/evaluacion?originPage=home&offer=evaluacion_inicial">Evaluar un caso</a></>}
   </div>
 </nav>

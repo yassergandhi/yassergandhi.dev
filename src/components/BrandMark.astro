@@ -1,0 +1,8 @@
+---
+interface Props { decorative?: boolean; class?: string; }
+const { decorative = true, class: className = "" } = Astro.props;
+---
+<svg class:list={["brand-mark", className]} viewBox="0 0 100 112" role={decorative ? undefined : "img"} aria-hidden={decorative ? "true" : undefined} aria-label={decorative ? undefined : "Y de yassergandhi.dev"} focusable="false">
+  <path d="M4 4h24l22 34L72 4h24L62 58v50H38V58L4 4Z" fill="currentColor"/>
+  <path d="M74 18h20M84 8v20" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="square"/>
+</svg>

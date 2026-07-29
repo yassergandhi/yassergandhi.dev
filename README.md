@@ -2,6 +2,8 @@
 
 Sitio comercial en Astro, gobernado por North Star V7.
 
+V8 — Identidad impresa y continuidad visual añade el sistema negro/lima, Barlow Condensed, el isotipo Y y microtransiciones progresivas sin cambiar el posicionamiento.
+
 Categoría pública: **Sitios y sistemas web con investigación cualitativa**.
 
 Producto: **Proyecto de intervención digital con investigación cualitativa**: un proyecto delimitado para comprender una situación real, decidir qué intervención corresponde y construirla cuando existe evidencia suficiente.

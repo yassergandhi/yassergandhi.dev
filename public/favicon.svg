@@ -1,4 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="4" fill="#300A24"/>
-  <text x="5" y="24" font-family="Ubuntu, sans-serif" font-weight="700" font-size="22" fill="#E95420">Y</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-labelledby="title"><title id="title">yassergandhi.dev</title><rect width="32" height="32" fill="#141314"/><path d="M3 4h7l6 9 6-9h7L20 19v10h-8V19L3 4Z" fill="#d2e659"/><path d="M23 7h6M26 4v6" stroke="#d2e659" stroke-width="2"/></svg>
