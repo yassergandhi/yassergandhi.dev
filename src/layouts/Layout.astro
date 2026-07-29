@@ -17,13 +17,13 @@ interface Props {
 }
 
 const {
-  title = "Sitios y sistemas web con investigación cualitativa | Yasser Gandhi",
-  description = "No empiezo por la página. Reconstruyo qué ocurrió, quién todavía podía ayudar y qué sitio o sistema hace falta construir.",
+  title = "Sitios y sistemas web con investigación cualitativa | yassergandhi.dev",
+  description = "Reconstruyo cómo llega una persona, qué espera y qué necesita para avanzar. Con esa información decidimos qué conviene cambiar o construir.",
   canonical = `${siteUrl}/`,
-  ogTitle = "Tu negocio no empezó con una página.",
-  ogDescription = "Empezó con una vida que alguien quería construir. Primero pregunto, después reconstruyo y sólo entonces construyo.",
+  ogTitle = "La promesa abre la puerta. El sistema debe permitir continuar.",
+  ogDescription = "Investigo cómo llega una persona, qué espera y qué necesita para avanzar. Después decidimos qué conviene cambiar o construir.",
   ogImage = `${siteUrl}/og-image.png`,
-  ogImageAlt = "Tu negocio no empezó con una página. Empezó con una vida que alguien quería construir.",
+  ogImageAlt = "La promesa abre la puerta. El sistema debe permitir continuar.",
   noindex = false,
   extraSchema = [],
 } = Astro.props;
@@ -41,7 +41,7 @@ const jsonLd = extraSchema.length
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Instrument+Sans:wdth,wght@75..100,400..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Ubuntu+Mono:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <title>{title}</title>
@@ -68,11 +68,21 @@ const jsonLd = extraSchema.length
     <meta name="twitter:description" content={ogDescription} />
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content={ogImageAlt} />
+    <meta name="build-sha" content={import.meta.env.VERCEL_GIT_COMMIT_SHA || "local"} />
+    <script is:inline>
+      (() => {
+        const root = document.documentElement;
+        if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        root.setAttribute("data-motion-capable", "");
+        setTimeout(() => {
+          if (!root.hasAttribute("data-motion-initialized")) root.removeAttribute("data-motion-capable");
+        }, 1500);
+      })();
+    </script>
     {jsonLd && <script type="application/ld+json" set:html={jsonLd} />}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
-    <div class="aura"></div>
     <slot />
     <Analytics />
   </body>

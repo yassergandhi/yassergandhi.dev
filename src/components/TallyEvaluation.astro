@@ -6,13 +6,13 @@ const EMBED_URL = `https://tally.so/embed/${TALLY_ID}`;
 
 <div class="tally-shell" data-tally-shell data-state="loading">
   <div class="tally-shell-header">
-    <span>Evaluación inicial</span>
-    <a href={SHARE_URL} target="_blank" rel="noopener">Abrir en Tally</a>
+    <span>Cuéntame qué pasó</span>
+    <a href={SHARE_URL} target="_blank" rel="noopener">Abrir formulario en Tally</a>
   </div>
 
   <div class="tally-loading" data-tally-loading role="status">
     <span aria-hidden="true"></span>
-    Cargando la evaluación…
+    Preparando el formulario…
   </div>
 
   <div class="tally-frame" data-tally-frame>
@@ -28,14 +28,14 @@ const EMBED_URL = `https://tally.so/embed/${TALLY_ID}`;
   </div>
 
   <div class="tally-error" data-tally-error hidden>
-    <p>No fue posible mostrar la evaluación en esta página.</p>
-    <a href={SHARE_URL} target="_blank" rel="noopener">Abrir el formulario en Tally</a>
+    <p>Puedes continuar directamente en Tally.</p>
+    <a href={SHARE_URL} target="_blank" rel="noopener">Abrir formulario</a>
   </div>
 
   <noscript>
     <div class="tally-error">
-      <p>No fue posible mostrar la evaluación en esta página.</p>
-      <a href={SHARE_URL} target="_blank" rel="noopener">Abrir el formulario en Tally</a>
+      <p>Puedes continuar directamente en Tally.</p>
+      <a href={SHARE_URL} target="_blank" rel="noopener">Abrir formulario</a>
     </div>
   </noscript>
 </div>
@@ -75,16 +75,16 @@ const EMBED_URL = `https://tally.so/embed/${TALLY_ID}`;
         loaded = true;
         window.clearTimeout(timeout);
         shell.dataset.state = 'loaded';
-        loading.hidden = true;
         error.hidden = true;
+        window.setTimeout(() => { loading.hidden = true; }, 220);
       };
       iframe.addEventListener('load', onLoad);
 
       const timeout = window.setTimeout(() => {
         if (loaded) return;
         shell.dataset.state = 'error';
-        loading.hidden = true;
         error.hidden = false;
+        window.setTimeout(() => { loading.hidden = true; }, 220);
       }, TIMEOUT_MS);
     });
 
@@ -95,7 +95,7 @@ const EMBED_URL = `https://tally.so/embed/${TALLY_ID}`;
         shell.dataset.state = 'error';
         const loading = shell.querySelector('[data-tally-loading]');
         const error = shell.querySelector('[data-tally-error]');
-        if (loading instanceof HTMLElement) loading.hidden = true;
+        if (loading instanceof HTMLElement) window.setTimeout(() => { loading.hidden = true; }, 220);
         if (error instanceof HTMLElement) error.hidden = false;
       });
     };
