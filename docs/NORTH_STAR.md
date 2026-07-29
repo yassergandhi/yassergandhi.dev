@@ -1,14 +1,12 @@
-# North Star
+# North Star V7
 
-Vigente desde el 25 de julio de 2026: North Star V6.
+Vigente desde el 29 de julio de 2026.
 
-> Tu negocio no empezó con una página. Empezó con una vida que alguien quería construir.
+> La promesa abre la puerta. El sistema debe permitir continuar.
 
-La distinción está en las preguntas: por qué debe seguir vivo el negocio, qué ocurrió realmente, quién todavía podía ayudar y qué puede continuar sin depender de una sola persona.
+- Categoría: **Sitios y sistemas web con investigación cualitativa**.
+- Producto: **Proyecto de intervención digital con investigación cualitativa**.
+- Definición: un proyecto delimitado para comprender una situación real, decidir qué intervención corresponde y construirla cuando existe evidencia suficiente.
+- Métrica: **Casos suficientemente reconstruidos que producen una decisión defendible y un siguiente paso aceptado.**
 
-- Categoría pública: **sitios y sistemas web con investigación cualitativa**.
-- Oferta principal: **Proyecto de sitio o sistema web con investigación cualitativa**.
-- Precio: **Desde $24,999 MXN, IVA incluido.**
-- Estado: definición fijada; comprador, mensaje y demanda en validación.
-
-El documento fuente es `NORTH_STAR_YASSERGANDHI_DEV_V6_ESCENA_PREGUNTAS_2026-07-25.md`. V5 conserva autoridad sobre oferta, precio, evaluación, URLs, métricas, límites comerciales y validación CANACO.
+Son legacy, no autoridad vigente: North Star V2–V6, precio público, narrativa SaaS, “Tu negocio no empezó...” como entrada, SplitText y catálogo histórico de servicios. No se borra su documentación histórica.

@@ -1,17 +1,9 @@
-# Oferta
+# Oferta V7
 
-## Oferta principal
+**Proyecto de intervención digital con investigación cualitativa.**
 
-**Proyecto de sitio o sistema web con investigación cualitativa.**
+La solicitud inicial es evidencia, no diagnóstico. Primero se reconstruye el caso; después se decide el alcance y, si existe evidencia suficiente, se construye y verifica la intervención.
 
-La investigación permite comprender qué debe construirse. El diseño y el desarrollo permiten entregarlo.
+La inversión se presenta después de comprender el caso y definir el alcance. El precio público anterior es una decisión legacy, conservada únicamente en el archivo histórico de Git.
 
-**Desde $24,999 MXN, IVA incluido.**
-
-El alcance final se define después de la evaluación. La evaluación no es auditoría gratuita, cotización automática ni aceptación del proyecto.
-
-CTA público: **Cuéntame qué pasó**.
-
-La oferta aparece después de la escena, la pregunta central y el método. Primero se reconstruyen casos reales; construir no es la respuesta automática.
-
-Destino desde la home: `/evaluacion?originPage=home&offer=evaluacion_inicial`.
+CTA: **Evaluar si existe un caso** → `/evaluacion?originPage=home&offer=evaluacion_inicial`.

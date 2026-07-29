@@ -1,4 +1,6 @@
-# Decisiones
+# LEGACY — Decisiones V6
+
+Este documento conserva valor de archivo. V7 gobierna la release vigente; sus decisiones están en `NORTH_STAR.md` y `MARKET_POSITIONING_V7.md`.
 
 Fecha de corte: 25 de julio de 2026.
 
