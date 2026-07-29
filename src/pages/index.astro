@@ -1,130 +1,33 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
-import SimpleTextMotion from "../components/SimpleTextMotion.astro";
 import Footer from "../components/Footer.astro";
-import {
-  LAST_SIGNIFICANT_UPDATE,
-  SITE_URL,
-} from "../config/siteMetadata.mjs";
-
+import { LAST_SIGNIFICANT_UPDATE, SITE_URL } from "../config/siteMetadata.mjs";
 const canonical = `${SITE_URL}/`;
-const title =
-  "yassergandhi.dev — Sitios y sistemas web con investigación cualitativa";
-const description =
-  "No empiezo por la página. Reconstruyo qué ocurrió, quién todavía podía ayudar y qué sitio o sistema hace falta construir.";
-
+const title = "Sitios y sistemas web con investigación cualitativa | yassergandhi.dev";
+const description = "Reconstruyo cómo llega una persona, qué espera y dónde pierde continuidad. Después decidimos si conviene cambiar una página, construir un sistema o no construir todavía.";
+const cta = "/evaluacion?originPage=home&offer=evaluacion_inicial";
+const serviceDescription = "Un proyecto delimitado para comprender una situación real, decidir qué intervención corresponde y construirla cuando existe evidencia suficiente.";
 const schema = [
-  {
-    "@type": "Person",
-    "@id": `${canonical}#person`,
-    name: "Yasser Gandhi Hernández Esquivel",
-    url: canonical,
-    email: "mailto:yassergandhi.dev@gmail.com",
-    jobTitle: "Docente-investigador y desarrollador de sistemas web",
-    affiliation: {
-      "@type": "Organization",
-      name: "CELEX — Centro de Lenguas Extranjeras, UAM Azcapotzalco",
-    },
-    alumniOf: [
-      {
-        "@type": "CollegeOrUniversity",
-        name: "Universidad Nacional Autónoma de México",
-      },
-      {
-        "@type": "CollegeOrUniversity",
-        name: "Universidad de Guadalajara",
-      },
-    ],
-    hasCredential: [
-      {
-        "@type": "EducationalOccupationalCredential",
-        name: "Licenciatura en Lengua y Literaturas Modernas (Letras Alemanas)",
-        credentialCategory: "Licenciatura",
-      },
-      {
-        "@type": "EducationalOccupationalCredential",
-        name: "Maestría en Pedagogía",
-        credentialCategory: "Maestría",
-      },
-      {
-        "@type": "EducationalOccupationalCredential",
-        name: "Licenciatura en Desarrollo de Sistemas Web",
-        credentialCategory: "Licenciatura",
-      },
-    ],
-    sameAs: [
-      "https://www.linkedin.com/in/yassergandhi/",
-      "https://github.com/yassergandhi/",
-      "https://orcid.org/0000-0002-8736-184X",
-      "https://scholar.google.com/citations?user=YnqLK4oAAAAJ",
-    ],
-    subjectOf: [
-      {
-        "@type": "CreativeWork",
-        name: "Trayectoria de investigación",
-        url: "https://huhugerman.com/investigacion",
-      },
-      {
-        "@type": "Dataset",
-        name: "Corpus CELEX-UAM Azcapotzalco 2026",
-        url: "https://osf.io/b7895/overview",
-      },
-    ],
-  },
-  {
-    "@type": "WebSite",
-    "@id": `${canonical}#website`,
-    name: "yassergandhi.dev",
-    url: canonical,
-    inLanguage: "es-MX",
-    publisher: { "@id": `${canonical}#person` },
-  },
-  {
-    "@type": "WebPage",
-    "@id": `${canonical}#webpage`,
-    url: canonical,
-    name: title,
-    description,
-    inLanguage: "es-MX",
-    dateModified: LAST_SIGNIFICANT_UPDATE,
-    isPartOf: { "@id": `${canonical}#website` },
-  },
-  {
-    "@type": "ProfessionalService",
-    "@id": `${canonical}#professional-service`,
-    name: "yassergandhi.dev",
-    url: canonical,
-    areaServed: ["Ciudad de México", "Remoto"],
-    founder: { "@id": `${canonical}#person` },
-    description,
-  },
-  {
-    "@type": "Service",
-    "@id": `${canonical}#service`,
-    name: "Proyecto de sitio o sistema web con investigación cualitativa",
-    serviceType: "Proyecto de sitio o sistema web con investigación cualitativa",
-    provider: { "@id": `${canonical}#professional-service` },
-    areaServed: ["Ciudad de México", "Remoto"],
-    description,
-  },
+  { "@type": "Person", "@id": `${canonical}#person`, name: "Yasser Gandhi Hernández Esquivel", url: canonical, jobTitle: "Investigador cualitativo y desarrollador de sistemas web", alumniOf: [{ "@type": "CollegeOrUniversity", name: "Universidad Nacional Autónoma de México" }, { "@type": "CollegeOrUniversity", name: "Universidad de Guadalajara" }], sameAs: ["https://github.com/yassergandhi", "https://orcid.org/0000-0002-8736-184X"] },
+  { "@type": "WebSite", "@id": `${canonical}#website`, name: "yassergandhi.dev", url: canonical, inLanguage: "es-MX", publisher: { "@id": `${canonical}#person` } },
+  { "@type": "WebPage", "@id": `${canonical}#webpage`, url: canonical, name: title, description, inLanguage: "es-MX", dateModified: LAST_SIGNIFICANT_UPDATE, isPartOf: { "@id": `${canonical}#website` } },
+  { "@type": "ProfessionalService", "@id": `${canonical}#professional-service`, name: "yassergandhi.dev", url: canonical, areaServed: ["Ciudad de México", "Remoto"], founder: { "@id": `${canonical}#person` }, description: serviceDescription },
+  { "@type": "Service", "@id": `${canonical}#service`, name: "Proyecto de intervención digital con investigación cualitativa", serviceType: "Proyecto de intervención digital con investigación cualitativa", provider: { "@id": `${canonical}#professional-service` }, areaServed: ["Ciudad de México", "Remoto"], description: serviceDescription },
 ];
 ---
-
-<Layout
-  {title}
-  {description}
-  {canonical}
-  ogTitle="Tu negocio no empezó con una página."
-  ogDescription="Empezó con una vida que alguien quería construir. Primero pregunto, después reconstruyo y sólo entonces construyo."
-  ogImageAlt="Tu negocio no empezó con una página. Empezó con una vida que alguien quería construir."
-  extraSchema={schema}
->
+<Layout {title} {description} {canonical} extraSchema={schema}>
   <Nav />
-
   <main>
-    <SimpleTextMotion />
+    <section class="hero" aria-labelledby="hero-title"><div class="container"><p class="kicker">Sitios y sistemas web con investigación cualitativa</p><h1 id="hero-title">Antes de cambiar tu página, hay que entender qué está pasando con las personas que ya llegan.</h1><p class="lead">Reconstruyo un caso real: cómo conocieron el negocio, qué esperaban, qué encontraron y qué tuvieron que resolver para continuar. Con esa evidencia decidimos si conviene cambiar una página, construir un sistema, ajustar un formulario o no construir todavía.</p><a class="button" href={cta}>Evaluar si existe un caso</a><p class="microcopy">No es una cotización, una auditoría gratuita ni una aceptación automática.</p></div></section>
+    <section id="problema" class="section-alt" aria-labelledby="problema-title"><div class="container"><p class="kicker">Situaciones que vale la pena reconstruir</p><h2 id="problema-title">El sitio no siempre es el principio del problema.</h2><ol class="case-grid"><li>Te encuentran en Google Maps o Facebook, pero al escribir tienen que empezar de cero.</li><li>Llegan por una recomendación, pero la página no continúa la confianza que abrió la conversación.</li><li>Piden información o una cotización y el equipo vuelve a preguntar, explicar o improvisar.</li></ol><p>Estas situaciones no demuestran por sí solas dónde está la causa. Sirven para formular una pregunta investigable.</p></div></section>
+    <section aria-labelledby="continuidad-title"><div class="container reading"><h2 id="continuidad-title">La promesa abre la puerta. El sistema debe permitir continuar.</h2><p class="lead">Una persona puede llegar por una recomendación, una red social, Google Maps, una búsqueda o una página. La intervención no debe sustituir automáticamente ese canal. Puede continuar la confianza, conservar el contexto, aclarar una decisión o hacer visible el siguiente paso.</p><p class="statement">No faltó una respuesta. Faltó continuidad.</p></div></section>
+    <section id="resultados" class="section-alt" aria-labelledby="resultados-title"><div class="container two-column"><div><p class="kicker">Lo que puede resultar</p><h2 id="resultados-title">No siempre hace falta una página nueva.</h2></div><div><ul class="plain-list"><li>una página;</li><li>un sistema;</li><li>un formulario;</li><li>un cambio de contenido o de recorrido;</li><li>una integración delimitada;</li><li>otra investigación;</li><li>la decisión de no construir todavía.</li></ul><p>La solicitud inicial es evidencia, no diagnóstico. El alcance se define después de comprender el caso.</p></div></div></section>
+    <section id="metodo" aria-labelledby="metodo-title"><div class="container"><p class="kicker">Cómo trabajo</p><h2 id="metodo-title">Primero reconstruyo. Después decidimos.</h2><ol class="method-grid"><li><span>01</span><h3>Caso real</h3><p>Reconstruimos qué ocurrió, qué esperaba la persona, qué información recibió, qué tuvo que reparar y quién podía decidir.</p></li><li><span>02</span><h3>Decisión de alcance</h3><p>Distinguimos qué ya funciona, qué evidencia falta y qué intervención puede justificarse.</p></li><li><span>03</span><h3>Construcción y verificación</h3><p>Diseño y desarrollo lo necesario, verifico su funcionamiento y documento qué debe observarse después.</p></li></ol><p class="statement">No busco culpables. Distingo hechos, declaraciones, hipótesis y pendientes.</p></div></section>
+    <section class="section-alt" aria-labelledby="incluye-title"><div class="container two-column"><h2 id="incluye-title">Un proyecto puede integrar investigación y construcción.</h2><div><ul class="plain-list"><li>entrevistas y análisis de casos;</li><li>arquitectura de información;</li><li>contenidos y copywriting;</li><li>diseño de interfaz;</li><li>desarrollo web;</li><li>formularios e integraciones;</li><li>rutas de seguimiento;</li><li>analítica y verificación;</li><li>documentación y transferencia.</li></ul><p>No incluye automáticamente un sitio nuevo, una aplicación completa, automatización, CRM, campañas o gestión de redes. La solución depende del caso.</p></div></div></section>
+    <section id="evidencia" aria-labelledby="evidencia-title"><div class="container reading"><h2 id="evidencia-title">Investigación que termina en una decisión utilizable.</h2><p class="lead">Durante 15 años he trabajado con textos, aprendizaje, decisiones y sistemas para comprender qué ocurre cuando una persona intenta avanzar y una regla, una interfaz o una explicación deja de orientarla.</p><ul class="evidence-links"><li><a href="https://huhugerman.com/investigacion">Investigación y trayectoria</a></li><li><a href="https://github.com/yassergandhi">GitHub</a></li><li><a href="https://orcid.org/0000-0002-8736-184X">ORCID</a></li></ul></div></section>
+    <section class="section-alt" aria-labelledby="limites-title"><div class="container two-column"><div><h2 id="limites-title">Qué ocurre antes de abrir un proyecto.</h2><p>La evaluación inicial determina si existe una situación investigable, qué evidencia falta y si tiene sentido continuar.</p></div><div><p><strong>No es:</strong></p><ul class="plain-list"><li>una cotización;</li><li>una auditoría gratuita;</li><li>un diagnóstico completo;</li><li>una aceptación automática;</li><li>una garantía de ventas.</li></ul><p>El alcance y la inversión se definen después de comprender el caso.</p></div></div></section>
+    <section id="evaluar" class="final-cta" aria-labelledby="evaluar-title"><div class="container reading"><h2 id="evaluar-title">¿Existe una situación concreta que vale la pena reconstruir?</h2><a class="button" href={cta}>Evaluar si existe un caso</a><p class="microcopy">Describe un caso real de forma general. No compartas contraseñas, datos financieros, expedientes ni información sensible.</p></div></section>
   </main>
-
   <Footer />
 </Layout>

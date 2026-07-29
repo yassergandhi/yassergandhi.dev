@@ -4,72 +4,10 @@ import Nav from "../components/Nav.astro";
 import TallyEvaluation from "../components/TallyEvaluation.astro";
 import Footer from "../components/Footer.astro";
 ---
-
-<Layout
-  title="yassergandhi.dev — Evaluación inicial del caso"
-  description="Describe una situación reciente para evaluar si existe información suficiente y si el problema está en la página, el primer contacto o el proceso posterior."
-  canonical="https://yassergandhi.dev/evaluacion"
-  ogTitle="Evaluación inicial del caso | yassergandhi.dev"
-  ogDescription="Reconstruye una situación reciente para decidir qué conviene hacer después."
-  noindex
->
-  <Nav />
-  <main class="evaluation-page">
-    <header class="evaluation-header surface-deep">
-      <div class="container narrow">
-        <p class="eyebrow">Evaluación inicial</p>
-        <h1>Cuéntame qué problema enfrentas actualmente.</h1>
-        <p class="lead">
-          No empieces por la solución.<br /><br />Empieza por un problema real:
-          <br />qué ocurre,<br />qué se respondió,<br />qué tuvo que explicarse
-          otra vez<br />y en qué momento dejó de avanzar.
-        </p>
-      </div>
-    </header>
-
-    <section class="surface-base evaluation-intro-section">
-      <div class="container evaluation-intro">
-        <div>
-          <h2>Antes de empezar</h2>
-          <div class="prose-stack">
-            <p>Describe el caso de forma general.</p>
-            <p>
-              La evaluación inicial permite saber<br />si existe suficiente
-              información<br />y si el caso corresponde con lo que hago.
-            </p>
-            <p>
-              <strong>Enviar el formulario<br />no implica aceptación.</strong>
-            </p>
-            <p class="privacy-notice">
-              Describe la situación de forma general.<br /><br />No compartas
-              contraseñas,<br />datos financieros, expedientes,<br />nombres de
-              clientes<br />ni información sensible.
-            </p>
-          </div>
-        </div>
-        <div>
-          <h2>Qué puede ocurrir después</h2>
-          <ol class="evaluation-outcomes">
-            <li>El caso corresponde y se agenda una conversación.</li>
-            <li>Primero hace falta otra decisión o más información.</li>
-            <li>El caso requiere otro tipo de apoyo.</li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <section
-      class="tally-section surface-raised"
-      aria-labelledby="tally-heading"
-    >
-      <div class="container narrow">
-        <h2 id="tally-heading">Describe la situación</h2>
-        <p class="tally-intro">
-          Tus respuestas se utilizan únicamente para evaluar el caso.
-        </p>
-        <TallyEvaluation />
-      </div>
-    </section>
-  </main>
-  <Footer />
+<Layout title="Evaluación inicial del caso | yassergandhi.dev" description="Describe una situación concreta para determinar si existe un caso investigable y qué información hace falta antes de definir alcance e inversión." canonical="https://yassergandhi.dev/evaluacion" noindex>
+  <Nav /><main class="evaluation-page">
+    <header class="evaluation-header"><div class="container reading"><p class="kicker">Evaluación inicial del caso</p><h1>Describe una situación concreta para saber si existe un caso investigable.</h1><p class="lead">No empieces por la solución. Describe qué ocurrió, qué se respondió, qué tuvo que explicarse otra vez y en qué momento dejó de avanzar.</p></div></header>
+    <section class="section-alt"><div class="container evaluation-grid"><div><h2>Qué es</h2><p>Una revisión inicial para decidir si existe base para continuar.</p></div><div><h2>Qué no es</h2><p>No es cotización, auditoría gratuita, diagnóstico completo ni aceptación automática.</p></div><div><h2>Qué puede ocurrir después</h2><ul class="plain-list"><li>el caso corresponde y se agenda una conversación;</li><li>hace falta otra decisión o más información;</li><li>el caso requiere otro tipo de apoyo;</li><li>no conviene construir todavía.</li></ul></div></div></section>
+    <section class="tally-section" aria-labelledby="tally-heading"><div class="container reading"><h2 id="tally-heading">Describe la situación</h2><p>Describe un caso real de forma general. No compartas contraseñas, datos financieros, expedientes ni información sensible.</p><TallyEvaluation /></div></section>
+  </main><Footer />
 </Layout>

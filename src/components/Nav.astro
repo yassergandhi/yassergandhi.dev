@@ -1,8 +1,10 @@
 ---
 const isEvaluation = Astro.url.pathname.replace(/\/+$/, "") === "/evaluacion";
 const links = [
+  { label: "Problema", href: "/#problema" },
+  { label: "Resultados", href: "/#resultados" },
   { label: "Método", href: "/#metodo" },
-  { label: "Oferta", href: "/#oferta" },
+  { label: "Evidencia", href: "/#evidencia" },
 ];
 ---
 
@@ -33,7 +35,7 @@ const links = [
             class="nav-evaluation"
             href="/evaluacion?originPage=home&offer=evaluacion_inicial"
           >
-            Evaluación
+            Evaluar un caso
           </a>
         </>
       )
