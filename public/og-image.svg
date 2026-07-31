@@ -4,9 +4,9 @@
   <rect width="1200" height="630" fill="#140D0A"/>
   <rect x="72" y="66" width="1056" height="5" fill="#E95420"/>
   <g transform="translate(72 112) scale(1.56)">
-    <path d="M8 10h24l28 37 16-20 17 14-23 29v42H50V70Z" fill="#F5F0EC"/>
-    <path d="M90 10h22l-12 18-16-13Z" fill="#F5F0EC"/>
-    <path d="m80 20 16 13-6 9-16-13Z" fill="#E95420"/>
+    <path d="M8 10h24l28 37 18-18 17 4-25 37v42H50V70Z" fill="#F5F0EC"/>
+    <path d="M91 10h21l-11 15-17-4Z" fill="#F5F0EC"/>
+    <path d="m80 25 19 4-3 9-19-4Z" fill="#E95420"/>
   </g>
   <text x="310" y="170" fill="#F5F0EC" font-family="Arial Narrow, Arial, sans-serif" font-size="64" font-weight="800">¿QUIERES UNA PÁGINA</text>
   <text x="310" y="244" fill="#F5F0EC" font-family="Arial Narrow, Arial, sans-serif" font-size="64" font-weight="800">QUE ATRAIGA CLIENTES?</text>
