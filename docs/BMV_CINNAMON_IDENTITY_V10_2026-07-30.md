@@ -231,6 +231,8 @@ Tally `MeQjR0` sigue siendo una dependencia remota. El repositorio controla el e
 
 Estos puntos sólo pueden revisarse y corregirse desde Tally. Las campañas CANACO y BMV permanecen intactas.
 
+El preview está disponible en `https://yassergandhi-fiib4xbdy-yassergandhis-projects.vercel.app`. Home, `/evaluacion`, favicon y Open Graph respondieron HTTP 200. El proyecto aplica protección de Vercel; una persona fuera del equipo puede necesitar autenticación o un enlace compartido.
+
 ## Rollback
 
 V10 no modifica `main`. Para descartar antes del merge, cerrar la PR y eliminar la rama cuando corresponda. Si se integra y después debe revertirse, usar `git revert` sobre los commits V10 en orden inverso. No usar `reset --hard` ni force push. El punto de retorno completo a V9 es `c5ed01dfafb81c9449243518b11db54a4b5d391d`.

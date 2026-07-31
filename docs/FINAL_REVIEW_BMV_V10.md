@@ -25,7 +25,11 @@ Abrir:
 - `http://127.0.0.1:4321/`
 - `http://127.0.0.1:4321/evaluacion`
 
-Preview remoto: se añadirá al cierre si Vercel permite crear uno sin producción.
+Preview remoto:
+
+`https://yassergandhi-fiib4xbdy-yassergandhis-projects.vercel.app`
+
+Está `READY`; home, evaluación, favicon y Open Graph respondieron HTTP 200. La protección de Vercel puede solicitar autenticación fuera del equipo.
 
 ## Capturas
 
@@ -42,6 +46,7 @@ Revisar `tmp/final-bmv-v10/`. Incluye logo de 16 a 256 px, home y evaluación m�
 
 ## Revisión humana pendiente
 
+- Revisar la draft PR `https://github.com/yassergandhi/yassergandhi.dev/pull/16`.
 - Confirmar la identidad y el copy en la PR.
 - Revisar dentro de Tally `MeQjR0` texto, duplicados, orden, obligatoriedad y lógica.
 - Autorizar merge a `main` y deployment de producción. Ninguna de esas acciones se ejecutó.
