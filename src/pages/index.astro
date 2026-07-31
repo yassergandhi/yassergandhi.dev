@@ -6,10 +6,10 @@ import BrandMark from "../components/BrandMark.astro";
 import { LAST_SIGNIFICANT_UPDATE, SITE_URL } from "../config/siteMetadata.mjs";
 
 const canonical = `${SITE_URL}/`;
-const title = "Diseño y desarrollo de sitios web para negocios en CDMX | Yasser Gandhi";
-const description = "Diseño sitios y sistemas web para negocios que ya reciben contactos por Facebook, Google Maps, recomendación o búsqueda. Primero revisamos qué pasa; después construimos lo necesario.";
+const title = "Diseño y desarrollo web para negocios en CDMX | Yasser Gandhi";
+const description = "Diseño páginas y sistemas web para negocios que ya reciben interés. Revisamos qué pasa después de que alguien te encuentra y construimos sólo lo necesario.";
 const cta = "/evaluacion?originPage=home&offer=evaluacion_inicial";
-const serviceDescription = "Diseño y desarrollo sitios y sistemas web para negocios. Primero reviso un caso reciente para decidir qué conviene aclarar, cambiar o construir.";
+const serviceDescription = "Diseño páginas y sistemas web para negocios que ya reciben interés. Reviso qué pasa después de que alguien los encuentra y construyo sólo lo necesario.";
 const schema = [
   { "@type": "Person", "@id": `${canonical}#person`, name: "Yasser Gandhi Hernández Esquivel", url: canonical, jobTitle: "Investigador cualitativo y desarrollador web", sameAs: ["https://github.com/yassergandhi", "https://orcid.org/0000-0002-8736-184X"] },
   { "@type": "WebSite", "@id": `${canonical}#website`, name: "yassergandhi.dev", url: canonical, inLanguage: "es-MX", publisher: { "@id": `${canonical}#person` } },
@@ -18,36 +18,36 @@ const schema = [
   { "@type": "Service", "@id": `${canonical}#service`, name: "Diseño y desarrollo de sitios y sistemas web", serviceType: "Diseño y desarrollo web", provider: { "@id": `${canonical}#professional-service` }, areaServed: ["Ciudad de México", "Remoto"], description: serviceDescription },
 ];
 ---
-<Layout {title} {description} {canonical} ogTitle="¿Quieres una página que atraiga clientes?" ogDescription={description} ogImageAlt="Diseño y desarrollo de sitios y sistemas web por Yasser Gandhi" extraSchema={schema}>
+<Layout {title} {description} {canonical} ogTitle="¿Quieres una página que atraiga clientes?" ogDescription="Veamos qué pasa después de que alguien te encuentra." ogImageAlt="Nueva Y de yassergandhi.dev con una pieza naranja que resuelve una interrupción" extraSchema={schema}>
   <Nav />
   <main>
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div class="hero-mark" data-hero-reveal style="--reveal-order: 0"><BrandMark /></div>
         <div class="hero-copy">
-          <p class="kicker" data-hero-reveal style="--reveal-order: 1">Diseño y desarrollo de sitios y sistemas web</p>
+          <p class="kicker" data-hero-reveal style="--reveal-order: 1">Diseño y desarrollo web para negocios que ya reciben interés</p>
           <h1 id="hero-title">
             <span data-hero-reveal style="--reveal-order: 2">¿Quieres una página que atraiga clientes?</span>
-            <span class="hero-contrast" data-hero-reveal style="--reveal-order: 3">Primero veamos qué pasa con las personas que ya llegan.</span>
+            <span class="hero-contrast" data-hero-reveal style="--reveal-order: 3">Veamos qué pasa después de que alguien te encuentra.</span>
           </h1>
-          <p class="intro-copy" data-hero-reveal style="--reveal-order: 4">Reviso un caso real: cómo te encontraron, qué preguntaron, qué respuesta recibieron y qué pasó después. Con eso decidimos si conviene renovar la página, cambiar el mensaje, mejorar el formulario o construir otra cosa.</p>
+          <p class="intro-copy" data-hero-reveal style="--reveal-order: 4">Partimos de un caso reciente: de dónde llegó la persona, qué preguntó, qué le respondiste y qué ocurrió después. Así decidimos si conviene cambiar la página, el mensaje, el formulario o la forma de dar seguimiento.</p>
           <a class="button" data-hero-reveal style="--reveal-order: 5" href={cta}>Revisar un caso reciente <span aria-hidden="true">→</span></a>
-          <p class="microcopy">Te toma dos minutos. No necesitas saber cuál es el problema.</p>
+          <p class="microcopy">Dos minutos. Tus datos van al final.</p>
         </div>
       </div>
     </section>
 
     <section id="situaciones" aria-labelledby="situaciones-title">
       <div class="container">
-        <p class="kicker">Situaciones reconocibles</p>
-        <h2 id="situaciones-title" class="section-title" data-reveal>Hay interés, pero la conversación no siempre continúa.</h2>
-        <p class="section-intro">No es necesario adivinar dónde está el problema. Podemos empezar por seguir un momento concreto, desde que alguien te encuentra hasta lo último que ocurrió.</p>
+        <p class="kicker">Lo que suele pasar</p>
+        <h2 id="situaciones-title" class="section-title" data-reveal>Hay personas interesadas. Lo difícil es saber qué pasó después.</h2>
+        <p class="section-intro">No necesitamos adivinar. Podemos empezar por una conversación, una solicitud o una cotización reciente.</p>
         <ol class="editorial-list" data-reveal-group>
-          <li data-reveal-item><span>01</span><p>Te encuentran por Facebook, Google Maps, búsqueda o recomendación.</p></li>
-          <li data-reveal-item><span>02</span><p>Piden información, precios o una cotización.</p></li>
-          <li data-reveal-item><span>03</span><p>Después no siempre queda claro qué ocurrió ni qué necesitaban para continuar.</p></li>
+          <li data-reveal-item><span>01</span><p>Te encuentran por recomendación, Google, redes o tu página.</p></li>
+          <li data-reveal-item><span>02</span><p>Te piden información, precio o una cotización.</p></li>
+          <li data-reveal-item><span>03</span><p>Después no siempre sabes qué entendieron ni por qué no siguieron.</p></li>
         </ol>
-        <p>La página puede ser parte de la respuesta, pero no es el único lugar que conviene mirar. A veces la duda aparece en el mensaje, en la forma de pedir datos o en lo que sucede después de responder.</p>
+        <p>La página puede ser parte de la respuesta. También conviene mirar el mensaje, los datos que se piden y la forma de dar seguimiento.</p>
       </div>
     </section>
 
@@ -55,12 +55,11 @@ const schema = [
       <div class="container">
         <div class="narrative-line" data-line aria-hidden="true"><span></span><span></span><span></span></div>
         <p class="kicker">Cómo trabajo</p>
-        <h2 id="trabajo-title" class="section-title" data-reveal>Primero vemos qué pasó. Después construimos lo que haga falta.</h2>
-        <p class="section-intro">No necesitas preparar un reporte. Una conversación, un mensaje o una cotización reciente permiten ordenar los hechos, hacer mejores preguntas y evitar que una idea asumida se convierta demasiado pronto en un proyecto.</p>
+        <h2 id="trabajo-title" class="section-title" data-reveal>Vemos el caso. Aclaramos qué pasó. Construimos sólo lo necesario.</h2>
         <ol class="method-sequence" data-reveal-group>
-          <li data-reveal-item><span>01</span><div><h3>Vemos qué ocurrió.</h3><p>Seguimos un caso: de dónde llegó la persona, qué pidió, qué respuesta recibió y hasta dónde avanzó.</p></div></li>
-          <li data-reveal-item><span>02</span><div><h3>Ubicamos qué necesita claridad.</h3><p>Distinguimos lo que ya funciona de lo que confunde, interrumpe o deja una pregunta sin respuesta.</p></div></li>
-          <li data-reveal-item><span>03</span><div><h3>Diseñamos y desarrollamos lo necesario.</h3><p>Puede ser una página, un formulario o un sistema. El alcance nace de lo observado, no de una solución elegida de antemano.</p></div></li>
+          <li data-reveal-item><span>01</span><div><h3>Seguimos lo que ocurrió.</h3><p>Cómo llegó la persona, qué pidió, qué respuesta recibió y hasta dónde llegó.</p></div></li>
+          <li data-reveal-item><span>02</span><div><h3>Ubicamos lo que quedó poco claro.</h3><p>Qué tuvo que preguntar, repetir o resolver para poder seguir.</p></div></li>
+          <li data-reveal-item><span>03</span><div><h3>Hacemos el cambio que corresponde.</h3><p>Puede ser la página, el formulario, el mensaje o la forma de dar seguimiento.</p></div></li>
         </ol>
       </div>
     </section>
@@ -69,10 +68,9 @@ const schema = [
       <div class="container evidence-grid">
         <div>
           <p class="kicker">Trayectoria</p>
-          <h2 id="trayectoria-title" class="section-title" data-reveal>Quince años uniendo preguntas, lenguaje y construcción.</h2>
-          <p>Mi trabajo reúne investigación cualitativa, lenguaje y pedagogía con diseño y desarrollo web. Esa combinación permite escuchar cómo explica una persona lo que vive y convertirlo en decisiones, contenidos e interfaces que pueda usar.</p>
-          <p>No parto de que todo necesite una página nueva. Primero conservo lo que ya ayuda; después construyo sólo lo que tiene una función clara.</p>
-          <p>He trabajado durante quince años entre investigación, enseñanza y tecnología. Puedo conversar con las personas involucradas, ordenar lo aprendido y llevar esa decisión hasta una solución web funcional.</p>
+          <h2 id="trayectoria-title" class="section-title" data-reveal>Quince años entre lenguaje, investigación y tecnología.</h2>
+          <p>Mi trabajo reúne investigación cualitativa, pedagogía y lenguaje con diseño y desarrollo web. Escucho cómo explica una persona lo que vive y lo convierto en decisiones, contenidos e interfaces claras.</p>
+          <p>Puedo llevar una observación desde la conversación inicial hasta una solución web funcional, sin asumir que todo necesita una página nueva.</p>
           <ul class="evidence-links" aria-label="Perfiles y evidencia">
             <li><a href="https://github.com/yassergandhi">GitHub</a></li>
             <li><a href="https://orcid.org/0000-0002-8736-184X">ORCID</a></li>
@@ -91,10 +89,10 @@ const schema = [
     <section id="revisar" class="final-cta" aria-labelledby="revisar-title">
       <div class="container">
         <p class="kicker">Un caso basta para empezar</p>
-        <h2 id="revisar-title" class="section-title" data-reveal>¿Recuerdas un caso en el que alguien mostró interés y después no supiste qué pasó?</h2>
-        <p>Cuenta sólo ese momento. Revisaré lo ocurrido para saber qué información falta y si conviene cambiar el mensaje, el formulario, la página o algo distinto.</p>
+        <h2 id="revisar-title" class="section-title" data-reveal>¿Hay una conversación reciente que todavía te deja dudas?</h2>
+        <p>Cuéntame qué pasó. No necesitas explicar todo tu negocio ni saber cuál es el problema.</p>
         <a class="button" href={cta}>Revisar un caso reciente <span aria-hidden="true">→</span></a>
-        <p class="microcopy">Te toma dos minutos. Tus datos van al final.</p>
+        <p class="microcopy">Dos minutos. Tus datos van al final.</p>
       </div>
     </section>
   </main>
