@@ -16,7 +16,9 @@ La home pasó de nueve bloques a cinco. La primera pantalla ahora dice qué se o
 
 URL local: `http://127.0.0.1:4321/`
 
-Preview remoto: se documentará en esta sección si Vercel autenticado permite crearlo sin producción.
+Preview remoto: `https://yassergandhi-pek1nuy5f-yassergandhis-projects.vercel.app`
+
+El deployment está `READY` y home/evaluación respondieron HTTP 200. Tiene protección de Vercel; una persona fuera del equipo puede requerir acceso o un enlace compartido.
 
 ## Capturas
 

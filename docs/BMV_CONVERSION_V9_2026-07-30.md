@@ -145,6 +145,7 @@ La auditoría de `/evaluacion` conserva deliberadamente `noindex, follow`; no de
 - Conviene revisar manualmente el formulario remoto antes de imprimir o distribuir el QR: primer campo, duplicados, campos requeridos, confirmación y entrega de atribución.
 - La respuesta prometida “por el medio que elijas” depende de que Tally ofrezca correctamente esa selección.
 - Vercel Analytics sólo registra en el entorno compatible; su componente está presente una vez.
+- El preview está protegido por Vercel; una persona sin acceso al equipo puede necesitar un enlace compartido o autenticación.
 - Best Practices queda en 96 en Lighthouse local. No hay errores de consola ni red; el resultado cumple el objetivo solicitado.
 
 ## Rollback
