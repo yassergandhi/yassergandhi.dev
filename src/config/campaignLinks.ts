@@ -5,3 +5,6 @@ export const CANACO_CARD_URL =
 
 export const CANACO_FLYER_URL =
   'https://yassergandhi.dev/evaluacion?utm_source=canaco&utm_medium=offline&utm_campaign=networking_julio_2026&utm_content=flyer&offer=evaluacion_inicial' as const;
+
+export const BMV_EVENT_URL =
+  'https://yassergandhi.dev/evaluacion?utm_source=bmv&utm_medium=offline&utm_campaign=networking_bmv_agosto_2026&utm_content=qr_evento&offer=evaluacion_inicial' as const;

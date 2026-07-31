@@ -4,31 +4,99 @@ import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import BrandMark from "../components/BrandMark.astro";
 import { LAST_SIGNIFICANT_UPDATE, SITE_URL } from "../config/siteMetadata.mjs";
+
 const canonical = `${SITE_URL}/`;
-const title = "Sitios y sistemas web con investigación cualitativa | yassergandhi.dev";
-const description = "Reconstruyo cómo llega una persona, qué espera y qué necesita para avanzar. Con esa información decidimos qué conviene cambiar o construir.";
+const title = "Diseño y desarrollo de sitios web para negocios en CDMX | Yasser Gandhi";
+const description = "Diseño sitios y sistemas web para negocios que ya reciben contactos por Facebook, Google Maps, recomendación o búsqueda. Primero revisamos qué pasa; después construimos lo necesario.";
 const cta = "/evaluacion?originPage=home&offer=evaluacion_inicial";
-const serviceDescription = "Comprendo una situación real, defino junto con el negocio qué cambio tiene sentido y desarrollo la solución cuando el alcance está claro.";
+const serviceDescription = "Diseño y desarrollo sitios y sistemas web para negocios. Primero reviso un caso reciente para decidir qué conviene aclarar, cambiar o construir.";
 const schema = [
-  { "@type": "Person", "@id": `${canonical}#person`, name: "Yasser Gandhi Hernández Esquivel", url: canonical, jobTitle: "Investigador cualitativo y desarrollador de sistemas web", alumniOf: [{ "@type": "CollegeOrUniversity", name: "Universidad Nacional Autónoma de México" }, { "@type": "CollegeOrUniversity", name: "Universidad de Guadalajara" }], sameAs: ["https://github.com/yassergandhi", "https://orcid.org/0000-0002-8736-184X"] },
+  { "@type": "Person", "@id": `${canonical}#person`, name: "Yasser Gandhi Hernández Esquivel", url: canonical, jobTitle: "Investigador cualitativo y desarrollador web", sameAs: ["https://github.com/yassergandhi", "https://orcid.org/0000-0002-8736-184X"] },
   { "@type": "WebSite", "@id": `${canonical}#website`, name: "yassergandhi.dev", url: canonical, inLanguage: "es-MX", publisher: { "@id": `${canonical}#person` } },
   { "@type": "WebPage", "@id": `${canonical}#webpage`, url: canonical, name: title, description, inLanguage: "es-MX", dateModified: LAST_SIGNIFICANT_UPDATE, isPartOf: { "@id": `${canonical}#website` } },
-  { "@type": "ProfessionalService", "@id": `${canonical}#professional-service`, name: "yassergandhi.dev", url: canonical, areaServed: ["Ciudad de México", "Remoto"], founder: { "@id": `${canonical}#person` }, description: serviceDescription },
-  { "@type": "Service", "@id": `${canonical}#service`, name: "Proyecto de intervención digital con investigación cualitativa", serviceType: "Proyecto de intervención digital con investigación cualitativa", provider: { "@id": `${canonical}#professional-service` }, areaServed: ["Ciudad de México", "Remoto"], description: serviceDescription },
+  { "@type": "ProfessionalService", "@id": `${canonical}#professional-service`, name: "Yasser Gandhi — diseño y desarrollo web", url: canonical, areaServed: ["Ciudad de México", "Remoto"], founder: { "@id": `${canonical}#person` }, description: serviceDescription },
+  { "@type": "Service", "@id": `${canonical}#service`, name: "Diseño y desarrollo de sitios y sistemas web", serviceType: "Diseño y desarrollo web", provider: { "@id": `${canonical}#professional-service` }, areaServed: ["Ciudad de México", "Remoto"], description: serviceDescription },
 ];
 ---
-<Layout {title} {description} {canonical} extraSchema={schema}>
+<Layout {title} {description} {canonical} ogTitle="¿Quieres una página que atraiga clientes?" ogDescription={description} ogImageAlt="Diseño y desarrollo de sitios y sistemas web por Yasser Gandhi" extraSchema={schema}>
   <Nav />
   <main>
-    <section class="hero" aria-labelledby="hero-title"><div class="container hero-grid"><div class="hero-mark" data-hero-reveal style="--reveal-order: 0"><BrandMark /></div><div class="hero-copy"><span class="section-number">01</span><p class="kicker" data-hero-reveal style="--reveal-order: 1">Diseño y desarrollo de sitios y sistemas web<br/>con investigación cualitativa</p><h1 id="hero-title" data-hero-reveal style="--reveal-order: 2">Antes de cambiar tu página, hay que entender qué está pasando con las personas que ya llegan.</h1><p class="lead" data-hero-reveal style="--reveal-order: 3">Reconstruyo un caso real: cómo conocieron el negocio, qué esperaban, qué encontraron y qué necesitaban para avanzar. Con esa información definimos el cambio que puede aportar más: una página, un sistema, un formulario, un ajuste de contenido o una etapa de observación.</p><a class="button" data-hero-reveal style="--reveal-order: 4" href={cta}>Contar una situación <span aria-hidden="true">→</span></a><p class="microcopy">Empieza con un ejemplo reciente. Después sabrás si conviene conversar y qué información hace falta.</p></div></div></section>
-    <section id="problema" aria-labelledby="problema-title"><div class="container"><p class="kicker">Lo que suele pasar</p><h2 id="problema-title" class="functional-title" data-reveal>El problema puede aparecer después de que alguien te encuentra.</h2><ol class="editorial-list" data-reveal-group><li data-reveal-item><span>01</span><p>Te encuentran en Google Maps o Facebook, pero al escribir tienen que empezar de cero.</p></li><li data-reveal-item><span>02</span><p>Llegan por una recomendación, pero la página no continúa la confianza que abrió la conversación.</p></li><li data-reveal-item><span>03</span><p>Piden información o una cotización y el equipo vuelve a preguntar, explicar o improvisar.</p></li></ol><p>Para saber qué conviene cambiar, sigo el recorrido desde el primer contacto hasta el siguiente paso.</p></div></section>
-    <section class="continuity" aria-labelledby="continuidad-title"><div class="container continuity-grid"><div><div class="expanding-line" data-line></div><h2 id="continuidad-title" class="monumental" data-reveal-group><span data-reveal-item>La promesa</span><span data-reveal-item>abre la puerta.</span><span data-reveal-item>El sistema</span><span data-reveal-item>debe permitir</span><span data-reveal-item>continuar.</span></h2></div><div><p>Una persona puede llegar por recomendación, una red social, Google Maps, una búsqueda o una página. Mi trabajo es conectar esa promesa con el siguiente paso: conservar el contexto, aclarar una decisión y facilitar que la conversación avance.</p><p class="statement" data-reveal>Hubo una respuesta. Ahora hace falta continuidad.</p></div></div></section>
-    <section id="resultados" aria-labelledby="resultados-title"><div class="container split-heading"><div><p class="kicker">Qué puede hacer falta</p><h2 id="resultados-title" class="functional-title" data-reveal>La solución puede tomar distintas formas.</h2></div><div><ol class="results-list" data-reveal-group><li data-reveal-item><span>A</span>Una página</li><li data-reveal-item><span>B</span>Un sistema</li><li data-reveal-item><span>C</span>Un formulario</li><li data-reveal-item><span>D</span>Un cambio de contenido o recorrido</li><li data-reveal-item><span>E</span>Una integración delimitada</li><li data-reveal-item><span>F</span>Más información para decidir</li><li class="result-stop" data-reveal-item><span>G</span>Observar y reunir información antes de construir</li></ol><p>La primera solicitud abre la conversación. La revisión permite elegir el siguiente paso con mayor claridad.</p></div></div></section>
-    <section id="metodo" class="section-raised" aria-labelledby="metodo-title"><div class="container"><p class="kicker">Cómo trabajo</p><h2 id="metodo-title" class="functional-title" data-reveal>Primero entendemos qué pasó. Después decidimos qué hacer.</h2><ol class="method-sequence" data-reveal-group><li data-reveal-item><span>01</span><div><h3>Comprender la situación</h3><p>Seguimos el recorrido de una persona: cómo llegó, qué buscaba, qué respuesta recibió y dónde perdió claridad.</p></div></li><li data-reveal-item><span>02</span><div><h3>Decidir qué conviene cambiar</h3><p>Separamos lo que ya funciona de lo que necesita ajuste y definimos un alcance realista.</p></div></li><li data-reveal-item><span>03</span><div><h3>Construir y comprobar</h3><p>Diseño y desarrollo lo necesario, pruebo su funcionamiento y dejo claro qué conviene observar después.</p></div></li></ol><p class="statement">Cada decisión parte de lo que ocurrió y de lo que el negocio necesita sostener.</p></div></section>
-    <section aria-labelledby="incluye-title"><div class="container split-heading"><h2 id="incluye-title" class="functional-title" data-reveal>Un proyecto reúne comprensión y construcción.</h2><div><div class="inventory"><div><p class="label">Comprender</p><ul><li>entrevistas</li><li>análisis de casos</li><li>revisión de mensajes y recorridos</li><li>arquitectura de información</li></ul></div><div><p class="label">Construir</p><ul><li>contenidos</li><li>interfaz</li><li>desarrollo web</li><li>formularios</li><li>integraciones</li><li>medición</li><li>documentación</li></ul></div></div><p>El alcance se concentra en lo que puede aportar al objetivo. Una aplicación completa, automatización, CRM, campañas o redes se consideran cuando realmente ayudan a resolver la situación.</p></div></div></section>
-    <section id="evidencia" class="section-raised" aria-labelledby="evidencia-title"><div class="container evidence-grid"><div><h2 id="evidencia-title" class="functional-title" data-reveal>Quince años convirtiendo preguntas complejas en decisiones claras.</h2><p>Mi experiencia reúne investigación cualitativa, pedagogía, lenguaje y desarrollo de sistemas web.</p><ul class="evidence-links"><li><a href="https://huhugerman.com/investigacion">Investigación y trayectoria</a></li><li><a href="https://github.com/yassergandhi">GitHub</a></li><li><a href="https://orcid.org/0000-0002-8736-184X">ORCID</a></li></ul></div><aside class="authorial-signature" data-reveal-group><div class="signature-line" data-line></div><p class="label" data-reveal-item>Firma autoral</p><h3 data-reveal-item><a href="https://huhugerman.com/investigacion">huhuGERMAN</a></h3><p>La forma de investigar que aplico aquí también está documentada en huhuGERMAN, un proyecto autoral sobre aprendizaje, lenguaje y situaciones reales.</p><a data-reveal-item href="https://huhugerman.com/investigacion">Ver investigación y trayectoria</a></aside></div></section>
-    <section aria-labelledby="inicio-title"><div class="container split-heading"><div><p class="kicker">Cómo empieza</p><h2 id="inicio-title" class="functional-title" data-reveal>La evaluación inicial ordena la situación y define el siguiente paso.</h2><p>Revisamos si la información disponible permite comprender qué ocurrió, qué conviene aclarar y si tiene sentido conversar sobre un proyecto.</p></div><div><p class="label">Lo que puedes esperar</p><ul class="expectations-list"><li>una lectura inicial de la situación;</li><li>claridad sobre la información que hace falta;</li><li>una respuesta sobre el siguiente paso;</li><li>alcance e inversión una vez comprendida la situación.</li></ul><p>Cuando el caso corresponde, las recomendaciones detalladas forman parte del proyecto.</p></div></div></section>
-    <section id="evaluar" class="final-cta" aria-labelledby="evaluar-title"><div class="container"><div class="expanding-line" data-line></div><h2 id="evaluar-title" class="functional-title" data-reveal>¿Hay una situación que se repite y quieres entender mejor?</h2><a class="button" data-reveal href={cta}>Contar una situación <span aria-hidden="true">→</span></a><p class="microcopy">Empieza con un ejemplo reciente. Puede ser una conversación, una cotización o una página que dejó más preguntas que respuestas.</p></div></section>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-mark" data-hero-reveal style="--reveal-order: 0"><BrandMark /></div>
+        <div class="hero-copy">
+          <p class="kicker" data-hero-reveal style="--reveal-order: 1">Diseño y desarrollo de sitios y sistemas web</p>
+          <h1 id="hero-title">
+            <span data-hero-reveal style="--reveal-order: 2">¿Quieres una página que atraiga clientes?</span>
+            <span class="hero-contrast" data-hero-reveal style="--reveal-order: 3">Primero veamos qué pasa con las personas que ya llegan.</span>
+          </h1>
+          <p class="intro-copy" data-hero-reveal style="--reveal-order: 4">Reviso un caso real: cómo te encontraron, qué preguntaron, qué respuesta recibieron y qué pasó después. Con eso decidimos si conviene renovar la página, cambiar el mensaje, mejorar el formulario o construir otra cosa.</p>
+          <a class="button" data-hero-reveal style="--reveal-order: 5" href={cta}>Revisar un caso reciente <span aria-hidden="true">→</span></a>
+          <p class="microcopy">Te toma dos minutos. No necesitas saber cuál es el problema.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="situaciones" aria-labelledby="situaciones-title">
+      <div class="container">
+        <p class="kicker">Situaciones reconocibles</p>
+        <h2 id="situaciones-title" class="section-title" data-reveal>Hay interés, pero la conversación no siempre continúa.</h2>
+        <p class="section-intro">No es necesario adivinar dónde está el problema. Podemos empezar por seguir un momento concreto, desde que alguien te encuentra hasta lo último que ocurrió.</p>
+        <ol class="editorial-list" data-reveal-group>
+          <li data-reveal-item><span>01</span><p>Te encuentran por Facebook, Google Maps, búsqueda o recomendación.</p></li>
+          <li data-reveal-item><span>02</span><p>Piden información, precios o una cotización.</p></li>
+          <li data-reveal-item><span>03</span><p>Después no siempre queda claro qué ocurrió ni qué necesitaban para continuar.</p></li>
+        </ol>
+        <p>La página puede ser parte de la respuesta, pero no es el único lugar que conviene mirar. A veces la duda aparece en el mensaje, en la forma de pedir datos o en lo que sucede después de responder.</p>
+      </div>
+    </section>
+
+    <section id="como-trabajo" class="section-raised" aria-labelledby="trabajo-title">
+      <div class="container">
+        <div class="narrative-line" data-line aria-hidden="true"><span></span><span></span><span></span></div>
+        <p class="kicker">Cómo trabajo</p>
+        <h2 id="trabajo-title" class="section-title" data-reveal>Primero vemos qué pasó. Después construimos lo que haga falta.</h2>
+        <p class="section-intro">No necesitas preparar un reporte. Una conversación, un mensaje o una cotización reciente permiten ordenar los hechos, hacer mejores preguntas y evitar que una idea asumida se convierta demasiado pronto en un proyecto.</p>
+        <ol class="method-sequence" data-reveal-group>
+          <li data-reveal-item><span>01</span><div><h3>Vemos qué ocurrió.</h3><p>Seguimos un caso: de dónde llegó la persona, qué pidió, qué respuesta recibió y hasta dónde avanzó.</p></div></li>
+          <li data-reveal-item><span>02</span><div><h3>Ubicamos qué necesita claridad.</h3><p>Distinguimos lo que ya funciona de lo que confunde, interrumpe o deja una pregunta sin respuesta.</p></div></li>
+          <li data-reveal-item><span>03</span><div><h3>Diseñamos y desarrollamos lo necesario.</h3><p>Puede ser una página, un formulario o un sistema. El alcance nace de lo observado, no de una solución elegida de antemano.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="trayectoria" aria-labelledby="trayectoria-title">
+      <div class="container evidence-grid">
+        <div>
+          <p class="kicker">Trayectoria</p>
+          <h2 id="trayectoria-title" class="section-title" data-reveal>Quince años uniendo preguntas, lenguaje y construcción.</h2>
+          <p>Mi trabajo reúne investigación cualitativa, lenguaje y pedagogía con diseño y desarrollo web. Esa combinación permite escuchar cómo explica una persona lo que vive y convertirlo en decisiones, contenidos e interfaces que pueda usar.</p>
+          <p>No parto de que todo necesite una página nueva. Primero conservo lo que ya ayuda; después construyo sólo lo que tiene una función clara.</p>
+          <p>He trabajado durante quince años entre investigación, enseñanza y tecnología. Puedo conversar con las personas involucradas, ordenar lo aprendido y llevar esa decisión hasta una solución web funcional.</p>
+          <ul class="evidence-links" aria-label="Perfiles y evidencia">
+            <li><a href="https://github.com/yassergandhi">GitHub</a></li>
+            <li><a href="https://orcid.org/0000-0002-8736-184X">ORCID</a></li>
+          </ul>
+        </div>
+        <aside class="authorial-signature" data-reveal>
+          <div class="signature-line" data-line></div>
+          <p class="label">Evidencia y firma autoral</p>
+          <h3><a href="https://huhugerman.com/investigacion">huhuGERMAN</a></h3>
+          <p>Un proyecto sobre aprendizaje, lenguaje e investigación de situaciones reales. Aquí funciona como evidencia de método y trayectoria, no como una segunda oferta.</p>
+          <a href="https://huhugerman.com/investigacion">Ver investigación y trayectoria</a>
+        </aside>
+      </div>
+    </section>
+
+    <section id="revisar" class="final-cta" aria-labelledby="revisar-title">
+      <div class="container">
+        <p class="kicker">Un caso basta para empezar</p>
+        <h2 id="revisar-title" class="section-title" data-reveal>¿Recuerdas un caso en el que alguien mostró interés y después no supiste qué pasó?</h2>
+        <p>Cuenta sólo ese momento. Revisaré lo ocurrido para saber qué información falta y si conviene cambiar el mensaje, el formulario, la página o algo distinto.</p>
+        <a class="button" href={cta}>Revisar un caso reciente <span aria-hidden="true">→</span></a>
+        <p class="microcopy">Te toma dos minutos. Tus datos van al final.</p>
+      </div>
+    </section>
   </main>
   <Footer />
   <script>import "../scripts/revealMotion";</script>

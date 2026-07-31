@@ -4,10 +4,31 @@ import Nav from "../components/Nav.astro";
 import TallyEvaluation from "../components/TallyEvaluation.astro";
 import Footer from "../components/Footer.astro";
 ---
-<Layout title="Evaluación inicial del caso | yassergandhi.dev" description="Cuenta una situación reciente para entender qué ocurrió, qué información hace falta y cuál puede ser el siguiente paso." canonical="https://yassergandhi.dev/evaluacion" ogDescription="Cuenta una situación reciente para entender qué ocurrió, qué información hace falta y cuál puede ser el siguiente paso." noindex>
-  <Nav /><main class="evaluation-page">
-    <header class="evaluation-header"><div class="container reading"><p class="kicker">Evaluación inicial</p><h1>Cuéntame una situación reciente que te hizo pensar: algo aquí puede funcionar mejor.</h1><p class="lead">Puede ser que una persona pidiera información y la conversación se enfriara, que el siguiente paso quedara poco claro o que tu equipo tuviera que preguntar o explicar otra vez.</p></div></header>
-    <section class="section-raised"><div class="container evaluation-grid" data-reveal-group><div data-reveal-item><p class="label">Para qué sirve</p><p>Ordenar lo ocurrido y ver si hay base para continuar.</p></div><div data-reveal-item><p class="label">Qué recibirás</p><p>Una respuesta sobre si conviene conversar, reunir más información o tomar otra decisión antes de construir.</p></div><div data-reveal-item><p class="label">Cómo puede seguir</p><ul><li>conversar sobre un proyecto;</li><li>reunir más información;</li><li>tomar una decisión interna;</li><li>buscar otro tipo de apoyo;</li><li>observar la situación un poco más.</li></ul></div></div></section>
-    <section class="tally-section" aria-labelledby="tally-heading"><div class="container reading"><h2 id="tally-heading">Cuéntame qué pasó</h2><p>Comparte un ejemplo reciente de forma general y omite contraseñas, datos financieros, expedientes e información sensible.</p><TallyEvaluation /></div></section>
-  </main><Footer />
+<Layout
+  title="Revisión inicial de un caso | Yasser Gandhi"
+  description="Cuenta un caso reciente en el que alguien mostró interés y después no supiste qué pasó. La revisión inicial toma dos minutos."
+  canonical="https://yassergandhi.dev/evaluacion"
+  ogTitle="Revisemos un caso reciente"
+  ogDescription="Cuenta un momento reciente. No necesitas explicar todo tu negocio ni saber cuál es el problema."
+  noindex
+>
+  <Nav />
+  <main class="evaluation-page">
+    <header class="evaluation-header">
+      <div class="container evaluation-reading">
+        <p class="kicker">Revisión inicial</p>
+        <h1>Cuéntame la última vez que alguien mostró interés y después no supiste qué pasó.</h1>
+        <p class="intro-copy">Puede haber llegado por recomendación, Facebook, Google Maps, una búsqueda o tu página. No necesitas explicar todo tu negocio: sólo cuenta un caso reciente.</p>
+        <p class="evaluation-strip" aria-label="Información de la revisión">2 minutos <span>·</span> tus datos van al final <span>·</span> te responderé por el medio que elijas</p>
+      </div>
+    </header>
+    <section class="tally-section" aria-labelledby="tally-heading">
+      <div class="container evaluation-reading">
+        <h2 id="tally-heading" class="visually-hidden">Formulario para revisar un caso reciente</h2>
+        <p class="sensitive-note">Describe el caso de forma general. No compartas contraseñas, datos financieros, expedientes ni información sensible.</p>
+        <TallyEvaluation />
+      </div>
+    </section>
+  </main>
+  <Footer />
 </Layout>
