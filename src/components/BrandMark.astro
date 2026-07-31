@@ -1,8 +1,28 @@
 ---
-interface Props { decorative?: boolean; class?: string; }
-const { decorative = true, class: className = "" } = Astro.props;
+interface Props {
+  decorative?: boolean;
+  class?: string;
+  label?: string;
+  monochrome?: boolean;
+}
+
+const {
+  decorative = true,
+  class: className = "",
+  label = "Y de yassergandhi.dev: dos caminos y una decisión",
+  monochrome = false,
+} = Astro.props;
 ---
-<svg class:list={["brand-mark", className]} viewBox="0 0 100 112" role={decorative ? undefined : "img"} aria-hidden={decorative ? "true" : undefined} aria-label={decorative ? undefined : "Y de yassergandhi.dev"} focusable="false">
-  <path class="brand-mark-body" d="M4 4h24l22 34L72 4h24L62 58v50H38V58L4 4Z" fill="currentColor"/>
-  <path class="brand-mark-spark" d="M74 18h20M84 8v20" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="square"/>
+<svg
+  class:list={["brand-mark", className]}
+  viewBox="0 0 120 120"
+  role={decorative ? undefined : "img"}
+  aria-hidden={decorative ? "true" : undefined}
+  aria-label={decorative ? undefined : label}
+  data-monochrome={monochrome ? "" : undefined}
+  focusable="false"
+>
+  <path class="brand-mark-body" d="M8 10h24l28 37 16-20 17 14-23 29v42H50V70Z" fill="currentColor"/>
+  <path class="brand-mark-body brand-mark-branch" d="M90 10h22l-12 18-16-13Z" fill="currentColor"/>
+  <path class="brand-mark-piece" d="m80 20 16 13-6 9-16-13Z"/>
 </svg>

@@ -1,1 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc"><title id="title">La promesa abre la puerta.</title><desc id="desc">El sistema debe permitir continuar. yassergandhi.dev</desc><rect width="1200" height="630" fill="#141314"/><rect x="72" y="68" width="1056" height="5" fill="#d2e659"/><g transform="translate(76 126) scale(1.7)" fill="#d2e659"><path d="M4 4h24l22 34L72 4h24L62 58v50H38V58L4 4Z"/><path d="M74 18h20M84 8v20" fill="none" stroke="#d2e659" stroke-width="6"/></g><text x="300" y="190" fill="#eeeded" font-family="Arial Narrow, Arial, sans-serif" font-size="62" font-weight="700">LA PROMESA ABRE LA PUERTA.</text><text x="300" y="276" fill="#d2e659" font-family="Arial Narrow, Arial, sans-serif" font-size="58" font-weight="700">EL SISTEMA DEBE PERMITIR</text><text x="300" y="348" fill="#d2e659" font-family="Arial Narrow, Arial, sans-serif" font-size="58" font-weight="700">CONTINUAR.</text><text x="76" y="550" fill="#eeeded" font-family="Arial, sans-serif" font-size="30">yassergandhi.dev_</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">¿Quieres una página que atraiga clientes?</title>
+  <desc id="desc">Veamos qué pasa después. yassergandhi.dev</desc>
+  <rect width="1200" height="630" fill="#140D0A"/>
+  <rect x="72" y="66" width="1056" height="5" fill="#E95420"/>
+  <g transform="translate(72 112) scale(1.56)">
+    <path d="M8 10h24l28 37 16-20 17 14-23 29v42H50V70Z" fill="#F5F0EC"/>
+    <path d="M90 10h22l-12 18-16-13Z" fill="#F5F0EC"/>
+    <path d="m80 20 16 13-6 9-16-13Z" fill="#E95420"/>
+  </g>
+  <text x="310" y="170" fill="#F5F0EC" font-family="Arial Narrow, Arial, sans-serif" font-size="64" font-weight="800">¿QUIERES UNA PÁGINA</text>
+  <text x="310" y="244" fill="#F5F0EC" font-family="Arial Narrow, Arial, sans-serif" font-size="64" font-weight="800">QUE ATRAIGA CLIENTES?</text>
+  <text x="310" y="346" fill="#E95420" font-family="Arial Narrow, Arial, sans-serif" font-size="58" font-weight="800">VEAMOS QUÉ PASA DESPUÉS.</text>
+  <text x="72" y="554" fill="#F5F0EC" font-family="Arial, sans-serif" font-size="30">yassergandhi.dev</text>
+</svg>
