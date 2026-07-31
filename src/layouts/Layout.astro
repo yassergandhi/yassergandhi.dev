@@ -17,13 +17,13 @@ interface Props {
 }
 
 const {
-  title = "Sitios y sistemas web con investigación cualitativa | yassergandhi.dev",
-  description = "Reconstruyo cómo llega una persona, qué espera y qué necesita para avanzar. Con esa información decidimos qué conviene cambiar o construir.",
+  title = "Diseño y desarrollo de sitios web para negocios en CDMX | Yasser Gandhi",
+  description = "Diseño sitios y sistemas web para negocios que ya reciben contactos por Facebook, Google Maps, recomendación o búsqueda. Primero revisamos qué pasa; después construimos lo necesario.",
   canonical = `${siteUrl}/`,
-  ogTitle = "La promesa abre la puerta. El sistema debe permitir continuar.",
-  ogDescription = "Investigo cómo llega una persona, qué espera y qué necesita para avanzar. Después decidimos qué conviene cambiar o construir.",
+  ogTitle = title,
+  ogDescription = description,
   ogImage = `${siteUrl}/og-image.png`,
-  ogImageAlt = "La promesa abre la puerta. El sistema debe permitir continuar.",
+  ogImageAlt = "Diseño y desarrollo de sitios y sistemas web por Yasser Gandhi",
   noindex = false,
   extraSchema = [],
 } = Astro.props;
@@ -38,12 +38,8 @@ const jsonLd = extraSchema.length
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preload" href="/fonts/barlow-condensed-800-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Yasser Gandhi Hernández Esquivel" />
