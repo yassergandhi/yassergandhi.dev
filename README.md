@@ -1,25 +1,41 @@
 # yassergandhi.dev
 
-Commercial homepage for Yasser Gandhi Hernández Esquivel.
+> **Status: archived 2026 product/market experiment**
+>
+> This repository preserves the commercial version of yassergandhi.dev that tested a qualitative friction-analysis offer for SaaS onboarding, support, forms and handoffs. The offer is no longer an active commercial priority.
 
-Live at [yassergandhi.dev](https://yassergandhi.dev)
+Live domain: [yassergandhi.dev](https://yassergandhi.dev)
 
-## Positioning
+## What this experiment tested
 
-yassergandhi.dev sells qualitative friction analysis for SaaS onboarding, support, forms, handoffs and activation.
+The site positioned qualitative research as a paid service for teams dealing with repeated support questions, onboarding gaps, weak intake data and incomplete handoffs.
 
-Core message:
+The core message was:
 
-“Find where your users stop acting — before support absorbs the cost.”
+> “Find where your users stop acting — before support absorbs the cost.”
 
-The homepage is positioned for Customer Success, Implementation, Support, Product Education and early-stage B2B SaaS teams dealing with repeated support questions, onboarding gaps, weak intake data and incomplete handoffs.
+The offer was taken beyond internal ideation: it was exposed through a priced proposition and in-person networking. It did not produce enough commercial evidence to justify continuing the service as an active offer.
 
-huhuGERMAN is referenced only as a protected living lab for structured friction, user reflection and feedback design. The site does not expose internal method details, private data or testimonials.
+That result should be read as market evidence about this specific positioning, not as a technical failure of the site.
 
-## Stack
+## Why the repository remains public
+
+A product can be archived without making its assets worthless.
+
+This codebase is preserved as:
+
+- an Astro implementation sample;
+- a record of a real product/market experiment;
+- a source of historical positioning and copy decisions;
+- an example of explicit scope reduction from form-based lead capture back to email contact;
+- infrastructure that may later be repurposed for a different technical role.
+
+Reusing the domain does not automatically reopen the commercial hypothesis.
+
+## Current codebase
 
 | Layer | Choice |
-| --- | --- |
+|---|---|
 | Framework | Astro |
 | Styling | CSS custom properties in `src/styles/global.css` |
 | Typography | Ubuntu and Ubuntu Mono via Google Fonts |
@@ -29,19 +45,43 @@ huhuGERMAN is referenced only as a protected living lab for structured friction,
 
 ## Technical notes
 
-- Shared layout exposes metadata props for title, description, canonical, Open Graph, Twitter card, robots and JSON-LD schema.
-- Home canonical: `https://yassergandhi.dev/`.
-- Homepage sections are modular Astro components composed in `src/pages/index.astro`.
+- shared layout props cover title, description, canonical URL, Open Graph, Twitter card, robots and JSON-LD;
+- the home canonical is `https://yassergandhi.dev/`;
+- homepage sections are composed as modular Astro components;
+- contact is currently email-only;
+- there is no active form submission endpoint or Resend integration.
 
-## Contact
+## What this repository does not prove
 
-Contact is email-only for now. The homepage uses a `mailto:` CTA with a prefilled `Friction Audit Inquiry` subject and a short checklist for the friction brief. There is no active form submission endpoint or Resend integration.
+- product-market fit;
+- validated willingness to pay;
+- a repeatable acquisition channel;
+- an active consulting practice;
+- revenue from the friction-analysis offer.
+
+Those claims require transaction evidence, not copy or deployment.
 
 ## Local development
 
 ```bash
 npm install
-npm run dev        # http://localhost:4321
+npm run dev
 npm run build
 npm run preview
 ```
+
+## Current strategic role
+
+The domain is available for future reuse as a developer portfolio, technical project launcher, documentation surface or another web application.
+
+No new role is assumed until there is a concrete reason to implement it.
+
+## About
+
+**Yasser Gandhi Hernández Esquivel**
+
+Software Developer · React + TypeScript · Web applications and API integration
+
+B.S. Web Systems Development (UdeG, 2025) · M.Ed. Pedagogy (UNAM, 2020) · German Studies (UNAM, 2012)
+
+[LinkedIn](https://linkedin.com/in/yassergandhi)
